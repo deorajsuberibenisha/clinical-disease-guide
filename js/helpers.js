@@ -179,7 +179,14 @@ const IMGS = {
   "images/dengue-rash-early.jpg": ["f/f8/Early_Dengue_Fever_Rash_2014.jpg",2394],
   "images/dengue-rash-recovery.jpg": ["a/ad/Dengue_recovery_rash_%28White_islands_in_red_sea%29.jpg",1011],
   "images/tourniquet-test.gif": ["8/83/Positive-tourniquet-test.gif",483],
-  "images/aedes-aegypti.jpg": ["9/91/Aedes_aegypti_mosquito.jpg",1024]
+  "images/aedes-aegypti.jpg": ["9/91/Aedes_aegypti_mosquito.jpg",1024],
+  "images/typhoid-rose-spots.jpg": ["1/12/Salmonella_typhi_typhoid_fever_PHIL_2215_lores.jpg",2973],
+  "images/typhoid-ileum-ulcer.jpg": ["b/b7/Typhoid_ulceration_of_the_lower_portion_of_the_ileum_Wellcome_L0061611.jpg",6270],
+  "images/widal-slide.jpg": ["8/88/Widal_Test_Slide.jpg",1920],
+  "images/scrub-eschar.jpg": ["5/52/Scrub_typhus_eschar.jpg",269],
+  "images/scrub-rash.webp": ["e/ea/Scrub_typhus_rash.webp",500],
+  "images/chigger-mites.jpg": ["c/c9/Leptotrombidium%2C_chigger_mites_%2814854410979%29.jpg",720],
+  "images/scrub-rdt.jpg": ["5/59/Scrub_Typhus_IgM_Test-Positive.jpg",4160]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
