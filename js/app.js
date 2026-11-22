@@ -183,7 +183,6 @@
       <section class="hero2">
         <div class="hero2-t"><h1>Clinical Disease Guide</h1>
         <p>Referenced disease chapters for clinicians and students in Bhutan and South Asia: Bhutan's STG and NEML read side by side with Indian and international guidelines, with separate adult, child and pregnancy pages where care differs.</p></div>
-        <div class="stats"><span class="stat"><b>${groupsFor(PAGES).length}</b> diseases</span><span class="stat"><b>${PAGES.length}</b> pages</span><span class="stat"><b>${Object.keys(GUIDE.drugs).length}</b> drug cards</span><span class="stat"><b>${calcIndex().length}</b> calculators</span></div>
       </section>
       <div class="quick">${QUICK.map(([h, ic, hue, t, sub]) => `<a class="qk" href="${h}" style="--h:${hue}"><span class="qk-ic">${IC2[ic]}</span><span><b>${t}</b><small>${sub()}</small></span></a>`).join("")}</div>
       <div class="sec-h"><h2>Clinical specialties</h2><small>Numbers show diseases written so far</small></div>
