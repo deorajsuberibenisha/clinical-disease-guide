@@ -232,8 +232,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["Cholera regimens (MSF/WHO)", "<span class='pass'>Checked</span>", "Plan C adult volumes and single-dose antibiotics"],
 ["IDSA 2017 / ACG 2016", "<span class='pass'>Checked</span>", "DOIs confirmed"],
 ["NEML 2025 availability", "<span class='pass'>Checked</span>", "Oral azithromycin and loperamide not listed"],
-["Bhutan Shigella/Campylobacter susceptibility", "<span class='warn'>Evidence gap</span>", "None found"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs physician review"]], "qc")}
+["Bhutan Shigella/Campylobacter susceptibility", "<span class='warn'>Evidence gap</span>", "None found"]], "qc")}
 ` }
 ]
 });

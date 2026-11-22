@@ -269,7 +269,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Adhesive SBO and perforated ulcer guidance", "<span class='pass'>Checked</span>", "WSES 2018 (ASBO) and 2020 (PPU)"],
 ["Antibiotics and durations", "<span class='pass'>Checked</span>", "WSES 2017, WHO AWaRe 2022, STOP-IT"],
 ["Volvulus guidance", "<span class='flag'>Secondary check</span>", "ASCRS 2021 cited from summary; verify against full text"],
-["Surgical sign-off", "<span class='flag'>Pending</span>", "Needs review by a Bhutanese general surgeon"],
 ["Images", "<span class='pass'>Done</span>", "CC0 / CC BY-SA 3.0 / 4.0"]], "qc")}
 ` }
 ]

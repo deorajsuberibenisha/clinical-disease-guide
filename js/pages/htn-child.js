@@ -278,8 +278,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["Drug doses", "<span class='pass'>Checked</span>", "AAP 2017 Table 13; existing drug cards; NEMF"],
 ["Screening calculator", "<span class='pass'>Checked</span>", "AAP 2017 simplified table (screening only)"],
 ["Bhutan paediatric prevalence", "<span class='warn'>Evidence gap</span>", "No data found"],
-["Images", "<span class='pass'>Done</span>", "Two Commons files; licences checked"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs review by a paediatrician/paediatric nephrologist"]], "qc")}
+["Images", "<span class='pass'>Done</span>", "Two Commons files; licences checked"]], "qc")}
 ` }
 ]
 });

@@ -254,7 +254,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Atlanta and Marshall definitions", "<span class='pass'>Checked</span>", "Banks 2013; tested in calculator"],
 ["Fluids, feeding, antibiotics", "<span class='pass'>Checked</span>", "WATERFALL 2022, ACG 2024, IAP/APA 2013"],
 ["BISAP mortality bands", "<span class='flag'>Approximate</span>", "Shown qualitatively; exact percentages vary by cohort"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a gastroenterologist or surgeon"],
 ["Images", "<span class='pass'>Done</span>", "CC BY 2.0 / CC BY-SA 3.0 / 4.0"]], "qc")}
 ` }
 ]

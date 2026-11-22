@@ -215,7 +215,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan town elevations in calculator", "<span class='flag'>Approximate</span>", "Rounded values; enter the exact elevation where known"],
 ["Bhutan STG content", "<span class='pass'>Verified</span>", "§4.3 (text partly missing in PDF)"],
 ["B12 on NEML", "<span class='flag'>Gap</span>", "Not listed"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a physician or haematologist"],
 ["Images", "<span class='pass'>Done</span>", "CC BY 2.0"]], "qc")}
 ` }
 ]

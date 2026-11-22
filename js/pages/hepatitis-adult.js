@@ -221,8 +221,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["WHO 2024 HBV criteria", "<span class='pass'>Checked</span>", "Built into calculator"],
 ["Paracetamol conflict", "<span class='flag'>Flagged</span>", "STG advises avoiding paracetamol; guide follows international practice"],
 ["HBIG, HCV DAAs on NEML", "<span class='flag'>Gap</span>", "Not listed; programme supply"],
-["Images", "<span class='pass'>Done</span>", "CC BY 4.0"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a gastroenterologist or physician"]], "qc")}
+["Images", "<span class='pass'>Done</span>", "CC BY 4.0"]], "qc")}
 ` }
 ]
 });

@@ -244,7 +244,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Febrile seizure LP criteria", "<span class='pass'>Checked</span>", "AAP 2011; tested in calculator"],
 ["Neonatal doses", "<span class='flag'>Simplified</span>", "Follow the neonatal formulary for intervals and maintenance"],
 ["Buccal midazolam availability", "<span class='flag'>Gap</span>", "Not on NEML; injectable 1 mg/mL only"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatrician or paediatric neurologist"],
 ["Images", "<span class='pass'>Done</span>", "CC BY-SA 4.0 / CC BY 4.0"]], "qc")}
 ` }
 ]

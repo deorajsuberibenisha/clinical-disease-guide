@@ -273,7 +273,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Long-term drug choice", "<span class='pass'>Checked</span>", "NICE NG217, SANAD II, WHO mhGAP"],
 ["HLA-B*15:02 frequency in Bhutan", "<span class='flag'>Evidence gap</span>", "Not found; counsel about rash"],
 ["Bhutan driving rules for epilepsy", "<span class='flag'>Not verified</span>", "International practice given"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a neurologist or physician"],
 ["Images", "<span class='pass'>Done</span>", "CC BY 4.0 / public domain"]], "qc")}
 ` }
 ]

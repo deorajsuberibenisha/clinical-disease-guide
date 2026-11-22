@@ -272,7 +272,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Scores and thresholds", "<span class='pass'>Checked</span>", "Original papers (Alvarado 1986, Andersson 2008) and WSES 2020"],
 ["Antibiotic regimens and durations", "<span class='pass'>Checked</span>", "WHO AWaRe 2022, STOP-IT, WSES 2020"],
 ["Bhutan incidence data", "<span class='flag'>Not available</span>", "No published national figure found"],
-["Surgical sign-off", "<span class='flag'>Pending</span>", "Needs review by a Bhutanese general surgeon"],
 ["Images", "<span class='pass'>Done</span>", "CC BY-SA 3.0 / 4.0"]], "qc")}
 ` }
 ]

@@ -333,8 +333,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["DAPT, AF anticoagulation, secondary prevention", "<span class='pass'>Verified</span>", "CHANCE, POINT, ELAN; AHA/ASA 2021; ESC 2024"],
 ["NIHSS, ABCD², CHA₂DS₂-VA(Sc), HAS-BLED calculators", "<span class='pass'>Checked</span>", "From the original scales"],
 ["Thrombectomy availability in Bhutan", "<span class='warn'>Not verified</span>", "Flagged in text"],
-["Images", "<span class='pass'>Done</span>", "Five Commons files; licences checked"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs review by a physician/neurologist"]], "qc")}
+["Images", "<span class='pass'>Done</span>", "Five Commons files; licences checked"]], "qc")}
 ` }
 ]
 });

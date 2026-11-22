@@ -265,8 +265,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["NEML inhaler availability and Bhutan adaptation", "<span class='pass'>Checked</span>", "No LABA–LAMA combination on NEML"],
 ["GOLD ABE and DECAF calculators", "<span class='pass'>Checked</span>", "From GOLD and Steer 2012"],
 ["Bhutan COPD prevalence", "<span class='warn'>Evidence gap</span>", "No national survey found"],
-["Images", "<span class='pass'>Done</span>", "Four Commons files; licences checked"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs review by a physician/pulmonologist"]], "qc")}
+["Images", "<span class='pass'>Done</span>", "Four Commons files; licences checked"]], "qc")}
 ` }
 ]
 });

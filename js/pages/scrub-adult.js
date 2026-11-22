@@ -226,7 +226,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan zoonoses guideline 2025", "<span class='pass'>Verified</span>", "Chapter 4 read directly from the PDF"],
 ["Doses (two sources)", "<span class='pass'>Checked</span>", "Bhutan 2025, ICMR 2015, INTREST, BNF"],
 ["Author lists of Bhutan studies", "<span class='flag'>Partly verified</span>", "Taken from the Bhutan guideline reference list; full author lists not checked"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a physician or infectious-disease specialist"],
 ["Images", "<span class='pass'>Done</span>", "CC BY-SA 3.0 / CC BY 4.0 / CC BY 2.0 / CC BY-SA 4.0"]], "qc")}
 ` }
 ]

@@ -191,7 +191,11 @@ const IMGS = {
   "images/koilonychia.jpg": ["3/32/Koilonychia_iron_deficiency_anemia.jpg",2713],
   "images/ida-smear.jpg": ["2/29/Iron-deficiency_Anemia%2C_Peripheral_Blood_Smear_%284422704616%29.jpg",1711],
   "images/hypersegmented-neutrophil.jpg": ["a/a2/Hyperlobated_Neutrophil_%288612790151%29.jpg",474],
-  "images/newborn-jaundice.jpg": ["7/7c/Jaundice_in_newborn.jpg",700]
+  "images/newborn-jaundice.jpg": ["7/7c/Jaundice_in_newborn.jpg",700],
+  "images/goitre-large.jpg": ["4/43/Kone_med_stor_struma.jpg",1939],
+  "images/myxedema-face.jpg": ["2/25/Myxedema.jpg",622],
+  "images/pitting-oedema.jpg": ["2/21/Pitting_Edema2008.jpg",2304],
+  "images/urine-strip-multi.jpg": ["c/c3/Comp.Urine.Test.Strip.jpg",1536]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };

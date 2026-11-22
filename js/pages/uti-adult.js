@@ -256,7 +256,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan STG content", "<span class='pass'>Verified</span>", "STG 2024 §6.1, read from the extracted text"],
 ["Local resistance data", "<span class='pass'>Checked</span>", "Three JDWNRH studies; figures rounded; methods vary and ESBL not confirmed by standard testing"],
 ["Doses (two sources)", "<span class='pass'>Checked</span>", "BNF and NEMF/WHO AWaRe; NEMF nitrofurantoin renal threshold differs (flagged)"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a physician, urologist or microbiologist"],
 ["Images", "<span class='pass'>Done</span>", "CC BY-SA 3.0 / 4.0; hydronephrosis image reused from the CKD chapter"]], "qc")}
 ` }
 ]

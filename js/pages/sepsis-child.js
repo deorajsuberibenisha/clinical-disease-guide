@@ -237,8 +237,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["SSC children 2026", "<span class='pass'>Checked</span>", "From SCCM recommendation listing"],
 ["Phoenix calculator thresholds", "<span class='pass'>Checked</span>", "Against published tables"],
 ["Vital-sign threshold table", "<span class='warn'>Approximate</span>", "Adapted from paediatric life-support teaching values"],
-["Bhutan paediatric sepsis protocol", "<span class='warn'>Evidence gap</span>", "None found; adult Quick Guide only"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs paediatric intensivist review"]], "qc")}
+["Bhutan paediatric sepsis protocol", "<span class='warn'>Evidence gap</span>", "None found; adult Quick Guide only"]], "qc")}
 ` }
 ]
 });

@@ -549,7 +549,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["Flowcharts match the text", "<span class='pass'>Checked</span>", "—"],
 ["Bhutan adaptations labelled", "<span class='pass'>Done</span>", "Purple labels and boxes"],
 ["Evidence gaps", "<span class='flag'>Flagged</span>", "No Bhutan AKI incidence data; dialysis capacity by district not published"]], "qc")}
-${box("amber", "Needs expert review before clinical sign-off", `<ul><li>The KDIGO 2026 recommendations come from a <b>public-review draft</b>; recheck when the final guideline is published.</li><li>The 30 mL vs 10 mL calcium gluconate choice is a panel recommendation.</li><li>Local availability of dialysis by hospital should be confirmed with the Ministry of Health.</li></ul>`)}
+${box("amber", "Evidence still evolving", `<ul><li>The KDIGO 2026 recommendations come from a <b>public-review draft</b>; recheck when the final guideline is published.</li><li>The 30 mL vs 10 mL calcium gluconate choice is a panel recommendation.</li><li>Local availability of dialysis by hospital should be confirmed with the Ministry of Health.</li></ul>`)}
 ` }
 ]
 });

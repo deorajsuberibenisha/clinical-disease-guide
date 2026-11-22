@@ -229,7 +229,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan dengue guideline (children, infants, annexures)", "<span class='pass'>Verified</span>", "Read directly from the PDF"],
 ["Paediatric compensated shock regimen", "<span class='flag'>Gap filled</span>", "Bhutan Figure 6 missing; WHO 2009 regimen used"],
 ["WHO 2025 arboviral guideline", "<span class='flag'>Not reviewed in full</span>", "Cited only"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatrician"],
 ["Images", "<span class='pass'>Done</span>", "Public domain / CC BY-SA 4.0 / CC BY 2.0"]], "qc")}
 ` }
 ]

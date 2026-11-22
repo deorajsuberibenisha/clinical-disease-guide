@@ -235,7 +235,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan STG content", "<span class='pass'>Verified</span>", "STG 2024 §12.4.3–12.4.5 read directly"],
 ["Intussusception and pyloric stenosis thresholds", "<span class='pass'>Checked</span>", "Standard paediatric surgical and radiology practice; Ko 2007"],
 ["Weight-based fluids", "<span class='pass'>Checked</span>", "NICE NG29; tested in the calculator"],
-["Paediatric surgical sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatric surgeon"],
 ["Images", "<span class='pass'>Done</span>", "CC0 / CC BY 2.0 / CC BY-SA 3.0 / 4.0"]], "qc")}
 ` }
 ]

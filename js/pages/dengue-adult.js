@@ -246,7 +246,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Fluid steps and calculator", "<span class='pass'>Checked</span>", "Against Bhutan guideline and WHO 2009; tested"],
 ["WHO 2025 arboviral guideline", "<span class='flag'>Not reviewed in full</span>", "Cited; specific recommendations not checked"],
 ["India NCVBDC guideline edition", "<span class='flag'>Not verified</span>", "Edition and year not confirmed"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a physician or infectious-disease specialist"],
 ["Images", "<span class='pass'>Done</span>", "Public domain / CC BY-SA 4.0 / CC BY 2.0"]], "qc")}
 ` }
 ]

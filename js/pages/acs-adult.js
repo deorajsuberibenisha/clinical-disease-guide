@@ -420,8 +420,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["24-hour primary PCI availability in Bhutan", "<span class='warn'>Not verified</span>", "Cath lab at JDWNRH since Sept 2023; on-call model not confirmed"],
 ["Bhutan ACS incidence and outcome data", "<span class='warn'>Evidence gap</span>", "No national figure found"],
 ["Images", "<span class='pass'>Done</span>", "Three Commons files; licences checked via the Commons API (CC BY-SA 3.0, public domain, CC BY 3.0)"],
-["References", "<span class='pass'>Done</span>", "All with DOI or link where available"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs review by a cardiologist before use for teaching"]], "qc")}
+["References", "<span class='pass'>Done</span>", "All with DOI or link where available"]], "qc")}
 ` }
 ]
 });

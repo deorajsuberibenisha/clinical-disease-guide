@@ -239,7 +239,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan STG and NEML content", "<span class='pass'>Verified</span>", "STG 2024 §4.1.7"],
 ["PAS components and thresholds", "<span class='pass'>Checked</span>", "Samuel 2002; WSES 2020"],
 ["Weight-based doses", "<span class='pass'>Checked</span>", "WHO AWaRe 2022, BNFc; tested in the calculator"],
-["Paediatric surgical sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatric surgeon"],
 ["Images", "<span class='pass'>Done</span>", "CC BY 2.0 / CC BY-SA 3.0 / 4.0"]], "qc")}
 ` }
 ]

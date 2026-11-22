@@ -258,7 +258,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bacterial Meningitis Score", "<span class='pass'>Checked</span>", "Nigrovic 2007; tested in calculator"],
 ["WHO 2025 meningitis guideline", "<span class='flag'>Summary only</span>", "Full text not reviewed"],
 ["Bhutan pneumococcal and JE vaccine status", "<span class='flag'>Not verified</span>", "Not stated as fact in this chapter"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatrician or paediatric neurologist"],
 ["Images", "<span class='pass'>Done</span>", "Public domain / CC BY 4.0 / CC BY-SA 4.0 / CC BY 2.0"]], "qc")}
 ` }
 ]

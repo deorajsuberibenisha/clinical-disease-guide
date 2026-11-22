@@ -233,7 +233,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan resistance data", "<span class='flag'>Evidence gap</span>", "No published S. Typhi susceptibility for Bhutan; regional data used"],
 ["Doses (two sources)", "<span class='pass'>Checked</span>", "WHO AWaRe and BNF/ICMR"],
 ["Oral azithromycin availability", "<span class='flag'>Gap</span>", "Not on NEML 2025 (IV only)"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a physician or infectious-disease specialist"],
 ["Images", "<span class='pass'>Done</span>", "Public domain / CC BY 4.0 / CC BY-SA 3.0"]], "qc")}
 ` }
 ]

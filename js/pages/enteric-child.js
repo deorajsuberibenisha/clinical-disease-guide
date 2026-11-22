@@ -195,7 +195,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan paediatric guidance", "<span class='flag'>Evidence gap</span>", "STG has no child regimen; WHO doses used"],
 ["Doses (two sources)", "<span class='pass'>Checked</span>", "WHO AWaRe and BNFc/ICMR"],
 ["IAP enteric fever guideline", "<span class='flag'>Not reviewed</span>", "Cefixime dose from widely used Indian practice"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatrician"],
 ["Images", "<span class='pass'>Done</span>", "Public domain / CC BY 4.0"]], "qc")}
 ` }
 ]

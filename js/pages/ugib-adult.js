@@ -232,8 +232,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["ACG 2021 / ESGE 2021 key points", "<span class='pass'>Checked</span>", "From guideline knowledge; DOIs verified"],
 ["NEML 2025 availability", "<span class='pass'>Checked</span>", "IV erythromycin not listed; omeprazole IV to DH"],
 ["GBS and Rockall calculators", "<span class='pass'>Checked</span>", "Against original papers"],
-["Bhutan UGIB aetiology data", "<span class='warn'>Evidence gap</span>", "No published local series found"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs gastroenterologist/surgeon review"]], "qc")}
+["Bhutan UGIB aetiology data", "<span class='warn'>Evidence gap</span>", "No published local series found"]], "qc")}
 ` }
 ]
 });

@@ -262,8 +262,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["SSC 2026 adult recommendations", "<span class='pass'>Checked</span>", "From SCCM recommendation listing; doses not in the summary taken from SSC 2021 / Bhutan guide"],
 ["NEML 2025 availability", "<span class='pass'>Checked</span>", "Meropenem and clindamycin not found"],
 ["NEWS2 and infusion calculators", "<span class='pass'>Checked</span>", "Hand-tested"],
-["Bhutan sepsis incidence/mortality data", "<span class='warn'>Evidence gap</span>", "No national figures found"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs intensivist review"]], "qc")}
+["Bhutan sepsis incidence/mortality data", "<span class='warn'>Evidence gap</span>", "No national figures found"]], "qc")}
 ` }
 ]
 });

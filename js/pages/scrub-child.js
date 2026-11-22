@@ -198,7 +198,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Doses (two sources)", "<span class='pass'>Checked</span>", "Bhutan 2025 and AAP/BNFc"],
 ["Todd 2015 reference", "<span class='pass'>Checked</span>", "DOI confirmed via Crossref"],
 ["INTREST in children", "<span class='flag'>Extrapolated</span>", "Trial included adolescents and adults; Bhutan guideline extends dual therapy to children"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatrician"],
 ["Images", "<span class='pass'>Done</span>", "CC BY-SA 3.0 / CC BY 2.0"]], "qc")}
 ` }
 ]

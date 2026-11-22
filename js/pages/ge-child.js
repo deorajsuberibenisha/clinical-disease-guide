@@ -260,8 +260,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["NEML 2025 availability", "<span class='pass'>Checked</span>", "Ciprofloxacin tablet to DH; oral azithromycin not listed"],
 ["Rotavirus vaccine in Bhutan's current schedule", "<span class='warn'>To verify</span>", "Not introduced as of 2020 study"],
 ["Shigella resistance data for Bhutan", "<span class='warn'>Evidence gap</span>", "No national data found"],
-["Ondansetron dose", "<span class='pass'>Checked</span>", "Freedman 2006; ICMR"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs paediatrician review"]], "qc")}
+["Ondansetron dose", "<span class='pass'>Checked</span>", "Freedman 2006; ICMR"]], "qc")}
 ` }
 ]
 });

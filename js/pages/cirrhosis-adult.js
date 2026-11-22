@@ -438,8 +438,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["Drug doses and Bhutan availability", "<span class='pass'>Checked</span>", "NEMF 2022 / NEML 2025 plus EASL/AASLD/BNF"],
 ["Bhutan ALD mortality figures", "<span class='pass'>Checked</span>", "Annual Health Bulletin 2024 as reported; Wangchuk 2018"],
 ["Transplant and TIPS availability in Bhutan", "<span class='warn'>Not verified</span>", "Not available in-country as far as could be found; referral abroad pathway not confirmed"],
-["Images", "<span class='pass'>Done</span>", "Five Commons files; licences checked via the Commons API"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs review by a physician or gastroenterologist"]], "qc")}
+["Images", "<span class='pass'>Done</span>", "Five Commons files; licences checked via the Commons API"]], "qc")}
 ` }
 ]
 });

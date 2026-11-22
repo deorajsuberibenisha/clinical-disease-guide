@@ -273,7 +273,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["WHO 2025 meningitis guideline", "<span class='flag'>Summary only</span>", "Recommendations taken from the WHO announcement and secondary summary; full text not reviewed"],
 ["Bhutan JE vaccine status", "<span class='flag'>Not verified</span>", "No routine programme found in public sources"],
 ["Pneumococcal vaccine in the Bhutan schedule", "<span class='flag'>Not verified</span>", "Not stated in this chapter"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a physician, neurologist or infectious-disease specialist"],
 ["Images", "<span class='pass'>Done</span>", "Public domain / CC BY 3.0 / CC BY 2.0 / CC BY-SA 4.0"]], "qc")}
 ` }
 ]

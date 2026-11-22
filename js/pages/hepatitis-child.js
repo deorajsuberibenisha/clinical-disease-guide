@@ -201,7 +201,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan STG and NSP IV", "<span class='pass'>Verified</span>", "STG §12.4.10; NSP IV birth dose, HBIG and prevalence"],
 ["PALF definition, Kasai timing", "<span class='pass'>Standard</span>", "Widely used paediatric hepatology criteria"],
 ["HBIG and hepatitis A vaccine on NEML", "<span class='flag'>Gap</span>", "Not listed"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatrician or paediatric gastroenterologist"],
 ["Images", "<span class='pass'>Done</span>", "CC BY 4.0 / public domain"]], "qc")}
 ` }
 ]

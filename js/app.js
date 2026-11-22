@@ -141,8 +141,8 @@
   /* ---------- Home & departments ----------
      A disease can have several pages (adults / children / pregnancy).
      Children's and newborn pages live ONLY under Paediatrics (and its NICU/PICU/neonatal areas). */
-  const baseId = id => id.replace(/-(adult|child|pregnancy)$/, "");
-  const variant = p => /-child$/.test(p.id) ? "Children" : /-pregnancy$/.test(p.id) ? "Pregnancy" : "Adults";
+  const baseId = id => id.replace(/-(adult|child|pregnancy|preg)$/, "");
+  const variant = p => /-child$/.test(p.id) ? "Children" : /-(pregnancy|preg)$/.test(p.id) ? "Pregnancy" : "Adults";
   const isChild = p => variant(p) === "Children";
   const vOrder = { Adults: 0, Children: 1, Pregnancy: 2 };
   const PAED = new Set(["paeds", "neo", "nicu", "picu"]);

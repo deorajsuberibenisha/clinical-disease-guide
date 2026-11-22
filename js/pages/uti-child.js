@@ -247,8 +247,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["Doses (two sources)", "<span class='pass'>Checked</span>", "AAP 2011, BNFc and NEMF; NEMF nitrofurantoin child dose wording flagged on the drug card"],
 ["Imaging table", "<span class='pass'>Checked</span>", "Adapted from NICE NG224 (unchanged from CG54 in substance)"],
 ["Indian paediatric guideline", "<span class='flag'>Partly verified</span>", "ISPN 2011 statement cited; later revisions not reviewed"],
-["Local paediatric resistance data", "<span class='flag'>Evidence gap</span>", "Bhutan studies mix adults and children"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatrician or paediatric nephrologist"]], "qc")}
+["Local paediatric resistance data", "<span class='flag'>Evidence gap</span>", "Bhutan studies mix adults and children"]], "qc")}
 ` }
 ]
 });

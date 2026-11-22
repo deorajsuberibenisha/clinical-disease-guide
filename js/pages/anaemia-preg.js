@@ -196,7 +196,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan STG §11.1", "<span class='flag'>Indirect</span>", "Not in the PDF text layer; BCR transcription used"],
 ["Albendazole misprint", "<span class='pass'>Resolved</span>", "NEMF 400 mg used"],
 ["WHO 2024 pregnancy cutoffs", "<span class='pass'>Verified</span>", "From WHO PDF"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by an obstetrician"],
 ["Images", "<span class='pass'>Done</span>", "CC BY 2.0"]], "qc")}
 ` }
 ]

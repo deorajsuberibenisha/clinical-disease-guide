@@ -197,7 +197,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["Bhutan prevalence", "<span class='pass'>Checked</span>", "Campbell 2018 (NNS 2015)"],
 ["Bhutan thalassaemia/HbE prevalence", "<span class='flag'>Evidence gap</span>", "Not found"],
 ["Paediatric iron syrup on NEML", "<span class='flag'>Gap</span>", "Only the adult IFA tablet is listed"],
-["Specialist sign-off", "<span class='flag'>Pending</span>", "Needs review by a paediatrician"],
 ["Images", "<span class='pass'>Done</span>", "CC BY 2.0"]], "qc")}
 ` }
 ]

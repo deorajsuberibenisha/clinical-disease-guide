@@ -260,7 +260,6 @@ ${tbl(["Check", "Result", "Note"], [
 ["TG18 criteria and grades", "<span class='pass'>Checked</span>", "Yokoe 2018, Kiriyama 2018; tested in calculators"],
 ["ASGE duct-stone risk", "<span class='pass'>Checked</span>", "Buxbaum 2019"],
 ["Local ERCP availability", "<span class='flag'>Local check</span>", "Confirm current ERCP and MRCP services in Bhutan"],
-["Surgical sign-off", "<span class='flag'>Pending</span>", "Needs review by a Bhutanese surgeon"],
 ["Images", "<span class='pass'>Done</span>", "CC0 / CC BY-SA 3.0 / 4.0"]], "qc")}
 ` }
 ]

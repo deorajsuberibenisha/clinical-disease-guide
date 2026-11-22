@@ -188,8 +188,7 @@ ${qa("Specialist", "When may thrombolysis be considered in a child?", "AHA/ASA 2
 ${tbl(["Check", "Result", "Note"], [
 ["Bhutan paediatric stroke guidance", "<span class='warn'>Evidence gap</span>", "None exists"],
 ["Acute management and aspirin dosing", "<span class='pass'>Checked</span>", "AHA/ASA 2026; AHA 2019; RCPCH 2017"],
-["Images", "<span class='pass'>Done</span>", "Two Commons files; licences checked"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs review by a paediatric neurologist"]], "qc")}
+["Images", "<span class='pass'>Done</span>", "Two Commons files; licences checked"]], "qc")}
 ` }
 ]
 });

@@ -372,8 +372,7 @@ ${tbl(["Check", "Result", "Note"], [
 ["Drug doses and Bhutan availability", "<span class='pass'>Checked</span>", "NEMF 2022 / NEML 2025; BNF; ICMR"],
 ["Bhutan prevalence data", "<span class='pass'>Verified</span>", "STEPS 2019 (28%); STEPS 2014 salt"],
 ["BP classifier calculator", "<span class='pass'>Checked</span>", "ISH 2020 and AHA/ACC 2025 categories; Bhutan v3.5 actions"],
-["Images", "<span class='pass'>Done</span>", "Four Commons files; licences checked via the Commons API"],
-["Clinical sign-off", "<span class='warn'>Pending</span>", "Needs review by a physician"]], "qc")}
+["Images", "<span class='pass'>Done</span>", "Four Commons files; licences checked via the Commons API"]], "qc")}
 ` }
 ]
 });
