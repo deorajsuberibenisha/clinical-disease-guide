@@ -172,7 +172,14 @@ const IMGS = {
   "images/pneumococcal-meningitis-path.jpg": ["f/fd/Streptococcus_pneumoniae_meningitis%2C_gross_pathology_33_lores.jpg",1220],
   "images/tbm-hydrocephalus-ct.jpg": ["2/23/Tuberculous-meningitis-scan.jpg",455],
   "images/meningococcal-rash.jpg": ["6/62/%D0%A2%D0%B8%D0%BF%D0%BE%D0%B2%D0%B8%D0%B9_%D0%B2%D0%B8%D1%81%D0%B8%D0%BF_%D0%BD%D0%B0_%D0%BA%D0%B8%D1%81%D1%82%D1%96_%D0%BF%D1%80%D0%B8_%D0%BC%D0%B5%D0%BD%D1%96%D0%BD%D0%B3%D0%BE%D0%BA%D0%BE%D0%BA%D1%86%D0%B5%D0%BC%D1%96%D1%97.jpg",1500],
-  "images/infant-opisthotonus.jpg": ["2/29/Child_suffering_from_post_basal_meningitis_Wellcome_L0061793.jpg",5248]
+  "images/infant-opisthotonus.jpg": ["2/29/Child_suffering_from_post_basal_meningitis_Wellcome_L0061793.jpg",5248],
+  "images/eeg-absence.png": ["7/74/EEG_Absence_seizure.png",889],
+  "images/ncc-ct.jpg": ["f/f1/Neurocysticercosis_brain_CT.jpg",576],
+  "images/mts-mri.jpg": ["3/3f/Mesial_Temporal_Sclerosis.jpg",296],
+  "images/dengue-rash-early.jpg": ["f/f8/Early_Dengue_Fever_Rash_2014.jpg",2394],
+  "images/dengue-rash-recovery.jpg": ["a/ad/Dengue_recovery_rash_%28White_islands_in_red_sea%29.jpg",1011],
+  "images/tourniquet-test.gif": ["8/83/Positive-tourniquet-test.gif",483],
+  "images/aedes-aegypti.jpg": ["9/91/Aedes_aegypti_mosquito.jpg",1024]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
