@@ -139,7 +139,12 @@ const IMGS = {
   "images/ugib-free-air.jpg": ["e/eb/Chest_X-ray_showing_presence_of_free_air_under_left_diaphragm.png", 1792],
   "images/gastric-ulcer-endo.jpg": ["f/f2/Gastric_ulcer_3.jpg",332],
   "images/hpylori-giemsa.jpg": ["0/04/Helicobacter_pylori%2C_Gastric_Biopsy%2C_Giemsa_Stain_%285517582111%29.jpg",1239],
-  "images/gastric-adenoca-gross.jpg": ["9/94/Adenocarcinoma_of_the_stomach.jpg",600]
+  "images/gastric-adenoca-gross.jpg": ["9/94/Adenocarcinoma_of_the_stomach.jpg",600],
+  "images/appx-us.png": ["3/36/Appendicitis_ultrasound.png",1070],
+  "images/appx-lith-ct.png": ["3/33/AppendicolithPlainCT.png",881],
+  "images/mcburney.jpg": ["b/b1/McBurney%27s_point.jpg",777],
+  "images/appx-histo.jpg": ["7/76/Acute_appendicitis_Low_Power.jpg",2048],
+  "images/appx-pinworm.jpg": ["6/6f/Pinworms_%28Enterobiasis%29_in_the_Lumen_of_the_Vermiform_Appendix_%288612815555%29.jpg",1376]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
