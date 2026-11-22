@@ -186,7 +186,12 @@ const IMGS = {
   "images/scrub-eschar.jpg": ["5/52/Scrub_typhus_eschar.jpg",269],
   "images/scrub-rash.webp": ["e/ea/Scrub_typhus_rash.webp",500],
   "images/chigger-mites.jpg": ["c/c9/Leptotrombidium%2C_chigger_mites_%2814854410979%29.jpg",720],
-  "images/scrub-rdt.jpg": ["5/59/Scrub_Typhus_IgM_Test-Positive.jpg",4160]
+  "images/scrub-rdt.jpg": ["5/59/Scrub_Typhus_IgM_Test-Positive.jpg",4160],
+  "images/scleral-icterus.jpg": ["9/9c/Scleral_Icterus.jpg",1600],
+  "images/koilonychia.jpg": ["3/32/Koilonychia_iron_deficiency_anemia.jpg",2713],
+  "images/ida-smear.jpg": ["2/29/Iron-deficiency_Anemia%2C_Peripheral_Blood_Smear_%284422704616%29.jpg",1711],
+  "images/hypersegmented-neutrophil.jpg": ["a/a2/Hyperlobated_Neutrophil_%288612790151%29.jpg",474],
+  "images/newborn-jaundice.jpg": ["7/7c/Jaundice_in_newborn.jpg",700]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
