@@ -151,7 +151,13 @@ const IMGS = {
   "images/pyloric-stenosis-us.jpg": ["7/72/PyloricStenosisUS.jpg",481],
   "images/double-bubble-xr.jpg": ["3/3d/Radiograph_with_Double_Bubble_Sign.jpg",643],
   "images/ascaris-barium.jpg": ["8/83/Ascaris_infection_in_the_x-ray_image-_ascaris_arranged_tidily_along_the_long_axis_of_the_small_bowel_%28South_Africa%29_%2816424840021%29.jpg",383],
-  "images/intuss-diagram.svg": ["9/9e/Intussusception_EN.svg",800,"svg"]
+  "images/intuss-diagram.svg": ["9/9e/Intussusception_EN.svg",800,"svg"],
+  "images/gallstone-impacted-us.png": ["a/af/Gallstones.PNG",420],
+  "images/cholecystitis-us.jpg": ["a/a1/Acute_cholecystitis_as_seen_on_ultrasound_axial_view.jpg",1024],
+  "images/mrcp-cbd-stones.jpg": ["7/78/MRCP_Choledocholithiasis.jpg",1094],
+  "images/cbd-stone-us.jpg": ["d/de/Ultrasonography_of_common_bile_duct_stone%2C_with_arrow.jpg",516],
+  "images/gallstones-photo.jpg": ["1/17/Human_gallstones_2015_G1.jpg",4900],
+  "images/ercp-diagram.svg": ["4/43/Detailed_diagram_of_an_endoscopic_retrograde_cholangio_pancreatography_%28ERCP%29_CRUK_001.svg",375,"svg"]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };

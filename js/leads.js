@@ -669,5 +669,26 @@ Object.assign(window.LEADS, {
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
   qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+},
+"gallstones-adult": {
+  overview: "Silent stones, colic, cholecystitis, duct stones and cholangitis, and who gets them.",
+  patho: "Where the stone lodges decides the disease.",
+  conflicts: "Bhutan STG against Tokyo 2018, WSES 2020, NICE and WHO AWaRe.",
+  presentation: "Colic, cholecystitis and cholangitis side by side, and septic cholangitis.",
+  ddx: "Ulcer, pancreatitis, hepatitis, pneumonia, inferior MI and painless jaundice.",
+  invest: "Liver tests, ultrasound first, then MRCP, CT or ERCP.",
+  staging: "Tokyo 2018 cholecystitis and cholangitis tools, the ASGE duct-stone tool, and referral.",
+  manage: "Colic, cholecystitis, cholangitis, worms in the bile duct, and the Bhutan reality.",
+  populations: "Pregnancy, older adults and children with haemolysis or worms.",
+  scenarios: "Cirrhosis, diabetes, kidney disease, anticoagulants and painless jaundice.",
+  complications: "Gangrene, sepsis, pancreatitis, abscess, duct injury and cancer.",
+  followup: "After surgery or ERCP, and what to tell the patient.",
+  images: "Gallstones and cholecystitis on ultrasound, duct stones on ultrasound and MRCP, real stones and ERCP. Tap to enlarge.",
+  flows: "Right upper quadrant pain, step by step.",
+  pearls: "Fever with jaundice, constant colic, the ECG and children's stones.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
 }
 });
