@@ -690,5 +690,26 @@ Object.assign(window.LEADS, {
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
   qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+},
+"pancreatitis-adult": {
+  overview: "Causes from alcohol and gallstones to triglycerides, calcium, drugs and worms.",
+  patho: "Two phases: organ failure in week one, infected necrosis later.",
+  conflicts: "Bhutan STG against ACG 2024, IAP/APA and WATERFALL on feeding, fluids and antibiotics.",
+  presentation: "The classic picture, the warning signs of severe disease, and a typical case.",
+  ddx: "Perforation, cholecystitis, MI, ischaemia, aneurysm, DKA, obstruction and ectopic.",
+  invest: "Lipase, urea, calcium, triglycerides, liver tests, ultrasound, and when CT helps.",
+  staging: "BISAP and Revised Atlanta calculators, and when to refer.",
+  manage: "Moderate fluids, analgesia, early feeding, gallstones, triglycerides, necrosis and the Bhutan reality.",
+  populations: "Pregnancy, older adults and children.",
+  scenarios: "Alcohol, heart and kidney disease, diabetes and recurrence.",
+  complications: "Organ failure, infected necrosis, pseudocysts, bleeding and diabetes.",
+  followup: "Removing the cause and what to tell the patient.",
+  images: "CT of exudative pancreatitis, a pseudocyst, Cullen's and Grey Turner's signs. Tap to enlarge.",
+  flows: "Suspected pancreatitis from arrival to day three.",
+  pearls: "Lipase level, gallstones, early feeding and the mistakes to avoid.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
 }
 });

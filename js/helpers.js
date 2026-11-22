@@ -157,7 +157,11 @@ const IMGS = {
   "images/mrcp-cbd-stones.jpg": ["7/78/MRCP_Choledocholithiasis.jpg",1094],
   "images/cbd-stone-us.jpg": ["d/de/Ultrasonography_of_common_bile_duct_stone%2C_with_arrow.jpg",516],
   "images/gallstones-photo.jpg": ["1/17/Human_gallstones_2015_G1.jpg",4900],
-  "images/ercp-diagram.svg": ["4/43/Detailed_diagram_of_an_endoscopic_retrograde_cholangio_pancreatography_%28ERCP%29_CRUK_001.svg",375,"svg"]
+  "images/ercp-diagram.svg": ["4/43/Detailed_diagram_of_an_endoscopic_retrograde_cholangio_pancreatography_%28ERCP%29_CRUK_001.svg",375,"svg"],
+  "images/pancreatitis-ct.jpg": ["e/eb/Akute_exsudative_Pankreatitis_-_CT_axial.jpg",1208],
+  "images/pancreatic-pseudocyst-ct.png": ["e/e7/Large_Pancreatic_Pseudocyst.PNG",956],
+  "images/cullen-sign.jpg": ["3/3e/Cullen%27s_sign.jpg",561],
+  "images/grey-turner-sign.jpg": ["5/5d/Hemorrhagic_pancreatitis_-_Grey_Turner%27s_sign.jpg",602]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
