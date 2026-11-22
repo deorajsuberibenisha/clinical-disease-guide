@@ -764,3 +764,11 @@ svg{shape-rendering:geometricPrecision}
 :root[data-tint="sepia"]{--orange:#F0A46A}
 @media print{:root[data-tint]{--orange:#A4470E}}
 @media print{.fade-in,.fade-in article,article{animation:none!important;opacity:1!important;transform:none!important}}
+.aa[hidden]{display:none}
+.ios-tip{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center;padding:16px 16px calc(16px + env(safe-area-inset-bottom));background:rgba(15,25,40,.35)}
+.ios-tip[hidden]{display:none}
+.ios-card{width:min(420px,100%);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow-lg);animation:popin .18s ease-out}
+.ios-card>b{font:700 17px var(--ui);color:var(--head)}
+.ios-card ol{margin:10px 0 6px;padding-left:20px;line-height:1.6}
+.ios-card p{margin:4px 0 12px;color:var(--muted);font-size:14.5px}
+@media print{.ios-tip,#installBtn{display:none!important}}
