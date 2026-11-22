@@ -144,7 +144,14 @@ const IMGS = {
   "images/appx-lith-ct.png": ["3/33/AppendicolithPlainCT.png",881],
   "images/mcburney.jpg": ["b/b1/McBurney%27s_point.jpg",777],
   "images/appx-histo.jpg": ["7/76/Acute_appendicitis_Low_Power.jpg",2048],
-  "images/appx-pinworm.jpg": ["6/6f/Pinworms_%28Enterobiasis%29_in_the_Lumen_of_the_Vermiform_Appendix_%288612815555%29.jpg",1376]
+  "images/appx-pinworm.jpg": ["6/6f/Pinworms_%28Enterobiasis%29_in_the_Lumen_of_the_Vermiform_Appendix_%288612815555%29.jpg",1376],
+  "images/sbo-upright-xr.jpg": ["d/dc/Upright_X-ray_demonstrating_small_bowel_obstruction.jpg",2285],
+  "images/sigmoid-volvulus-xr.jpg": ["9/94/Sigmoidvolvulus.jpg",510],
+  "images/intuss-target-us.png": ["5/5d/Ultrasound_of_target_sign_in_intussusception_of_the_right_bowel.png",8649],
+  "images/pyloric-stenosis-us.jpg": ["7/72/PyloricStenosisUS.jpg",481],
+  "images/double-bubble-xr.jpg": ["3/3d/Radiograph_with_Double_Bubble_Sign.jpg",643],
+  "images/ascaris-barium.jpg": ["8/83/Ascaris_infection_in_the_x-ray_image-_ascaris_arranged_tidily_along_the_long_axis_of_the_small_bowel_%28South_Africa%29_%2816424840021%29.jpg",383],
+  "images/intuss-diagram.svg": ["9/9e/Intussusception_EN.svg",800,"svg"]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
