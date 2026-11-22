@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clinical Disease Guide</title>
+<meta name="description" content="Evidence-based disease reference for doctors and students in Bhutan and South Asia.">
+<link rel="icon" type="image/png" href="icon-256.png">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="theme-color" content="#0F2C59">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script>
+/* Apply saved reading preferences before first paint, so nothing flashes */
+(function(){var d=document.documentElement,p={};try{p=JSON.parse(localStorage.getItem("cdg-prefs")||"{}")}catch(e){}
+var dark=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;
+d.dataset.tint=p.tint&&p.tint!=="auto"?p.tint:(dark?"sepia":"paper");d.dataset.style=p.style||"classic";d.dataset.font=p.font||"textbook";
+d.dataset.width=p.width||"medium";d.dataset.spacing=p.spacing||"comfortable";d.style.setProperty("--scale",(p.size||100)/100);d.dataset.toc=p.toc||"open";
+if(p.hideBhutan)d.dataset.hideBhutan="1";if(p.hideImages)d.dataset.hideImages="1";})();
+</script>
+<link rel="stylesheet" href="css/guide.css?v=20261122r">
+</head>
+<body>
+<a class="skip" href="#view">Skip to content</a>
+<header class="topbar" id="topbar">
+  <a class="brand" href="#/" aria-label="Clinical Disease Guide — home">
+    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5c3-1.2 6-1.2 9 .6v13c-3-1.8-6-1.8-9-.6v-13Z"/><path d="M21 5.5c-3-1.2-6-1.2-9 .6v13c3-1.8 6-1.8 9-.6v-13Z"/><path d="M16.5 9v4M14.5 11h4"/></svg></span>
+    <span class="brand-txt"><b>Clinical Disease Guide</b><small id="brandSub">Evidence-based · Bhutan &amp; South Asia</small></span>
+  </a>
+  <div class="top-search" role="search">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input id="q" type="search" placeholder="Search diseases, drugs, tests…" autocomplete="off" aria-label="Search the guide">
+    <kbd class="kbd">/</kbd>
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="aa" href="#/drugs" title="Drug library"><span aria-hidden="true">℞</span><span class="aa-txt">Drugs</span></a>
+  <button type="button" class="aa" id="aaBtn" aria-haspopup="dialog" aria-expanded="false" title="Reading settings">
+    <span aria-hidden="true">Aa</span><span class="aa-txt">Reading</span>
+  </button>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+</header>
+
+<main id="view" tabindex="-1"></main>
+
+<!-- Reading settings -->
+<div class="panel-wrap" id="prefsWrap" hidden>
+  <div class="panel-backdrop" data-close-prefs></div>
+  <section class="panel" role="dialog" aria-modal="true" aria-labelledby="prefsTitle">
+    <header class="panel-head"><h2 id="prefsTitle">Reading settings</h2><button type="button" class="x" data-close-prefs aria-label="Close">×</button></header>
+    <div class="panel-body" id="prefsBody"></div>
+  </section>
+</div>
+
+<!-- PDF options -->
+<div class="panel-wrap" id="pdfWrap" hidden>
+  <div class="panel-backdrop" data-close-pdf></div>
+  <section class="panel narrow" role="dialog" aria-modal="true" aria-labelledby="pdfTitle">
+    <header class="panel-head"><h2 id="pdfTitle">Save as PDF</h2><button type="button" class="x" data-close-pdf aria-label="Close">×</button></header>
+    <div class="panel-body" id="pdfBody"></div>
+  </section>
+</div>
+
+<!-- Drug card -->
+<div class="sheet-wrap" id="sheetWrap" hidden>
+  <div class="sheet-backdrop" data-close></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <button class="sheet-x" data-close aria-label="Close">×</button>
+    <div id="sheetBody"></div>
+  </section>
+</div>
+
+<!-- Image viewer -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button type="button" class="lb-x" data-close-lb aria-label="Close">×</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<button class="totop" id="toTop" aria-label="Back to top" hidden>↑</button>
+<!-- Floating contents button (phones and tablets): tap to open, tap a section to jump -->
+<div class="toc-dock" id="tocDock" hidden>
+  <div class="toc-pop" id="tocPop" role="dialog" aria-label="Chapter contents" hidden>
+    <div class="toc-pop-head"><b>Contents</b><button type="button" class="toc-top" id="tocTop">↑ Top</button></div>
+    <ol id="tocList"></ol>
+  </div>
+  <button type="button" class="toc-fab" id="tocFab" aria-label="Open contents" aria-expanded="false" aria-controls="tocPop">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></svg>
+    <span class="toc-fab-n" id="tocFabN"></span>
+  </button>
+</div>
+
+<script src="js/icons.js?v=20261122r"></script>
+<script src="js/helpers.js?v=20261122r"></script>
+<script src="js/drugs.js?v=20261122r"></script>
+<script src="js/pages/aki-adult.js?v=20261122r"></script>
+<script src="js/pages/aki-child.js?v=20261122r"></script>
+<script src="js/pages/ckd-adult.js?v=20261122r"></script>
+<script src="js/pages/ckd-child.js?v=20261122r"></script>
+<script src="js/drugs-dm.js?v=20261122r"></script>
+<script src="js/calcs-dm.js?v=20261122r"></script>
+<script src="js/pages/dm-adult.js?v=20261122r"></script>
+<script src="js/pages/dm-pregnancy.js?v=20261122r"></script>
+<script src="js/pages/dm-child.js?v=20261122r"></script>
+<script src="js/drugs-tb.js?v=20261122r"></script>
+<script src="js/calcs-tb.js?v=20261122r"></script>
+<script src="js/pages/tb-adult.js?v=20261122r"></script>
+<script src="js/pages/tb-child.js?v=20261122r"></script>
+<script src="js/drugs-pneumonia.js?v=20261122r"></script>
+<script src="js/calcs-pneumonia.js?v=20261122r"></script>
+<script src="js/pages/pneumonia-adult.js?v=20261122r"></script>
+<script src="js/pages/pneumonia-child.js?v=20261122r"></script>
+<script src="js/drugs-hf.js?v=20261122r"></script>
+<script src="js/pages/hf-adult.js?v=20261122r"></script>
+<script src="js/pages/hf-child.js?v=20261122r"></script>
+<script src="js/drugs-asthma.js?v=20261122r"></script>
+<script src="js/pages/asthma-adult.js?v=20261122r"></script>
+<script src="js/pages/asthma-child.js?v=20261122r"></script>
+<script src="js/drugs-acs.js?v=20261122r"></script>
+<script src="js/calcs-acs.js?v=20261122r"></script>
+<script src="js/pages/acs-adult.js?v=20261122r"></script>
+<script src="js/drugs-cirrhosis.js?v=20261122r"></script>
+<script src="js/calcs-cirrhosis.js?v=20261122r"></script>
+<script src="js/pages/cirrhosis-adult.js?v=20261122r"></script>
+<script src="js/drugs-htn.js?v=20261122r"></script>
+<script src="js/calcs-htn.js?v=20261122r"></script>
+<script src="js/pages/htn-adult.js?v=20261122r"></script>
+<script src="js/pages/htn-child.js?v=20261122r"></script>
+<script src="js/drugs-stroke.js?v=20261122r"></script>
+<script src="js/calcs-stroke.js?v=20261122r"></script>
+<script src="js/pages/stroke-adult.js?v=20261122r"></script>
+<script src="js/pages/stroke-child.js?v=20261122r"></script>
+<script src="js/drugs-copd.js?v=20261122r"></script>
+<script src="js/calcs-copd.js?v=20261122r"></script>
+<script src="js/pages/copd-adult.js?v=20261122r"></script>
+<script src="js/drugs-ge.js?v=20261122r"></script>
+<script src="js/calcs-ge.js?v=20261122r"></script>
+<script src="js/pages/ge-child.js?v=20261122r"></script>
+<script src="js/pages/ge-adult.js?v=20261122r"></script>
+<script src="js/drugs-sepsis.js?v=20261122r"></script>
+<script src="js/calcs-sepsis.js?v=20261122r"></script>
+<script src="js/pages/sepsis-adult.js?v=20261122r"></script>
+<script src="js/pages/sepsis-child.js?v=20261122r"></script>
+<script src="js/drugs-ugib.js?v=20261122r"></script>
+<script src="js/calcs-ugib.js?v=20261122r"></script>
+<script src="js/pages/ugib-adult.js?v=20261122r"></script>
+<script src="js/drugs-apd.js?v=20261122r"></script>
+<script src="js/pages/apd-adult.js?v=20261122r"></script>
+<script src="js/calcs-asthma.js?v=20261122r"></script>
+<script src="js/calcs-hf.js?v=20261122r"></script>
+<script src="js/calcs-apd.js?v=20261122r"></script>
+<script src="js/leads.js?v=20261122r"></script>
+<script src="js/formulary.js?v=20261122r"></script>
+<script src="js/app.js?v=20261122r"></script>
+</body>
+</html>
