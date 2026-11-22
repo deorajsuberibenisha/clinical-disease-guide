@@ -161,7 +161,18 @@ const IMGS = {
   "images/pancreatitis-ct.jpg": ["e/eb/Akute_exsudative_Pankreatitis_-_CT_axial.jpg",1208],
   "images/pancreatic-pseudocyst-ct.png": ["e/e7/Large_Pancreatic_Pseudocyst.PNG",956],
   "images/cullen-sign.jpg": ["3/3e/Cullen%27s_sign.jpg",561],
-  "images/grey-turner-sign.jpg": ["5/5d/Hemorrhagic_pancreatitis_-_Grey_Turner%27s_sign.jpg",602]
+  "images/grey-turner-sign.jpg": ["5/5d/Hemorrhagic_pancreatitis_-_Grey_Turner%27s_sign.jpg",602],
+  "images/pyelonephritis-ct.jpg": ["b/b4/Akute_Pyelonephritis_links_mit_Minderperfusion_der_linken_Niere_52M_-_CT_-_001.jpg",1830],
+  "images/urine-dipstick.jpg": ["c/c3/Comp.Urine.Test.Strip.jpg",1536],
+  "images/vur-vcug.jpg": ["0/0a/Vesicoureteral-reflux-004.jpg",443],
+  "images/vur-grade3.svg": ["a/ac/Grade_3_Vesico_Ureteric_Reflux.svg",842,"svg"],
+  "images/nmen-csf-gram.jpg": ["e/e6/Neisseria_meningitidis_CSF_Gram_1000.jpg",1920],
+  "images/kernig-sign.jpg": ["6/65/Kernig%27s_sign_cerebrospinal_meningitis.jpg",838],
+  "images/hsv-encephalitis-mri.jpg": ["d/d5/Hsv_encephalitis.jpg",480],
+  "images/pneumococcal-meningitis-path.jpg": ["f/fd/Streptococcus_pneumoniae_meningitis%2C_gross_pathology_33_lores.jpg",1220],
+  "images/tbm-hydrocephalus-ct.jpg": ["2/23/Tuberculous-meningitis-scan.jpg",455],
+  "images/meningococcal-rash.jpg": ["6/62/%D0%A2%D0%B8%D0%BF%D0%BE%D0%B2%D0%B8%D0%B9_%D0%B2%D0%B8%D1%81%D0%B8%D0%BF_%D0%BD%D0%B0_%D0%BA%D0%B8%D1%81%D1%82%D1%96_%D0%BF%D1%80%D0%B8_%D0%BC%D0%B5%D0%BD%D1%96%D0%BD%D0%B3%D0%BE%D0%BA%D0%BE%D0%BA%D1%86%D0%B5%D0%BC%D1%96%D1%97.jpg",1500],
+  "images/infant-opisthotonus.jpg": ["2/29/Child_suffering_from_post_basal_meningitis_Wellcome_L0061793.jpg",5248]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
