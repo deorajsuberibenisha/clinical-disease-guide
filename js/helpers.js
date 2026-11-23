@@ -299,7 +299,14 @@ const IMGS = {
   "images/gangrene-foot.jpg": ["8/8e/GangreneFoot.JPG",2956],
   "images/buerger-cta.jpg": ["1/17/Morbus_Buerger-2.JPG",800],
   "images/apc-angiodysplasia.jpg": ["a/a5/Argon_plasma_coagulation.jpg",441],
-  "images/diverticulosis-colitis.jpg": ["5/58/Segmental_colitis_associated_with_diverticulosis.jpg",1350]
+  "images/diverticulosis-colitis.jpg": ["5/58/Segmental_colitis_associated_with_diverticulosis.jpg",1350],
+  "images/uc-endoscopy.jpg": ["7/72/Ulcerative_colitis.jpg",579],
+  "images/uc-gross.jpg": ["1/1b/Severe_ulcerative_colitis.jpg",4032],
+  "images/toxic-megacolon-xr.jpg": ["4/4b/Toxic_Megacolon_in_Ulcerative_Colitis.jpg",931],
+  "images/pyoderma-gangrenosum.jpg": ["f/f1/Pyoderma_gangrenosum_01.jpg",880],
+  "images/cd-serpiginous-ulcer.jpg": ["c/c6/CD_serpiginous_ulcer.jpg",437],
+  "images/cd-granuloma.jpg": ["3/31/Histopathology_of_granuloma_of_colonic_mucosa.jpg",1465],
+  "images/itb-ileum.jpg": ["c/cf/Tuberculosis_of_ileum.jpg",641]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
