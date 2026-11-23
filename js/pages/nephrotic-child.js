@@ -5,7 +5,7 @@ title: "Nephrotic Syndrome — Children",
 subtitle: "Puffy eyes and frothy urine: confirm heavy proteinuria, treat with prednisolone by body surface area, watch for infection and clots, and teach families to dipstick at home",
 age: "Children 1–12 years", specs: ["paeds", "neph"],
 keywords: ["nephrotic syndrome", "minimal change disease", "steroid sensitive nephrotic syndrome", "prednisolone", "proteinuria", "oedema", "relapse", "steroid resistant", "peritonitis", "hypoalbuminaemia"],
-related: ["ckd-child", "aki-child", "htn-child", "uti-child"],
+related: ["glomerular-adult", "agn-child", "ckd-child", "aki-child", "htn-child", "uti-child"],
 updated: "23 Nov 2026", review: "Nov 2027", evidenceTo: "Nov 2026",
 sections: [
 { id: "glance", title: "At a glance", html: `

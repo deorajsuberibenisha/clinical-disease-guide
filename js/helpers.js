@@ -261,7 +261,14 @@ const IMGS = {
   "images/hfmd-foot.jpg": ["9/9e/Characteristic_rash_of_hand,_foot,_and_mouth_disease,_on_a_human_foot.jpg",4073],
   "images/rickets-child.jpg": ["0/0b/Child_suffering_from_rickets.jpg",700],
   "images/inguinal-hernia.jpg": ["c/c0/Inguinal_hernia_front_view.jpg",1623],
-  "images/bthal-smear.jpg": ["a/a0/B-Thal.jpg",3840]
+  "images/bthal-smear.jpg": ["a/a0/B-Thal.jpg",3840],
+  "images/hypsarrhythmia.png": ["a/af/Hypsarrhythmia.png",2534],
+  "images/asd-diagram.png": ["9/92/Atrial_septal_defect-en.png",730],
+  "images/pfo-diagram.png": ["0/0a/Patent-foramen-ovale-en.png",730],
+  "images/ards-xray.jpg": ["b/b1/ARDS_X-Ray.jpg",804],
+  "images/down-boy.jpg": ["0/03/Boy_with_Down_Syndrome.JPG",1804],
+  "images/cleft-lip-child.jpg": ["3/3a/Cleft_lip_child.jpg",2080],
+  "images/pda-diagram.svg": ["4/46/Patent_ductus_arteriosus.svg",454,"svg"]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
