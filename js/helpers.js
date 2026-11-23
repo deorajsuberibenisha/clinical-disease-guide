@@ -248,7 +248,12 @@ const IMGS = {
   "images/kmc.jpg": ["d/d4/MotherKMC.jpg",780],
   "images/croup-steeple.jpg": ["1/12/Croup_steeple_sign.jpg",426],
   "images/placenta-praevia.svg": ["1/12/Placenta_previa-en.svg",744,"svg"],
-  "images/hbb-action-plan.jpg": ["f/f7/Helping-babies-breathe-2018-action-plan.jpg",1331]
+  "images/hbb-action-plan.jpg": ["f/f7/Helping-babies-breathe-2018-action-plan.jpg",1331],
+  "images/koplik.jpg": ["6/6b/Koplik_spots,_measles_6111_lores.jpg",490],
+  "images/measles-rash.jpg": ["2/27/RougeoleDP.jpg",652],
+  "images/ascaris-worms.png": ["d/dd/Ascaris_lumbricoides_adult_worms.png",1046],
+  "images/hookworm-egg.jpg": ["0/0c/Hookworm_egg_1.JPG",1195],
+  "images/liver-abscess-us.png": ["6/65/LiverAbscessMark.png",1004]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
