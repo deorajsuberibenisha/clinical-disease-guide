@@ -281,7 +281,9 @@ const IMGS = {
   "images/clubfoot.jpg": ["5/51/813_Clubfoot.jpg",529],
   "images/fasciotomy-leg.jpg": ["d/da/Fasciotomy_leg.jpg",1768],
   "images/rop-zones.jpg": ["0/0e/Retinopathy_of_Prematurity_Zones.jpg",1909],
-  "images/potts-wellcome.jpg": ["3/3c/Pott's_disease_in_a_mummy_of_a_priest_of_Ammon,_21st_Dynasty_Wellcome_M0019338.jpg",2556]
+  "images/potts-wellcome.jpg": ["3/3c/Pott's_disease_in_a_mummy_of_a_priest_of_Ammon,_21st_Dynasty_Wellcome_M0019338.jpg",2556],
+  "images/ankle-sprain.jpg": ["3/33/Schwellung_Bluterguss_Baenderirss.JPG",1931],
+  "images/tube-feeding.svg": ["0/0c/Tube_Feeding.svg",792,"svg"]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
