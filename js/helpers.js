@@ -198,7 +198,9 @@ const IMGS = {
   "images/urine-strip-multi.jpg": ["c/c3/Comp.Urine.Test.Strip.jpg",1536],
   "images/phototherapy-infant.png": ["c/ca/Infant_Under_Bili_Lights.png",1024],
   "images/phototherapy-photo.jpg": ["0/09/Phototherapy.jpg",1536],
-  "images/uterine-balloon.png": ["7/7d/Balloon_medical_device_for_Tamponade_Treatment_of_uterine_postpartum_hemorrhage.png",1870]
+  "images/uterine-balloon.png": ["7/7d/Balloon_medical_device_for_Tamponade_Treatment_of_uterine_postpartum_hemorrhage.png",1870],
+  "images/rsv-em.jpg": ["7/74/Respiratory_syncytial_virus_01.jpg",1804],
+  "images/omphalitis.svg": ["f/f8/Omphalitis_by_hariadhi.svg",512,"svg"]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
