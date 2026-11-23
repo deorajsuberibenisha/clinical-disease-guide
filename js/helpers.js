@@ -1,6 +1,10 @@
 /* Small helpers the disease pages use to stay consistent. */
 window.GUIDE = { pages: [], drugs: {} };
-function registerPage(p) { GUIDE.pages.push(p); }
+function registerPage(p) {
+  // Owner rule (23 Nov 2026): an Images section without a real image is useless — keep it only if it holds a licensed figure (fig() → <figure>) or an <img>.
+  p.sections = p.sections.filter(s => s.id !== "images" || /<figure|<img/i.test(s.html));
+  GUIDE.pages.push(p);
+}
 
 /* drug link: opens the drug card */
 const dr = (id, label) => `<a href="#" role="button" class="drug" data-drug="${id}" title="Open drug card">${label || (GUIDE.drugs[id] && GUIDE.drugs[id].name) || id}</a>`;
@@ -283,7 +287,19 @@ const IMGS = {
   "images/rop-zones.jpg": ["0/0e/Retinopathy_of_Prematurity_Zones.jpg",1909],
   "images/potts-wellcome.jpg": ["3/3c/Pott's_disease_in_a_mummy_of_a_priest_of_Ammon,_21st_Dynasty_Wellcome_M0019338.jpg",2556],
   "images/ankle-sprain.jpg": ["3/33/Schwellung_Bluterguss_Baenderirss.JPG",1931],
-  "images/tube-feeding.svg": ["0/0c/Tube_Feeding.svg",792,"svg"]
+  "images/tube-feeding.svg": ["0/0c/Tube_Feeding.svg",792,"svg"],
+  "images/kmc-mother.jpg": ["d/d4/MotherKMC.jpg",780],
+  "images/kmc-cameroon.jpg": ["5/56/Kangaroo_Care_Laquintinie_Hospital_Cameroon.jpg",4496],
+  "images/cord-normal.jpg": ["c/c0/P%C4%99pek.jpg",4320],
+  "images/omphalitis-schematic.svg": ["f/f8/Omphalitis_by_hariadhi.svg",512,"svg"],
+  "images/gonococcal-ophthalmia.jpg": ["2/27/Gonococcal_ophthalmia_neonatorum.jpg",1617],
+  "images/macrosomic-baby.jpg": ["5/55/New-baby-boy-weight-11-pounds.jpg",1000],
+  "images/bw-ga-chart.jpg": ["2/2b/Weight_vs_gestational_Age.jpg",729],
+  "images/abi-test.jpg": ["e/ee/Pad_abi.jpg",475],
+  "images/gangrene-foot.jpg": ["8/8e/GangreneFoot.JPG",2956],
+  "images/buerger-cta.jpg": ["1/17/Morbus_Buerger-2.JPG",800],
+  "images/apc-angiodysplasia.jpg": ["a/a5/Argon_plasma_coagulation.jpg",441],
+  "images/diverticulosis-colitis.jpg": ["5/58/Segmental_colitis_associated_with_diverticulosis.jpg",1350]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
