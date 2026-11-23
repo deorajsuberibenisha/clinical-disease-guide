@@ -232,7 +232,15 @@ const IMGS = {
   "images/ra-hands.jpg": ["7/70/Rheumatoid_Arthritis.JPG",4320],
   "images/renal-calculi-ct.jpg": ["8/8c/Non-contrast_CT_of_multiple_bilateral_renal_calculi.jpg",1085],
   "images/oral-candidiasis.jpg": ["2/26/CandidiasisFromCDCinJPEG03-18-06.JPG",1763],
-  "images/syphilis-chancre-tongue.jpg": ["a/ab/Primary_stage_syphilis_sore_%28chancre%29_on_the_surface_of_a_tongue-CDC.jpg",960]
+  "images/syphilis-chancre-tongue.jpg": ["a/ab/Primary_stage_syphilis_sore_%28chancre%29_on_the_surface_of_a_tongue-CDC.jpg",960],
+  "images/pf-rings.jpg": ["c/c3/Plasmodium_falciparum_02.jpg",1159],
+  "images/pv-troph.jpg": ["f/f2/Immature_and_mature_trophozoites_of_the_Plasmodium_vivax_parasite_PHIL_2720_lores.jpg",700],
+  "images/dvt-leg.jpg": ["2/21/Deep_vein_thrombosis_of_the_right_leg.jpg",1814],
+  "images/dvt-us.jpg": ["4/4f/Ultrasonography_of_deep_vein_thrombosis_of_the_femoral_vein_-annotated.jpg",695],
+  "images/pe-ctpa.jpg": ["a/ae/CTA_Chest_With_Massive_Pulmonary_Embolism_and_Complete_Occlusion.jpg",512],
+  "images/hcc-ct.jpg": ["d/d6/Arterial_and_portal_venous_phase_CT_of_cirrhosis_and_hepatocellular_carcinoma.jpg",791],
+  "images/erythema-marginatum.jpg": ["4/41/Erythema_marginatum.jpg",3264],
+  "images/cervix-scc-pap.jpg": ["3/32/Squamous_cell_carcinoma_in_the_cervix,_pap_stain.jpg",1350]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
