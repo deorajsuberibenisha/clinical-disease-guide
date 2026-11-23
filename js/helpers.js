@@ -204,7 +204,13 @@ const IMGS = {
   "images/epidural-ct.jpg": ["f/f9/EpiduralHematoma.jpg",784],
   "images/kwashiorkor.jpg": ["4/4d/Kwashiorkor_6180.jpg",1205],
   "images/kwashiorkor-skin.jpg": ["c/c4/Kwashiorkor_dermatosis.jpg",907],
-  "images/muac-uganda.jpg": ["7/73/Uganda_Nutrition_%2826941720597%29.jpg",3216]
+  "images/muac-uganda.jpg": ["7/73/Uganda_Nutrition_%2826941720597%29.jpg",3216],
+  "images/rule-of-nines.svg": ["2/27/Wallace_Rule_of_Nines.svg",1172,"svg"],
+  "images/burn-superficial-partial.png": ["d/d6/Superficial-partial-thickness-burn.png",3200],
+  "images/burn-deep-partial.png": ["5/5a/Deep-partial-thickness-burn.png",3200],
+  "images/russells-viper.jpg": ["9/95/Daboia_russelii_142066935.jpg",2048],
+  "images/common-krait.jpg": ["f/ff/Bungarus_caeruleus_160434547.jpg",1536],
+  "images/green-pit-viper.jpg": ["f/f3/Trimeresurus_albolabris_89712044.jpg",2000]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
