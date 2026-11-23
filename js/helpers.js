@@ -200,7 +200,11 @@ const IMGS = {
   "images/phototherapy-photo.jpg": ["0/09/Phototherapy.jpg",1536],
   "images/uterine-balloon.png": ["7/7d/Balloon_medical_device_for_Tamponade_Treatment_of_uterine_postpartum_hemorrhage.png",1870],
   "images/rsv-em.jpg": ["7/74/Respiratory_syncytial_virus_01.jpg",1804],
-  "images/omphalitis.svg": ["f/f8/Omphalitis_by_hariadhi.svg",512,"svg"]
+  "images/omphalitis.svg": ["f/f8/Omphalitis_by_hariadhi.svg",512,"svg"],
+  "images/epidural-ct.jpg": ["f/f9/EpiduralHematoma.jpg",784],
+  "images/kwashiorkor.jpg": ["4/4d/Kwashiorkor_6180.jpg",1205],
+  "images/kwashiorkor-skin.jpg": ["c/c4/Kwashiorkor_dermatosis.jpg",907],
+  "images/muac-uganda.jpg": ["7/73/Uganda_Nutrition_%2826941720597%29.jpg",3216]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
