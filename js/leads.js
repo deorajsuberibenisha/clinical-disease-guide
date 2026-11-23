@@ -416,7 +416,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "stroke-child": {
   overview: "Childhood stroke is uncommon but not rare, and its causes are quite different from adults'.",
@@ -437,7 +437,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "copd-adult": {
   overview: "Years of tobacco or kitchen smoke damage the airways and alveoli; in Bhutan many patients are women who never smoked.",
@@ -458,7 +458,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "ge-child": {
   overview: "Watery diarrhoea, dysentery and persistent diarrhoea are different problems with different treatments.",
@@ -479,7 +479,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "ge-adult": {
   overview: "The pattern of the illness (watery, bloody, vomiting, persistent) points to the cause.",
@@ -500,7 +500,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "sepsis-adult": {
   overview: "Sepsis-3 definitions, who is at risk, and why late presentation matters in Bhutan.",
@@ -521,7 +521,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "sepsis-child": {
   overview: "Phoenix criteria define sepsis and septic shock in children.",
@@ -542,7 +542,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "ugib-adult": {
   overview: "Peptic ulcers and varices cause most bleeds; in Bhutan H. pylori, alcohol and stomach cancer shape the picture.",
@@ -563,7 +563,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "apd-adult": {
   overview: "What dyspepsia, ulcer and gastritis actually mean, and why H. pylori and stomach cancer loom large in Bhutan.",
@@ -584,7 +584,7 @@ Object.assign(window.LEADS, {
   pearls: "PPIs and false negatives, biopsy every gastric ulcer, and the ECG first.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "appendicitis-adult": {
   overview: "Uncomplicated and complicated disease, who gets it, and who does badly.",
@@ -605,7 +605,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "appendicitis-child": {
   overview: "How appendicitis changes from infancy to adolescence.",
@@ -626,7 +626,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "acute-abdomen-adult": {
   overview: "Small and large bowel obstruction, perforation, and the causes that matter in Bhutan.",
@@ -647,7 +647,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "acute-abdomen-child": {
   overview: "Causes by age, from newborn atresia to worm bolus.",
@@ -668,7 +668,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "gallstones-adult": {
   overview: "Silent stones, colic, cholecystitis, duct stones and cholangitis, and who gets them.",
@@ -689,7 +689,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "pancreatitis-adult": {
   overview: "Causes from alcohol and gallstones to triglycerides, calcium, drugs and worms.",
@@ -710,7 +710,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "uti-adult": {
   overview: "Uncomplicated, complicated, recurrent and asymptomatic: the four boxes, and the bacteria behind them.",
@@ -731,7 +731,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "uti-child": {
   overview: "Organisms, reflux, obstruction and bladder-bowel dysfunction, by age.",
@@ -752,7 +752,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "meningitis-adult": {
   overview: "Bacteria, TB, viruses, scrub typhus, JE and cryptococcus, and who gets which.",
@@ -773,7 +773,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "meningitis-child": {
   overview: "Organisms by age, TB and encephalitis, and who is at risk.",
@@ -794,7 +794,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "epilepsy-adult": {
   overview: "Provoked seizures, the ILAE definition of epilepsy, and the causes common in Bhutan.",
@@ -815,7 +815,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "epilepsy-child": {
   overview: "Causes by age, from neonatal seizures to juvenile myoclonic epilepsy.",
@@ -836,7 +836,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "dengue-adult": {
   overview: "Virus, vector, risk, special populations and Bhutan case definitions.",
@@ -857,7 +857,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "dengue-child": {
   overview: "Children, infants, neonates and other groups at risk.",
@@ -878,7 +878,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "enteric-adult": {
   overview: "Typhoid and paratyphoid, how they spread, and who is at risk in Bhutan.",
@@ -899,7 +899,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "enteric-child": {
   overview: "Why most of Bhutan's typhoid is in children, and the risks.",
@@ -920,7 +920,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "scrub-adult": {
   overview: "Orientia, chiggers, Bhutan's risk factors, and other rickettsial fevers.",
@@ -941,7 +941,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "scrub-child": {
   overview: "How children are infected, and who is at risk.",
@@ -962,7 +962,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "hepatitis-adult": {
   overview: "Hepatitis A to E side by side, and the numbers in Bhutan.",
@@ -983,7 +983,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "hepatitis-child": {
   overview: "Viruses and mimics of hepatitis in children.",
@@ -1004,7 +1004,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "anaemia-adult": {
   overview: "Definition, the main mechanisms and their causes.",
@@ -1025,7 +1025,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "anaemia-child": {
   overview: "Causes by age, from preterm infants to adolescent girls.",
@@ -1046,7 +1046,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "anaemia-preg": {
   overview: "Causes of anaemia in pregnancy.",
@@ -1067,7 +1067,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "thyroid-adult": {
   overview: "Hypothyroid and hyperthyroid causes, and who gets them.",
@@ -1088,7 +1088,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "thyroid-child": {
   overview: "Congenital, acquired and autoimmune thyroid disease by age.",
@@ -1109,7 +1109,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "preeclampsia-preg": {
   overview: "Definitions from gestational hypertension to HELLP, and risk factors.",
@@ -1130,7 +1130,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "pph-preg": {
   overview: "Definitions, minor and major PPH, and risk factors.",
@@ -1151,7 +1151,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "neojaundice-child": {
   overview: "Physiological, pathological, breast-milk, prolonged and conjugated jaundice.",
@@ -1172,7 +1172,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "neosepsis-child": {
   overview: "Early- and late-onset sepsis, organisms and risk factors.",
@@ -1193,7 +1193,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "bronchiolitis-child": {
   overview: "What bronchiolitis is and how it differs from pneumonia and wheeze.",
@@ -1214,7 +1214,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "sam-child": {
   overview: "Definitions, marasmus, kwashiorkor and underlying causes.",
@@ -1235,7 +1235,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "headinjury-adult": {
   overview: "Concussion, haematomas, contusions and fractures.",
@@ -1256,7 +1256,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "headinjury-child": {
   overview: "Causes and patterns in children.",
@@ -1277,7 +1277,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "burns-adult": {
   overview: "Burn types and depth.",
@@ -1298,7 +1298,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "burns-child": {
   overview: "Causes, depth and age-adjusted body areas.",
@@ -1319,7 +1319,7 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
 },
 "snakebite-adult": {
   overview: "Snakes of Bhutan and the five syndromes.",
@@ -1340,6 +1340,321 @@ Object.assign(window.LEADS, {
   drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
   qbank: "Tap a question to reveal the answer.",
   refs: "Every recommendation traces back to one of these sources, with links where freely available.",
-  qc: "What was verified, what was flagged, and what still needs specialist sign-off."
+  qc: "What was verified and what was flagged."
+},
+"rabies-adult": {
+  overview: "WHO exposure categories and which animals matter.",
+  patho: "How the virus travels from bite to brain.",
+  conflicts: "Bhutan guideline, NEMF and WHO 2018 compared.",
+  presentation: "What to ask, high-risk bites and a typical case.",
+  ddx: "Conditions that mimic clinical rabies.",
+  invest: "No test before PEP; tests for clinical rabies.",
+  staging: "PEP regimen, dates and immunoglobulin volume.",
+  manage: "Wound care, vaccine, immunoglobulin and clinical rabies.",
+  populations: "Children, pregnancy, immunocompromised and travellers.",
+  scenarios: "Late presenters, vaccinated dogs and no immunoglobulin.",
+  complications: "Wound infection and the two forms of rabies.",
+  followup: "Vaccine card, wound advice and prevention.",
+  images: "A rabid dog. Tap to enlarge.",
+  flows: "Animal bite, step by step.",
+  pearls: "Washing, immunoglobulin and dosing errors.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"poisoning-adult": {
+  overview: "Five toxidromes that guide treatment.",
+  patho: "How poisons kill, and how antidotes help.",
+  conflicts: "Bhutan STG against Eddleston, WHO and ANZ guidance.",
+  presentation: "History, examination, danger signs and a typical case.",
+  ddx: "Conditions that look like poisoning.",
+  invest: "Glucose, ECG and the 4-hour paracetamol level.",
+  staging: "Paracetamol and organophosphate antidote tools.",
+  manage: "Organophosphates, aconite, paracetamol and other poisons.",
+  populations: "Pregnancy, older adults and heavy drinkers.",
+  scenarios: "Atropine shortage, unknown pesticides, staggered overdoses.",
+  complications: "Intermediate syndrome, arrhythmias and liver failure.",
+  followup: "Safe storage and return advice.",
+  images: "Himalayan aconite. Tap to enlarge.",
+  flows: "The poisoned patient, step by step.",
+  pearls: "Atropine endpoints, charcoal and suicide risk.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"poisoning-child": {
+  overview: "What children swallow, and which doses kill.",
+  patho: "Why a small dose matters in a small body.",
+  conflicts: "Bhutan child doses against international practice.",
+  presentation: "History, danger signs and a typical case.",
+  ddx: "Sepsis, hypoglycaemia and abuse.",
+  invest: "Glucose, ECG, levels and X-rays.",
+  staging: "Paracetamol and organophosphate tools for children.",
+  manage: "Kerosene, iron, paracetamol, pesticides, batteries and more.",
+  populations: "Infants and dosing errors.",
+  scenarios: "Unknown amounts, salt water and teenagers.",
+  complications: "Pneumonitis, strictures and liver failure.",
+  followup: "Making the home safe.",
+  images: "Image note.",
+  flows: "The child who swallowed something.",
+  pearls: "Kerosene, single tablets and batteries.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"anaphylaxis-adult": {
+  overview: "WAO 2020 criteria.",
+  patho: "Mast cell release and what adrenaline reverses.",
+  conflicts: "Bhutan STG against RCUK 2021, WAO and EAACI.",
+  presentation: "Airway, breathing, circulation and a typical case.",
+  ddx: "Faints, asthma and panic.",
+  invest: "Tryptase, after treatment.",
+  staging: "Doses by age and weight.",
+  manage: "IM adrenaline, support, refractory care and aftercare.",
+  populations: "Pregnancy, older adults and asthma.",
+  scenarios: "Antivenom reactions and beta-blockers.",
+  complications: "Biphasic reactions and deaths.",
+  followup: "Trigger records and allergy referral.",
+  images: "Urticaria and angioedema. Tap to enlarge.",
+  flows: "Anaphylaxis, step by step.",
+  pearls: "Adrenaline first, thigh, lie flat.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"anaphylaxis-child": {
+  overview: "Criteria and common triggers in children.",
+  patho: "Airway, breathing and circulation in children.",
+  conflicts: "Bhutan age doses against RCUK and weight dosing.",
+  presentation: "Recognition, danger signs and a typical case.",
+  ddx: "Croup, foreign body and asthma.",
+  invest: "Tests never delay treatment.",
+  staging: "Doses by age and weight.",
+  manage: "IM adrenaline, fluids, infusion and aftercare.",
+  populations: "Infants and adolescents.",
+  scenarios: "Vaccine and food reactions.",
+  complications: "Biphasic reactions.",
+  followup: "Plans for home and school.",
+  images: "Image note.",
+  flows: "The child with anaphylaxis.",
+  pearls: "Syringes, promethazine and waiting for hives.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"altitude-adult": {
+  overview: "AMS, HACE and HAPE: timing and features.",
+  patho: "Why low oxygen swells the brain and floods the lungs.",
+  conflicts: "Bhutan STG against WMS 2024.",
+  presentation: "Assessment, danger signs and a typical case.",
+  ddx: "Dehydration, carbon monoxide and pneumonia.",
+  invest: "Pulse oximetry at altitude.",
+  staging: "Lake Louise score with a treatment plan.",
+  manage: "AMS, HACE, HAPE and prevention.",
+  populations: "Children, pregnancy and highlanders.",
+  scenarios: "No descent possible, group pressure.",
+  complications: "Prognosis with and without descent.",
+  followup: "Advice for travellers.",
+  images: "Helicopter evacuation. Tap to enlarge.",
+  flows: "Ill at altitude, step by step.",
+  pearls: "Never go higher ill.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"alcohol-adult": {
+  overview: "From low-risk drinking to dependence.",
+  patho: "Why stopping suddenly is dangerous.",
+  conflicts: "Bhutan STG against NICE and WHO.",
+  presentation: "Screening, harms and a typical case.",
+  ddx: "Encephalopathy, head injury and sepsis.",
+  invest: "Glucose, liver and electrolytes.",
+  staging: "AUDIT and CIWA-Ar tools.",
+  manage: "Brief intervention, detox, thiamine and relapse prevention.",
+  populations: "Pregnancy, older adults, adolescents and liver disease.",
+  scenarios: "Family pressure, festivals and relapse.",
+  complications: "DTs, Wernicke's and liver disease.",
+  followup: "Review plan and advice.",
+  images: "Image note.",
+  flows: "Alcohol in clinic and ward.",
+  pearls: "Thiamine first, treat withdrawal fully, stay kind.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"depression-adult": {
+  overview: "Diagnosis and severity.",
+  patho: "Biological, psychological and social roots.",
+  conflicts: "Bhutan STG against NICE NG222 and mhGAP.",
+  presentation: "How to ask about suicide, risk levels and a typical case.",
+  ddx: "Bipolar disorder, grief, thyroid and alcohol.",
+  invest: "Tests for physical causes.",
+  staging: "PHQ-9 with a suicide alert.",
+  manage: "Psychological care, antidepressants, safety planning and referral.",
+  populations: "Adolescents, perinatal, older adults and chronic illness.",
+  scenarios: "Beliefs, refusal and switching to mania.",
+  complications: "Suicide, relapse and disability.",
+  followup: "Review schedule and advice.",
+  images: "Image note.",
+  flows: "Low mood in the clinic.",
+  pearls: "Ask about suicide; small amitriptyline supplies.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"ssti-adult": {
+  overview: "From impetigo to necrotising fasciitis.",
+  patho: "How bacteria get through the skin.",
+  conflicts: "Bhutan STG against AWaRe, IDSA and NICE.",
+  presentation: "Eron classes, necrotising red flags and a typical case.",
+  ddx: "DVT, venous eczema and gout.",
+  invest: "When tests help.",
+  staging: "Type, severity and dose tool.",
+  manage: "Cellulitis, abscess, impetigo, necrotising infection and bites.",
+  populations: "Diabetes, pregnancy and older adults.",
+  scenarios: "Early spread, eye involvement and recurrence.",
+  complications: "Sepsis, recurrence and glomerulonephritis.",
+  followup: "Advice and return signs.",
+  images: "Cellulitis and impetigo. Tap to enlarge.",
+  flows: "Red, hot, swollen skin.",
+  pearls: "Drain pus, 5 days, pain out of proportion.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"ssti-child": {
+  overview: "Common childhood skin infections.",
+  patho: "Why children get them, and the immune aftermath.",
+  conflicts: "Bhutan STG against international practice.",
+  presentation: "Danger signs and a typical case.",
+  ddx: "Eczema, herpes and chickenpox.",
+  invest: "Usually none.",
+  staging: "Weight-based treatment tool.",
+  manage: "Impetigo, cellulitis, eye swelling, SSSS and omphalitis.",
+  populations: "Newborns and infants.",
+  scenarios: "School outbreaks and post-strep complications.",
+  complications: "Spread, sepsis and nephritis.",
+  followup: "Advice for families.",
+  images: "Bullous impetigo. Tap to enlarge.",
+  flows: "The child with a skin infection.",
+  pearls: "Scabies, eye movements and short courses.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"scabies-adult": {
+  overview: "IACS 2020 diagnostic criteria.",
+  patho: "The mite and why contacts must be treated.",
+  conflicts: "Bhutan STG against WHO 2023.",
+  presentation: "Typical sites, crusted scabies and a typical case.",
+  ddx: "Eczema, bites and dermatitis.",
+  invest: "Clinical diagnosis; when to scrape.",
+  staging: "Household treatment planner.",
+  manage: "Permethrin, sulphur, ivermectin, crusted scabies and outbreaks.",
+  populations: "Pregnancy, infants and the elderly.",
+  scenarios: "Persistent itch and re-infestation.",
+  complications: "Impetigo and its consequences.",
+  followup: "Advice for the household.",
+  images: "Scabies on the hand and the mite. Tap to enlarge.",
+  flows: "The itchy family.",
+  pearls: "Everyone, everywhere, twice.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"urti-adult": {
+  overview: "Colds, sore throats, quinsy, epiglottitis and sinusitis.",
+  patho: "Why most need no antibiotic.",
+  conflicts: "Bhutan STG against IDSA, NICE and AWaRe.",
+  presentation: "Red flags and a typical case.",
+  ddx: "Glandular fever, HIV and cancer.",
+  invest: "Usually none.",
+  staging: "FeverPAIN and Centor with doses.",
+  manage: "Sore throat, sinusitis and colds.",
+  populations: "Pregnancy, rheumatic heart disease and diabetes.",
+  scenarios: "Rashes, demands and mucormycosis.",
+  complications: "Abscesses, rheumatic fever and orbital spread.",
+  followup: "Advice and return signs.",
+  images: "Exudative tonsillitis. Tap to enlarge.",
+  flows: "Sore throat, step by step.",
+  pearls: "Scores, 10 days, and leave the airway alone.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"urti-child": {
+  overview: "Colds, strep throat, scarlet fever and emergencies.",
+  patho: "Why children get so many.",
+  conflicts: "Bhutan child doses against IDSA and AAP.",
+  presentation: "Danger signs and a typical case.",
+  ddx: "Croup, foreign body and Kawasaki disease.",
+  invest: "Usually none.",
+  staging: "FeverPAIN and Centor with child doses.",
+  manage: "Colds, strep throat, sinusitis, emergencies and tonsillectomy.",
+  populations: "Infants and adolescents.",
+  scenarios: "Green snot, RHD and epiglottitis.",
+  complications: "Otitis, abscesses and rheumatic fever.",
+  followup: "Advice for parents.",
+  images: "Image note.",
+  flows: "The child with a sore throat.",
+  pearls: "Epiglottitis, 10 days and diphtheria.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"otitis-adult": {
+  overview: "Outer, middle and chronic ear infections.",
+  patho: "How outer and middle ear infections develop.",
+  conflicts: "Bhutan STG against AAO-HNS, AWaRe and WHO.",
+  presentation: "Examination, urgent referrals and a typical case.",
+  ddx: "Referred pain, zoster and foreign bodies.",
+  invest: "Swabs, glucose, audiometry and CT.",
+  staging: "Adult AOM dose tool.",
+  manage: "Otitis externa, AOM, CSOM and mastoiditis.",
+  populations: "Diabetes, pregnancy and hearing aids.",
+  scenarios: "Swollen canals, unilateral effusion and malignant otitis.",
+  complications: "Local and intracranial complications.",
+  followup: "Ear care advice.",
+  images: "Otitis externa and a perforated drum. Tap to enlarge.",
+  flows: "The painful adult ear.",
+  pearls: "Clean first, topical first, refer unilateral effusion.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
+},
+"otitis-child": {
+  overview: "AOM, glue ear, CSOM, otitis externa and mastoiditis.",
+  patho: "The child's Eustachian tube and risk factors.",
+  conflicts: "Bhutan STG against AAP 2013, NICE and AWaRe.",
+  presentation: "Otoscopy, danger signs and a typical case.",
+  ddx: "Teething, otitis externa and meningitis.",
+  invest: "Otoscopy and hearing tests.",
+  staging: "Antibiotic or watchful waiting, with doses.",
+  manage: "AOM, the discharging ear, glue ear and mastoiditis.",
+  populations: "Infants, cleft palate and recurrent AOM.",
+  scenarios: "Remote families, wax and school problems.",
+  complications: "Hearing loss and intracranial spread.",
+  followup: "Advice for parents.",
+  images: "Acute otitis media and perforation. Tap to enlarge.",
+  flows: "The child with earache.",
+  pearls: "Bulging drum, high-dose amoxicillin, dry mopping.",
+  drugs: "Tap any drug for its full card, with doses, cautions and the Bhutan listing.",
+  qbank: "Tap a question to reveal the answer.",
+  refs: "Every recommendation traces back to one of these sources, with links where freely available.",
+  qc: "What was verified and what was flagged."
 }
 });

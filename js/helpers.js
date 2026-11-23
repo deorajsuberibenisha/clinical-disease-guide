@@ -210,7 +210,21 @@ const IMGS = {
   "images/burn-deep-partial.png": ["5/5a/Deep-partial-thickness-burn.png",3200],
   "images/russells-viper.jpg": ["9/95/Daboia_russelii_142066935.jpg",2048],
   "images/common-krait.jpg": ["f/ff/Bungarus_caeruleus_160434547.jpg",1536],
-  "images/green-pit-viper.jpg": ["f/f3/Trimeresurus_albolabris_89712044.jpg",2000]
+  "images/green-pit-viper.jpg": ["f/f3/Trimeresurus_albolabris_89712044.jpg",2000],
+  "images/rabid-dog.jpg": ["9/90/Rabid_dog.jpg",2728],
+  "images/aconitum-ferox.jpg": ["8/84/Aconitum_ferox_in_Jardin_botanique_de_la_Charme.jpg",6000],
+  "images/urticaria-hives.jpg": ["1/19/Rash.jpg",1530],
+  "images/angioedema-lips.jpg": ["7/78/AngioedemaFra.JPG",1006],
+  "images/altitude-helicopter.jpg": ["6/6a/Helicopter_evac_in_Himalaya_evacuation_of_an_old_man_suffering_altitude_sickness._%2812192425724%29.jpg",2000],
+  "images/cellulitis-foot.jpg": ["1/1f/Cellulitis_of_lower_leg_and_foot.jpg",4032],
+  "images/impetigo-face.jpg": ["b/b8/Woman%27s_face_infected_with_impetigo_Wellcome_L0074829_%28cropped%29.jpg",3101],
+  "images/bullous-impetigo.jpg": ["a/a3/Bullous_impetigo.jpg",2592],
+  "images/scabies-hand.jpg": ["8/8d/Scabies_hand_and_fingers_2.jpg",2880],
+  "images/sarcoptes-mite.jpg": ["c/c0/Sarcoptes_scabei_2.jpg",925],
+  "images/tonsillitis.jpg": ["c/cf/Tonsillitis_Img.jpeg",2288],
+  "images/aom-drum.jpg": ["3/36/Otitis_media_entdifferenziert1.jpg",1209],
+  "images/otitis-externa.jpg": ["9/94/OtitisExterna10.JPG",2679],
+  "images/perforated-drum.jpg": ["b/bb/Otite_moyenne_perfor%C3%A9e.jpg",3024]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
