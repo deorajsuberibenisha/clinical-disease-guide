@@ -253,7 +253,11 @@ const IMGS = {
   "images/measles-rash.jpg": ["2/27/RougeoleDP.jpg",652],
   "images/ascaris-worms.png": ["d/dd/Ascaris_lumbricoides_adult_worms.png",1046],
   "images/hookworm-egg.jpg": ["0/0c/Hookworm_egg_1.JPG",1195],
-  "images/liver-abscess-us.png": ["6/65/LiverAbscessMark.png",1004]
+  "images/liver-abscess-us.png": ["6/65/LiverAbscessMark.png",1004],
+  "images/chickenpox-adult.jpg": ["7/74/Chickenpox_Adult_back.jpg",2419],
+  "images/kawasaki-lips.jpg": ["9/96/Kawasaki_symptoms_B.jpg",464],
+  "images/vasculitis-legs.jpg": ["b/b6/Vasculitis_on_legs.jpg",3264],
+  "images/nec-xray.jpg": ["6/6a/Pneumatosis_intestinalis_und_hepatis_bei_NEC_0W_-_CR_ap_-_001.jpg",1208]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
