@@ -273,7 +273,12 @@ const IMGS = {
   "images/beriberi-dry.jpg": ["8/88/Late_stage_of_paralysis_with_atrophy_in_dry_beriberi.jpg",1381],
   "images/cp-child.png": ["1/19/Child_with_Cerebral_Palsy.png",3508],
   "images/blood-bag.jpg": ["d/d0/Blood_bag_2020.jpg",4248],
-  "images/copper-iud.jpg": ["6/69/Copper_IUD.jpg",1905]
+  "images/copper-iud.jpg": ["6/69/Copper_IUD.jpg",1905],
+  "images/supracondylar-xr.jpg": ["5/58/Supracondylar09.JPG",2304],
+  "images/nof-fracture.png": ["8/88/Neck_of_Femur_fracture_Right_side_in_a_80_years_old_female_patient.png",534],
+  "images/fibroid-diagram.png": ["2/2d/Subserosal_uterine_fibroid.png",500],
+  "images/dermoid-ct.png": ["c/c2/DermoidCyst(CT).png",937],
+  "images/clubfoot.jpg": ["5/51/813_Clubfoot.jpg",529]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
