@@ -1,0 +1,41 @@
+/* Preterm and low-birth-weight newborn (WHO 2022 recommendations, Bhutan EM booklet 2018) */
+registerPage({
+id: "preterm-child",
+title: "Preterm & Low-Birth-Weight Newborn",
+subtitle: "Keep warm, start kangaroo mother care at once, feed breast milk early by cup or tube, give caffeine and CPAP when needed, and prevent infection",
+age: "Newborns", specs: ["neo", "nicu", "paeds"],
+keywords: ["preterm", "premature", "low birth weight", "LBW", "VLBW", "kangaroo mother care", "KMC", "CPAP", "caffeine citrate", "apnoea of prematurity", "feeding preterm", "hypothermia", "RDS", "surfactant"],
+related: ["asphyxia-child", "neosepsis-child", "neojaundice-child", "hypo-child"],
+updated: "23 Nov 2026", review: "Nov 2027", evidenceTo: "Nov 2026",
+sections: [
+{ id: "glance", title: "At a glance", html: `
+<p class="lead">Prematurity is the leading cause of newborn death in Bhutan. Simple care — warmth, breast milk, kangaroo care, infection prevention — saves most of these babies.</p>
+<div class="glance">
+<div><h4>Warmth</h4><p>Skin-to-skin; plastic bag under 28 weeks; target 36.5–37.5 °C.</p></div>
+<div><h4>KMC</h4><p>Immediate kangaroo mother care (WHO 2022), up to 24 h/day.</p></div>
+<div><h4>Feeds</h4><p>Breast milk; VLBW start 10 mL/kg/day, advance up to 30 mL/kg/day.</p></div>
+<div><h4>Breathing</h4><p>CPAP for distress; ${dr("caffeine_citrate", "caffeine")} 20 mg/kg load under 34 weeks.</p></div>
+</div>
+${box("bt", "Bhutan note", `<p>Bhutan EM booklet: extra staff, warm room, plastic bag under 28 weeks, CPAP if breathing with HR over 100, surfactant if CPAP fails, skin-to-skin for at least 90 minutes then continuous KMC. NICU at JDWNRH and regional referral hospitals; caffeine citrate is on the NEML; surfactant is not. ${LB.bt()}</p>`)}
+` },
+{ id: "overview", title: "Definitions", html: `${tbl(["Term", "Definition"], [["Preterm", "Under 37 weeks (late 34–36, moderate 32–33, very 28–31, extreme under 28)"], ["Low birth weight", "Under 2500 g"], ["Very LBW", "Under 1500 g"], ["Extremely LBW", "Under 1000 g"], ["Small for gestational age", "Under 10th centile — hypoglycaemia, polycythaemia"]])}${r(1)}` },
+{ id: "patho", title: "Pathophysiology", html: `${F.chart("Why preterm babies struggle", [F.s("Large surface, little fat → cold"), F.a, F.s("Surfactant deficiency, immature breathing control → RDS, apnoea"), F.a, F.e("Weak immunity, immature gut and liver → sepsis, NEC, jaundice")])}` },
+{ id: "conflicts", title: "Where guidance differs", html: `${tbl(["Topic", "Bhutan EM booklet 2018", "WHO 2022", "This guide"], [["Start of KMC", "After stabilisation (90 min skin-to-skin)", "Immediately after birth, even before stable (iKMC)", "WHO where monitoring is possible " + LB.loc()], ["Caffeine", "Not specified", "Recommended for apnoea and under 34 weeks", "WHO"]])}` },
+{ id: "presentation", title: "Assessment", html: `<ul><li>Gestation (dates, early scan, New Ballard), weight, temperature, breathing (rate, grunting, recession — Silverman), SpO₂, glucose, ability to suck.</li></ul>${box("red", "Danger signs", `<ul><li>Apnoea, cyanosis, severe recession or grunting</li><li>Temperature under 35.5 °C</li><li>Poor feeding, lethargy, convulsions, distended abdomen, bloody stools</li><li>Jaundice on day 1</li></ul>`)}<h3>The typical patient</h3><p>A 1400 g boy born at 31 weeks in Trashigang breathes but grunts, SpO₂ 86%. <b>This is a very low-birth-weight preterm baby with RDS</b>: warm, CPAP 5–6 cmH₂O, caffeine 28 mg load, IV 10% dextrose 80 mL/kg/day, start expressed breast milk 10 mL/kg/day, KMC with mother, refer to NICU.</p>` },
+{ id: "ddx", title: "Causes of distress", html: `${tbl(["Condition", "Clue"], [["RDS", "Preterm, worsens over hours, ground-glass X-ray"], ["Sepsis/pneumonia", "Maternal fever, PROM"], ["TTN", "Term caesarean, improves in 24 h"], ["Pneumothorax", "Sudden deterioration"]])}` },
+{ id: "invest", title: "Investigations", html: `<p>Glucose 3-hourly day 1, temperature, SpO₂; bilirubin; sepsis screen if risk; chest X-ray for distress; cranial ultrasound under 32 weeks where available.</p>` },
+{ id: "staging", title: "Fluids, feeds and caffeine", html: `<div class="calc" data-calc="pretermfeed"></div>` },
+{ id: "manage", title: "Management", html: `<ul><li><b>Thermal care:</b> dry, cap, skin-to-skin, plastic bag under 28 weeks, warm room 25–28 °C, radiant warmer/incubator if needed.</li><li><b>KMC:</b> start immediately, continuous; mother and family supported.</li><li><b>Breathing:</b> CPAP for RDS; caffeine citrate 20 mg/kg then 5–10 mg/kg daily for under 34 weeks or apnoea; target SpO₂ 90–95% (avoid excess oxygen — retinopathy).</li><li><b>Feeding:</b> mother's milk; cup/paladai if 32 weeks+, NG tube if younger; donor milk if needed; vitamin D 400 IU, iron from 2–6 weeks.</li><li><b>Infection:</b> hand washing, avoid unnecessary procedures; treat suspected sepsis.</li><li>Vitamin K 0.5 mg IM (under 1500 g) or 1 mg.</li><li>Antenatal: steroids 24–34 weeks, magnesium under 32 weeks, transfer the mother before birth.</li></ul>` },
+{ id: "drugs", title: "Medicines", html: `${tbl(["Drug", "Dose", "Notes"], [[dr("caffeine_citrate"), "20 mg/kg → 5–10 mg/kg/day", "Under 34 weeks"], [dr("vitamin_k"), "0.5–1 mg IM", "At birth"], [dr("dextrose"), "10% 60–80 mL/kg/day day 1", "If not fed"], [dr("ampicillin"), "50 mg/kg 12-hourly", "Suspected sepsis"], [dr("gentamicin"), "5 mg/kg 36–48-hourly", "Suspected sepsis"]])}` },
+{ id: "populations", title: "Late preterm", html: `<p>34–36 weeks look mature but feed poorly and get jaundice, hypoglycaemia and hypothermia — keep with mother, check feeds and glucose, delay discharge until feeding well.</p>` },
+{ id: "scenarios", title: "Hard situations", html: `${tbl(["Situation", "What to do"], [["No CPAP at district hospital", "Oxygen, KMC, caffeine, early referral with warmth (KMC during transport)"], ["Mother unwell", "Father or relative provides KMC"]])}` },
+{ id: "complications", title: "Complications", html: `<p>Hypothermia, hypoglycaemia, RDS, apnoea, sepsis, NEC, IVH, jaundice, ROP, BPD, anaemia, developmental delay.</p>` },
+{ id: "followup", title: "Follow-up", html: `<p>Discharge when feeding well, gaining weight, stable temperature; ROP screening under 32 weeks or 1500 g; growth and development checks; immunise by chronological age.</p>` },
+{ id: "images", title: "Images", html: `${fig({ title: "Kangaroo mother care", src: "images/kmc.jpg", mod: "Photograph", ctx: "Low-birth-weight baby", loc: "Mother's chest", find: "Baby upright skin-to-skin, head turned, wrapped together", interp: "Keeps baby warm, supports breathing and breastfeeding; reduces mortality", by: "Sathishsugavanam27", page: "https://commons.wikimedia.org/wiki/File:MotherKMC.jpg", lic: "CC BY-SA 4.0" })}` },
+{ id: "flows", title: "Flowchart", html: `${F.chart("Preterm at birth", [F.s("Warmth + resuscitation if needed"), F.a, F.d("Breathing difficulty?"), F.a, F.b([["Yes", F.e("CPAP, caffeine, refer NICU")], ["No", F.ok("KMC, early breast milk, glucose checks")]])])}` },
+{ id: "pearls", title: "Pearls", html: `${tbl(["Mistake", "Why harmful", "Prevention"], [["Separating baby from mother for 'warmer'", "Loses KMC benefits", "KMC with monitoring"], ["100% oxygen without monitoring", "Retinopathy, lung injury", "Target 90–95%"]])}` },
+{ id: "qbank", title: "Question bank", html: `${qa("Intern/MO", "Caffeine loading dose for a 1.2 kg baby?", "24 mg caffeine citrate (20 mg/kg).")}` },
+{ id: "refs", title: "References", html: `<ol><li id="ref-1">World Health Organization. WHO recommendations for care of the preterm or low-birth-weight infant. Geneva: WHO; 2022. <a href="https://www.who.int/publications/i/item/9789240058262" target="_blank" rel="noopener">who.int</a></li><li id="ref-2">WHO Immediate KMC Study Group. Immediate 'kangaroo mother care' and survival of infants with low birth weight. N Engl J Med. 2021;384:2028-2038. <a href="https://doi.org/10.1056/NEJMoa2026486" target="_blank" rel="noopener">doi</a></li><li id="ref-3">Ministry of Health, Bhutan. Emergency booklet 2018, chapter 3B.</li></ol>` },
+{ id: "qc", title: "Quality check", html: `${tbl(["Check", "Result", "Note"], [["DOI", "<span class='pass'>Verified</span>", "Crossref"]], "qc")}` }
+]
+});

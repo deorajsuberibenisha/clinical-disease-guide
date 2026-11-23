@@ -240,7 +240,15 @@ const IMGS = {
   "images/pe-ctpa.jpg": ["a/ae/CTA_Chest_With_Massive_Pulmonary_Embolism_and_Complete_Occlusion.jpg",512],
   "images/hcc-ct.jpg": ["d/d6/Arterial_and_portal_venous_phase_CT_of_cirrhosis_and_hepatocellular_carcinoma.jpg",791],
   "images/erythema-marginatum.jpg": ["4/41/Erythema_marginatum.jpg",3264],
-  "images/cervix-scc-pap.jpg": ["3/32/Squamous_cell_carcinoma_in_the_cervix,_pap_stain.jpg",1350]
+  "images/cervix-scc-pap.jpg": ["3/32/Squamous_cell_carcinoma_in_the_cervix,_pap_stain.jpg",1350],
+  "images/open-fracture-tib.jpg": ["0/01/Tibial_and_fibular_shaft_fracture_(open_fracture).jpg",3456],
+  "images/brodie-abscess-xr.jpg": ["2/21/BrodieAbscessRadiograph.jpg",644],
+  "images/ectopic-blob.png": ["f/f0/Blob_sign_of_ectopic_pregnancy_(hy).png",1600],
+  "images/molar-us.jpg": ["c/c1/Molar_pregnancy.jpg",676],
+  "images/kmc.jpg": ["d/d4/MotherKMC.jpg",780],
+  "images/croup-steeple.jpg": ["1/12/Croup_steeple_sign.jpg",426],
+  "images/placenta-praevia.svg": ["1/12/Placenta_previa-en.svg",744,"svg"],
+  "images/hbb-action-plan.jpg": ["f/f7/Helping-babies-breathe-2018-action-plan.jpg",1331]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };

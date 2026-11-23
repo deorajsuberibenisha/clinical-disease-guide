@@ -1,0 +1,41 @@
+/* Miscarriage and molar pregnancy (Bhutan STG 11.2/11.4, WHO 2018, FIGO 2023, NICE NG126) */
+registerPage({
+id: "miscarriage-preg",
+title: "Miscarriage & Molar Pregnancy",
+subtitle: "Classify by the os and the scan, resuscitate heavy bleeding, offer expectant, medical (misoprostol) or MVA management, treat sepsis aggressively, and follow moles with hCG",
+age: "Pregnant women (under 20–24 weeks)", specs: ["obg", "emerg"],
+keywords: ["miscarriage", "abortion", "threatened abortion", "incomplete abortion", "missed miscarriage", "septic abortion", "misoprostol", "MVA", "manual vacuum aspiration", "molar pregnancy", "hydatidiform mole", "gestational trophoblastic disease", "hCG follow-up"],
+related: ["ectopic-preg", "pph-preg", "sepsis-adult", "anaemia-preg"],
+updated: "23 Nov 2026", review: "Nov 2027", evidenceTo: "Nov 2026",
+sections: [
+{ id: "glance", title: "At a glance", html: `
+<p class="lead">About 1 in 5 recognised pregnancies end in miscarriage, mostly from chromosomal problems — not anything the woman did. Kind words matter as much as the treatment.</p>
+<div class="glance">
+<div><h4>Classify</h4><p>Threatened (os closed, viable), inevitable/incomplete (os open), missed, complete, septic.</p></div>
+<div><h4>Incomplete</h4><p>${dr("misoprostol")} 600 µg oral or 400 µg SL, or MVA.</p></div>
+<div><h4>Septic</h4><p>Antibiotics + evacuation promptly.</p></div>
+<div><h4>Mole</h4><p>Suction evacuation, weekly hCG until normal.</p></div>
+</div>
+${box("bt", "Bhutan note", `<p>STG 11.2 manages threatened miscarriage with rest and folic acid, incomplete/inevitable by resuscitation and evacuation, septic by IV ampicillin + metronidazole then evacuation; 11.4 molar pregnancy by suction evacuation and weekly hCG. Misoprostol is on the NEML; mifepristone is not. ${LB.bt()}</p>`)}
+` },
+{ id: "overview", title: "Types", html: `${tbl(["Type", "Features", "Plan"], [["Threatened", "Bleeding, os closed, viable", "Reassure; progesterone if previous miscarriage"], ["Inevitable", "Pain, cervix opening", "Evacuate/misoprostol"], ["Incomplete", "Os open, tissue partly passed", "Misoprostol or MVA"], ["Missed", "Non-viable, os closed", "Expectant, medical, MVA"], ["Complete", "Empty uterus, bleeding settling", "No evacuation"], ["Septic", "Fever, foul discharge, tenderness", "Antibiotics + evacuation"]])}${r(1, 2)}` },
+{ id: "patho", title: "Pathophysiology", html: `${F.chart("Early loss", [F.s("Chromosomal abnormality (50%+)"), F.a, F.s("Placental failure, bleeding"), F.a, F.e("Expulsion; retained tissue → bleeding, infection")])}` },
+{ id: "conflicts", title: "Where guidance differs", html: `${tbl(["Topic", "Bhutan STG", "WHO 2018 / NICE", "This guide"], [["Threatened", "Rest, folic acid", "No benefit from rest; vaginal progesterone if previous miscarriage (PRISM)", "WHO/NICE " + LB.loc()], ["Incomplete", "Refer for evacuation", "Misoprostol or MVA equally acceptable", "Misoprostol at PHC/DH, MVA where trained"]])}` },
+{ id: "presentation", title: "Assessment", html: `<ul><li>Bleeding amount, tissue passed, pain, fever, foul discharge, interference with pregnancy.</li><li>Pulse, BP, temperature; speculum: os open/closed, products in os; uterine size.</li></ul>${box("red", "Emergency", `<ul><li>Shock (also from 'cervical shock' with products in the os)</li><li>Sepsis — fever, tachycardia, foul discharge, peritonism</li><li>Uterine size much larger than dates with heavy bleeding (mole)</li></ul>`)}<h3>The typical patient</h3><p>A 30-year-old at 10 weeks in Haa has heavy bleeding with clots; pulse 110; os open with tissue in it. <b>This is incomplete miscarriage</b>: remove products from the os with sponge forceps, IV fluids, misoprostol 400 µg sublingual or MVA, anti-D if Rh negative, counselling.</p>` },
+{ id: "ddx", title: "Differential diagnosis", html: `${tbl(["Condition", "Clue"], [["Ectopic pregnancy", "Empty uterus, adnexal mass"], ["Molar pregnancy", "Very high hCG, snowstorm scan, hyperemesis"], ["Cervical lesion", "Speculum"]])}` },
+{ id: "invest", title: "Investigations", html: `<p>Pregnancy test, Hb, group/Rh, crossmatch if heavy; ultrasound (viability, retained products); molar: hCG, chest X-ray, LFT, RFT, TFT; histology of products where possible.</p>` },
+{ id: "staging", title: "Management tool", html: `<div class="calc" data-calc="misoplan"></div>` },
+{ id: "manage", title: "Management", html: `<ul><li><b>Threatened:</b> reassurance; vaginal micronised progesterone 400 mg twice daily to 16 weeks for women with previous miscarriage.</li><li><b>Incomplete (under 14 weeks):</b> misoprostol 600 µg oral or 400 µg SL once; or MVA.</li><li><b>Missed:</b> mifepristone 200 mg + misoprostol 800 µg 1–2 days later; or misoprostol 800 µg every 3 h (max 3 doses); or MVA.</li><li><b>Septic:</b> ampicillin + metronidazole ± gentamicin (or ceftriaxone + metronidazole) IV, fluids, then evacuation within hours.</li><li><b>Molar:</b> suction evacuation; weekly hCG until 3 normal, then monthly for 3 months (complete) or 1 month (partial); contraception (pill or injectable).</li><li>Anti-D for Rh-negative women having surgical evacuation or over 12 weeks.</li></ul>` },
+{ id: "drugs", title: "Medicines", html: `${tbl(["Drug", "Dose", "Notes"], [[dr("misoprostol"), "400–800 µg by type", "NEML"], [dr("oxytocin"), "10 units IM", "Heavy bleeding"], [dr("ampicillin"), "2 g IV 6-hourly", "Septic"], [dr("metronidazole"), "500 mg IV 8-hourly", "Septic"], [dr("anti_d"), "250 IU IM", "Rh negative"]])}` },
+{ id: "populations", title: "Recurrent miscarriage", html: `<p>3 or more: refer — antiphospholipid antibodies, karyotype, uterine anatomy, thyroid, diabetes.</p>` },
+{ id: "scenarios", title: "Hard situations", html: `${tbl(["Situation", "What to do"], [["Bleeding continues after misoprostol", "MVA"], ["hCG plateaus after mole", "Gestational trophoblastic neoplasia — refer for chemotherapy"]])}` },
+{ id: "complications", title: "Complications", html: `<p>Haemorrhage, sepsis, uterine perforation (surgical), Asherman syndrome, grief and depression; molar: GTN, choriocarcinoma.</p>` },
+{ id: "followup", title: "Follow-up", html: `<p>Pregnancy test at 3 weeks after medical management; emotional support; folic acid before next pregnancy.</p>` },
+{ id: "images", title: "Images", html: `${fig({ title: "Complete molar pregnancy", src: "images/molar-us.jpg", mod: "Ultrasound", ctx: "Hydatidiform mole", loc: "Uterus", find: "Echogenic mass with many small cysts", signs: "Snowstorm / bunch-of-grapes appearance", interp: "Suction evacuation and hCG follow-up", by: "Mikael Häggström", page: "https://commons.wikimedia.org/wiki/File:Molar_pregnancy.jpg", lic: "CC0" })}` },
+{ id: "flows", title: "Flowchart", html: `${F.chart("Early pregnancy bleeding", [F.s("Vitals, pregnancy test, speculum"), F.a, F.d("Os open?"), F.a, F.b([["Yes", F.e("Inevitable/incomplete → misoprostol or MVA")], ["No", F.s("Scan: viable / missed / empty (ectopic?)")]])])}` },
+{ id: "pearls", title: "Pearls", html: `${tbl(["Mistake", "Why harmful", "Prevention"], [["Missing ectopic with empty uterus", "Rupture", "hCG and scan"], ["No hCG follow-up after mole", "Missed GTN", "Register and recall"]])}` },
+{ id: "qbank", title: "Question bank", html: `${qa("Intern/MO", "Misoprostol dose for incomplete miscarriage at 9 weeks?", "600 µg oral or 400 µg sublingual once.")}` },
+{ id: "refs", title: "References", html: `<ol><li id="ref-1">World Health Organization. Medical management of abortion. Geneva: WHO; 2018. <a href="https://www.who.int/publications/i/item/9789241550406" target="_blank" rel="noopener">who.int</a></li><li id="ref-2">Coomarasamy A, Devall AJ, Cheed V, et al. A randomized trial of progesterone in women with bleeding in early pregnancy. N Engl J Med. 2019;380:1815-1824. <a href="https://doi.org/10.1056/NEJMoa1813730" target="_blank" rel="noopener">doi</a></li><li id="ref-3">Ministry of Health, Bhutan. Standard Treatment Guidelines 2024, sections 11.2 and 11.4.</li></ol>` },
+{ id: "qc", title: "Quality check", html: `${tbl(["Check", "Result", "Note"], [["DOI", "<span class='pass'>Verified</span>", "Crossref"], ["Mifepristone NEML", "<span class='flag'>Not listed</span>", "Misoprostol-only regimen given"]], "qc")}` }
+]
+});
