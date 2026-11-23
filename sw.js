@@ -3,7 +3,7 @@
    - App files (css/js/icons, versioned with ?v=): cache first.
    - Fonts and Wikimedia images: served from cache, refreshed in the background.
    Change VERSION to drop old caches. */
-const VERSION = "cdg-20261123q";
+const VERSION = "cdg-20261123r";
 const CORE = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
 
 self.addEventListener("install", e => {

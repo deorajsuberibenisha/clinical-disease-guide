@@ -268,7 +268,12 @@ const IMGS = {
   "images/ards-xray.jpg": ["b/b1/ARDS_X-Ray.jpg",804],
   "images/down-boy.jpg": ["0/03/Boy_with_Down_Syndrome.JPG",1804],
   "images/cleft-lip-child.jpg": ["3/3a/Cleft_lip_child.jpg",2080],
-  "images/pda-diagram.svg": ["4/46/Patent_ductus_arteriosus.svg",454,"svg"]
+  "images/pda-diagram.svg": ["4/46/Patent_ductus_arteriosus.svg",454,"svg"],
+  "images/trousseau.jpg": ["1/13/Trousseau's_Sign_of_Latent_Tetany.jpg",3201],
+  "images/beriberi-dry.jpg": ["8/88/Late_stage_of_paralysis_with_atrophy_in_dry_beriberi.jpg",1381],
+  "images/cp-child.png": ["1/19/Child_with_Cerebral_Palsy.png",3508],
+  "images/blood-bag.jpg": ["d/d0/Blood_bag_2020.jpg",4248],
+  "images/copper-iud.jpg": ["6/69/Copper_IUD.jpg",1905]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
