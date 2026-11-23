@@ -306,7 +306,13 @@ const IMGS = {
   "images/pyoderma-gangrenosum.jpg": ["f/f1/Pyoderma_gangrenosum_01.jpg",880],
   "images/cd-serpiginous-ulcer.jpg": ["c/c6/CD_serpiginous_ulcer.jpg",437],
   "images/cd-granuloma.jpg": ["3/31/Histopathology_of_granuloma_of_colonic_mucosa.jpg",1465],
-  "images/itb-ileum.jpg": ["c/cf/Tuberculosis_of_ileum.jpg",641]
+  "images/itb-ileum.jpg": ["c/cf/Tuberculosis_of_ileum.jpg",641],
+  "images/kussmaul-breathing.svg": ["c/c6/Kussmaul_breath_no_lang.svg",371,"svg"],
+  "images/urine-ketone-strip.jpg": ["d/d7/Glucose_Ketones_in_urine.JPG",1232],
+  "images/crypto-india-ink.jpg": ["6/6f/Cryptococcus_neoformans_using_a_light_India_ink_staining_preparation_PHIL_3771_lores.jpg",2855],
+  "images/pcp-cxr.jpg": ["9/9f/X-ray_of_ground_glass_opacities_of_pneumocystis_pneumonia.jpg",1013],
+  "images/pf-gametocyte.jpg": ["d/d4/P._falciparum_thin_smear_gametocyte.jpg",1360],
+  "images/anopheles-feeding.jpg": ["a/ae/Anopheles_albimanus_mosquito.jpg",2466]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };

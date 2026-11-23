@@ -109,7 +109,7 @@
       else reg = "<b>TLD (TDF 300/3TC 300/DTG 50 mg) one tablet once daily</b>.";
       if (w >= 25 && rif) dtgExtra = " With rifampicin: add DTG 50 mg 12 hours later (twice-daily DTG) until 2 weeks after rifampicin stops.";
       const ctx = w < 5 ? "co-trimoxazole 2.5 mL syrup (100/20 mg) once daily" : w < 15 ? "co-trimoxazole 5 mL syrup (200/40 mg) once daily" : w < 30 ? "co-trimoxazole 1 single-strength tablet (sulfamethoxazole 400/trimethoprim 80 mg) once daily" : "co-trimoxazole 960 mg (1 double-strength or 2 single-strength tablets) once daily";
-      out.innerHTML = `<p style="margin:0">${reg}${dtgExtra}</p><p style="margin:6px 0 0"><b>Prophylaxis:</b> ${ctx} if indicated (adults CD4 under 200 or WHO stage 3–4; all HIV-exposed and infected infants per guideline); TB preventive therapy once active TB is excluded.</p><p class="warn" style="margin:8px 0 0">Start ART as soon as possible (same day if ready), except delay 4–6 weeks in cryptococcal and at least 4 weeks in TB meningitis. Separate DTG from iron, calcium and antacids.</p>`;
+      out.innerHTML = `<p style="margin:0">${reg}${dtgExtra}</p><p style="margin:6px 0 0"><b>Prophylaxis:</b> ${ctx} if indicated (Bhutan 2024: adults and adolescents with CD4 under 350 or WHO stage 3–4, and everyone with active TB; HIV-exposed and infected infants per the paediatric chapter); TB preventive therapy once active TB is excluded.</p><p class="warn" style="margin:8px 0 0">Start ART as soon as possible (same day if ready), except delay 4–6 weeks in cryptococcal and at least 4 weeks in TB meningitis. Separate DTG from iron, calcium and antacids.</p>`;
     });
   },
 
