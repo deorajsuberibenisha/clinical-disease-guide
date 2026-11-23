@@ -224,7 +224,15 @@ const IMGS = {
   "images/tonsillitis.jpg": ["c/cf/Tonsillitis_Img.jpeg",2288],
   "images/aom-drum.jpg": ["3/36/Otitis_media_entdifferenziert1.jpg",1209],
   "images/otitis-externa.jpg": ["9/94/OtitisExterna10.JPG",2679],
-  "images/perforated-drum.jpg": ["b/bb/Otite_moyenne_perfor%C3%A9e.jpg",3024]
+  "images/perforated-drum.jpg": ["b/bb/Otite_moyenne_perfor%C3%A9e.jpg",3024],
+  "images/conjunctivitis-swollen.jpg": ["9/90/Swollen_eye_with_conjunctivitis.jpg",1407],
+  "images/aacg-eye.jpg": ["0/07/Acute_angle_closure_glaucoma.JPG",2853],
+  "images/gout-tophi-ear.jpg": ["3/3d/Ear_of_a_man_with_numerous_gouty_tophi_Wellcome_L0062313.jpg",4244],
+  "images/oa-knee-xr.jpg": ["b/b5/Osteoarthritis_on_X-ray.jpg",2133],
+  "images/ra-hands.jpg": ["7/70/Rheumatoid_Arthritis.JPG",4320],
+  "images/renal-calculi-ct.jpg": ["8/8c/Non-contrast_CT_of_multiple_bilateral_renal_calculi.jpg",1085],
+  "images/oral-candidiasis.jpg": ["2/26/CandidiasisFromCDCinJPEG03-18-06.JPG",1763],
+  "images/syphilis-chancre-tongue.jpg": ["a/ab/Primary_stage_syphilis_sore_%28chancre%29_on_the_surface_of_a_tongue-CDC.jpg",960]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
