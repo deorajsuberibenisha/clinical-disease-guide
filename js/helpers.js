@@ -278,7 +278,10 @@ const IMGS = {
   "images/nof-fracture.png": ["8/88/Neck_of_Femur_fracture_Right_side_in_a_80_years_old_female_patient.png",534],
   "images/fibroid-diagram.png": ["2/2d/Subserosal_uterine_fibroid.png",500],
   "images/dermoid-ct.png": ["c/c2/DermoidCyst(CT).png",937],
-  "images/clubfoot.jpg": ["5/51/813_Clubfoot.jpg",529]
+  "images/clubfoot.jpg": ["5/51/813_Clubfoot.jpg",529],
+  "images/fasciotomy-leg.jpg": ["d/da/Fasciotomy_leg.jpg",1768],
+  "images/rop-zones.jpg": ["0/0e/Retinopathy_of_Prematurity_Zones.jpg",1909],
+  "images/potts-wellcome.jpg": ["3/3c/Pott's_disease_in_a_mummy_of_a_priest_of_Ammon,_21st_Dynasty_Wellcome_M0019338.jpg",2556]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
