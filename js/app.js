@@ -20,6 +20,8 @@
     });
   });
   (window.FORMULARY || []).forEach(d => INDEX.push({ kind: "Formulary", title: d.n.charAt(0) + d.n.slice(1).toLowerCase(), sub: d.g, text: d.n + " " + d.g + " " + (d.f25 || []).map(x => x.i).join(" "), href: `#/drug/${encodeURIComponent(d.k)}`, w: 1.5 }));
+  Object.entries(window.FDB || {}).forEach(([id, d]) => { const br = d.brands || {}, names = [...(Array.isArray(br.IN) ? br.IN : []), ...(Array.isArray(br.BD) ? br.BD : [])].map(x => x[0]);
+    INDEX.push({ kind: "Drug", title: d.inn, sub: d.cls + (names.length ? " · " + names.join(", ") : ""), text: [d.inn, d.cls, d.atc, ...names].join(" "), href: `#/fdb/${id}`, w: 4 }); });
   Object.entries(GUIDE.drugs).forEach(([id, d]) => INDEX.push({ kind: "Drug", title: d.name, sub: d.cls, text: strip(Object.values(d).join(" ")), href: `drug:${id}`, w: 2 }));
 
   const qEl = $("#q"), resEl = $("#results");
@@ -172,6 +174,7 @@
 
   const short = s => s[1].split(" · ")[0];
   const QUICK = [["#/drugs", "drugs", 355, "Drug library", () => (window.FORMULARY || []).length + " medicines · Bhutan levels"],
+    ["#/fdb", "drugs", 32, "Drug monographs A–Z", () => (window.FDB_INDEX ? window.FDB_INDEX.total.toLocaleString() : "0") + " drugs worldwide · " + Object.keys(window.FDB || {}).length + " written"],
     ["#/calcs", "calc", 150, "Calculators", () => calcIndex().length + " scores and dose tools"],
     ["#/az", "guide", 215, "Diseases A–Z", () => groupsFor(PAGES).length + " diseases · " + PAGES.length + " pages"],
     ["#/spec/emerg", "ambul", 8, "Emergency", () => "Resuscitation and acute care"]];
@@ -464,6 +467,209 @@
       </article></div>`;
   }
 
+  /* ---------- Drug monograph database (A–Z, worldwide master list; monographs per Build Prompt v2) ---------- */
+  const FDB = window.FDB || {}, FIDX = window.FDB_INDEX || { letters: {}, total: 0 };
+  const TAGS = { "CDC": "who", "FDA": "fda", "WHO-EML": "who", "WHO-GL": "who", "NLM": "nlm", "BT-STG": "bt", "BT-NEML": "bt", "NEP": "nep", "UNVERIFIED-KNOWLEDGE": "unv" };
+  const tagged = s => esc(s).replace(/\[([A-Z-]+)\]/g, (m, t) => TAGS[t] ? `<span class="ftag ft-${TAGS[t]}">${t === "UNVERIFIED-KNOWLEDGE" ? "UNVERIFIED" : t}</span>` : m)
+    .replace(/⚠ DISCREPANCY/g, `<mark class="fdisc">⚠ DISCREPANCY</mark>`);
+  const fdbKey = n => Object.keys(FDB).find(k => k === n || (FDB[k].inn || "").toLowerCase() === n);
+  let fdbLetter = "A", fdbQ = "";
+  function fdbIndex() {
+    document.title = "Drug monograph database · Clinical Disease Guide";
+    const letters = Object.keys(FIDX.letters).filter(l => l !== "#").sort();
+    const doneAll = Object.keys(FDB).length, q = fdbQ.toLowerCase().trim();
+    const rows = q ? Object.values(FIDX.letters).flat().filter(r => (r[0] + " " + (r[3] || "") + " " + r[1]).toLowerCase().includes(q)) : (FIDX.letters[fdbLetter] || []);
+    view.innerHTML = `<div class="wrap lib fdb">
+      <div class="crumb"><a href="#/">Home</a> › Drug monograph database</div>
+      <div class="hero lib-hero"><h1>Drug monograph database</h1>
+        <p>Worldwide master list A–Z: <b>${FIDX.total.toLocaleString()}</b> single-ingredient medicines from the WHO ATC classification (mapped by the US National Library of Medicine). Monographs follow the Build Prompt v2 — FDA label first, then WHO, NLM, with Bhutan STG/NEML as comparator. <b>${doneAll}</b> written so far (test set).</p>
+        <div class="lib-tools"><input id="fdbQ" type="search" placeholder="Search any drug, US name or ATC code…" value="${esc(fdbQ)}" aria-label="Search the drug database"></div>
+        <div class="fdb-az" role="tablist">${letters.map(l => { const n = (FIDX.letters[l] || []).filter(r => fdbKey(r[0])).length;
+          return `<button type="button" data-l="${l}" aria-pressed="${!q && l === fdbLetter}">${l}${n ? `<i>${n}</i>` : ""}</button>`; }).join("")}</div></div>
+      <p class="lib-count">${q ? `${rows.length} match${rows.length === 1 ? "" : "es"}` : `Block ${fdbLetter}: ${rows.length} medicines · ${rows.filter(r => fdbKey(r[0])).length} monographs written`}</p>
+      <div class="fdb-list">${rows.slice(0, 600).map(r => { const k = fdbKey(r[0]);
+        return k ? `<a class="fdb-row done" href="#/fdb/${k}"><b>${esc(title(r[0]))}</b><small>${esc(r[1])}${r[3] ? " · US: " + esc(r[3]) : ""}</small><span class="chip ok">Monograph ✓</span></a>`
+          : `<div class="fdb-row"><b>${esc(title(r[0]))}</b><small>${esc(r[1])}${r[3] ? " · US: " + esc(r[3]) : ""}</small><span class="chip">Pending</span></div>`; }).join("") || `<div class="note">No drug matches “${esc(fdbQ)}”.</div>`}</div>
+      <p class="foot">Master list: WHO Collaborating Centre ATC classification via NLM RxClass (RxNorm ingredients), built ${esc(FIDX.built || "")}. Combination products are added as separate entries later.</p></div>`;
+    const qi = $("#fdbQ"); qi.addEventListener("input", () => { fdbQ = qi.value; const p = qi.selectionStart; fdbIndex(); const n = $("#fdbQ"); n.focus(); n.setSelectionRange(p, p); });
+    $$(".fdb-az button").forEach(b => b.onclick = () => { fdbLetter = b.dataset.l; fdbQ = ""; fdbIndex(); });
+  }
+  const { fnum, compute: fdbCompute, volume: fdbVolume, infusion: fdbInfusion } = window.FDBCalc;   // engine: js/fdb-calc.js (tested by _work/tools/fdb-calc-test.js)
+  /* ----- patient bar: one entry doses every drug in the app (stored on this device only) ----- */
+  const PT_KEY = "cdg-patient";
+  // numeric fields are coerced on load, so a stored string ("8") can never be concatenated into an age or weight ("8"*12+"0" = "960")
+  const PT_NUM = ["ay", "am", "wt", "ht", "cr", "crclM"];
+  const ptGet = () => { try { const p = JSON.parse(localStorage.getItem(PT_KEY) || "null"); if (!p) return null;
+    PT_NUM.forEach(k => { if (k in p) { const n = parseFloat(p[k]); if (isFinite(n)) p[k] = n; else delete p[k]; } }); return p; } catch (e) { return null; } };
+  const ptSet = p => { try { p ? localStorage.setItem(PT_KEY, JSON.stringify(p)) : localStorage.removeItem(PT_KEY); } catch (e) {} ptLabel(); };
+  const ptAgeM = p => p && p.ay != null ? p.ay * 12 + (p.am || 0) : null;
+  // Effective patient: adds the kidney value used for dosing (measured CrCl if entered, else the creatinine estimate).
+  function ptFull(p) {
+    if (!p) return null;
+    const q = { ...p, ageM: ptAgeM(p) }, k = window.FDBCalc.kidney(q);
+    q.kid = k;
+    if (p.crclM != null) { q.crcl = p.crclM; q.crclSrc = "measured"; }
+    else if (k && !k.err) { q.crcl = Math.round(k.value * 10) / 10; q.crclSrc = k.method; }
+    else q.crcl = null;
+    return q;
+  }
+  const ptText = p => { if (!p || p.wt == null) return ""; const m = ptAgeM(p); const age = m == null ? "" : m < 24 ? `${m} mo` : `${Math.floor(m / 12)} y`; const f = ptFull(p); return [age, p.wt + " kg", f && f.crcl != null ? "CrCl " + fnum(f.crcl) : ""].filter(Boolean).join(" · "); };
+  function ptLabel() { const l = document.getElementById("ptLbl"), b = document.getElementById("ptBtn"); if (!l) return; const t = ptText(ptGet()); l.textContent = t || "Patient"; b.classList.toggle("on", !!t); }
+  // Expected weight for age (APLS formulae) — used only to warn about a possible tenfold or unit error.
+  const expWt = m => m == null ? null : m < 12 ? 3.5 + 0.5 * m : m < 72 ? 2 * (m / 12) + 8 : m < 156 ? 3 * (m / 12) + 7 : null;
+  function ptCheck(p) { const m = ptAgeM(p), e = expWt(m); if (!e || !p.wt) return ""; const r = p.wt / e; return r > 2.2 || r < 0.45 ? `Weight ${p.wt} kg is unusual for age ${m < 24 ? m + " months" : Math.floor(m / 12) + " years"} (expected about ${fnum(e)} kg). Check for a decimal or unit error.` : ""; }
+  function ptPanel() {
+    let w = document.getElementById("ptWrap");
+    if (!w) {
+      w = document.createElement("div"); w.className = "panel-wrap"; w.id = "ptWrap"; w.hidden = true;
+      const fld = (k, unit, ph, label, mode = "decimal") => `<label class="pfld"><span class="pfld-l">${label}</span><span class="pfld-box"><input type="number" inputmode="${mode}" min="0" step="any" data-p="${k}" placeholder="${ph}" aria-label="${label} (${unit})"><i>${unit}</i></span></label>`;
+      w.innerHTML = `<div class="panel-backdrop" data-close-pt></div>
+      <section class="panel pt2" role="dialog" aria-modal="true" aria-labelledby="ptTitle">
+        <header class="pt2-head"><div><h2 id="ptTitle">Patient</h2><p>Every drug page doses for this patient. Saved on this device only.</p></div><button type="button" class="x" data-close-pt aria-label="Close">×</button></header>
+        <div class="pt2-sum" aria-live="polite"></div>
+        <div class="pt2-body">
+          <fieldset class="pgrp"><legend>Age</legend><div class="prow">${fld("ay", "years", "0", "Years", "numeric")}${fld("am", "months", "0", "Months", "numeric")}</div></fieldset>
+          <fieldset class="pgrp"><legend>Body</legend><div class="prow">${fld("wt", "kg", "e.g. 18.5", "Weight")}${fld("ht", "cm", "optional", "Height")}</div></fieldset>
+          <fieldset class="pgrp"><legend>Sex</legend><div class="pseg" role="radiogroup" aria-label="Sex"><button type="button" role="radio" data-sex="m">Male</button><button type="button" role="radio" data-sex="f">Female</button></div></fieldset>
+          <fieldset class="pgrp"><legend>Kidney function <small>optional</small></legend>
+            <div class="prow prow-cr">${fld("cr", "", "e.g. 90", "Serum creatinine")}<div class="pseg pseg-u" role="radiogroup" aria-label="Creatinine unit"><button type="button" role="radio" data-cru="umol">µmol/L</button><button type="button" role="radio" data-cru="mg">mg/dL</button></div></div>
+            <p class="pkid" aria-live="polite"></p>
+            <div class="prow">${fld("crclM", "mL/min", "optional", "Or measured CrCl")}</div>
+          </fieldset>
+          <p class="pt-warn" hidden></p>
+        </div>
+        <footer class="pt2-foot"><button type="button" class="linkbtn" data-pt-clear>Clear patient</button><button type="button" class="btn primary" data-close-pt>Done</button></footer>
+      </section>`;
+      document.body.appendChild(w);
+      const state = () => { const o = {}; w.querySelectorAll("input[data-p]").forEach(e => { const v = e.value.trim(); if (v !== "") o[e.dataset.p] = parseFloat(v); });
+        const sx = w.querySelector("[data-sex][aria-checked='true']"); if (sx) o.sex = sx.dataset.sex;
+        o.cru = (w.querySelector("[data-cru][aria-checked='true']") || {}).dataset?.cru || "umol"; return Object.keys(o).some(k => k !== "cru") ? o : null; };
+      const paint = p => {
+        const f = ptFull(p || {}), sum = w.querySelector(".pt2-sum"), m = f ? f.ageM : null;
+        const chips = [];
+        if (m != null) chips.push(["Age", m < 24 ? `${m} months` : `${Math.floor(m / 12)} y${m % 12 ? " " + (m % 12) + " mo" : ""}`]);
+        if (p && p.wt != null) chips.push(["Weight", fnum(p.wt) + " kg"]);
+        if (p && p.ht != null) chips.push(["Height", fnum(p.ht) + " cm"]);
+        const B = window.FDBCalc.bsa(f || {}); if (B) chips.push(["BSA", fnum(B) + " m²"]);
+        const I = window.FDBCalc.ibw(f || {}); if (I) chips.push(["Ideal wt", fnum(I) + " kg"]);
+        if (f && f.crcl != null) chips.push([f.crclSrc === "measured" ? "CrCl (measured)" : "Kidney", fnum(f.crcl) + " " + (f.crclSrc === "measured" ? "mL/min" : f.kid.unit)]);
+        sum.innerHTML = chips.length ? chips.map(([a, b]) => `<span><small>${a}</small><b>${esc(b)}</b></span>`).join("") : `<span class="empty">Enter age and weight to start.</span>`;
+        const kid = w.querySelector(".pkid"), k = f && f.kid;
+        kid.className = "pkid" + (k && k.err ? " bad" : "");
+        kid.textContent = !k ? "Enter creatinine to estimate kidney function automatically." : k.err ? k.err : `Estimated ${fnum(k.value)} ${k.unit} (${k.method}).${p && p.crclM != null ? " Measured CrCl entered below is used instead." : ""}`;
+        const wn = w.querySelector(".pt-warn"), t = p && p.wt ? ptCheck(p) : ""; wn.hidden = !t; wn.textContent = t;
+      };
+      const upd = () => { const p = state(); ptSet(p); paint(p); if (location.hash.startsWith("#/fdb/")) route(); };
+      w.querySelectorAll("input[data-p]").forEach(e => e.addEventListener("input", upd));
+      w.addEventListener("click", e => {
+        const s = e.target.closest("[data-sex]"); if (s) { w.querySelectorAll("[data-sex]").forEach(x => x.setAttribute("aria-checked", x === s && x.getAttribute("aria-checked") !== "true")); upd(); }
+        const u = e.target.closest("[data-cru]"); if (u) { w.querySelectorAll("[data-cru]").forEach(x => x.setAttribute("aria-checked", x === u)); upd(); }
+        if (e.target.closest("[data-close-pt]")) { w.hidden = true; $("#ptBtn").setAttribute("aria-expanded", "false"); }
+        if (e.target.closest("[data-pt-clear]")) { w.querySelectorAll("input[data-p]").forEach(x => x.value = ""); w.querySelectorAll("[data-sex]").forEach(x => x.setAttribute("aria-checked", "false")); upd(); }
+      });
+      w.addEventListener("keydown", e => { if (e.key === "Escape") { w.hidden = true; $("#ptBtn").setAttribute("aria-expanded", "false"); } });
+      w._paint = paint;
+    }
+    const p = ptGet() || {};
+    w.querySelectorAll("input[data-p]").forEach(e => e.value = p[e.dataset.p] ?? "");
+    w.querySelectorAll("[data-sex]").forEach(x => x.setAttribute("aria-checked", p.sex === x.dataset.sex));
+    w.querySelectorAll("[data-cru]").forEach(x => x.setAttribute("aria-checked", (p.cru || "umol") === x.dataset.cru));
+    w._paint(ptGet());
+    w.hidden = false; $("#ptBtn").setAttribute("aria-expanded", "true"); setTimeout(() => w.querySelector(p.wt == null ? '[data-p="ay"]' : '[data-p="wt"]').focus(), 30);
+  }
+  { const b = document.getElementById("ptBtn"); if (b) b.addEventListener("click", ptPanel); ptLabel(); }
+
+  /* ----- clean text for reading: the database keeps every source tag; the page shows plain sentences ----- */
+  const clean = s => esc(String(s || ""))
+    .replace(/\s*\[UNVERIFIED-KNOWLEDGE\]/g, ` <span class="unv" title="Not yet checked against a primary source">(to be verified)</span>`)
+    .replace(/\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|BT-[A-Z]+)\](\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|BT-[A-Z]+)\])*/g, "")
+    .replace(/Not established in primary source\.?/g, "Not established.")
+    .replace(/⚠ DISCREPANCY:?\s*/g, `<span class="diff">Note:</span> `);
+  // interval in words: 8 → "every 8 h", 24 → "once daily", 168 → "once weekly", 672 → "every 4 weeks"
+  const every = h => !h ? "" : h === 24 ? "once daily" : h === 56 ? "three times a week" : h === 84 ? "twice a week" : h === 168 ? "once weekly" : h % 168 === 0 ? `every ${h / 168} weeks` : h % 24 === 0 ? `every ${h / 24} days` : `every ${h} h`;
+  const yourDose = (d, ids, p) => {
+    if (!ids || !ids.length) return "";
+    if (!p || p.wt == null) return `<div class="yd none"><button type="button" class="linkbtn" data-open-pt>Set patient</button> to see the dose for your patient.</div>`;
+    const rows = ids.map(id => { const b = d.calc.find(x => x.indication_id === id); if (!b) return ""; const r = fdbCompute(b, { ageM: p.ageM, wt: p.wt, ht: p.ht, sex: p.sex, crcl: p.crcl });
+      const lab = ids.length > 1 ? `<span class="yd-lab">${esc((b.label || "").replace(/^.*?:\s*/, ""))}</span>` : "";
+      if (r.err) return `<div class="yd-row muted">${lab}${esc(r.err)}</div>`;
+      if (r.band) return `<div class="yd-row">${lab}<b>${esc(r.band)}</b></div>`;
+      // a dose range shows the volume for both ends ("1.5 mL … to 3 mL …"), never just the low end
+      const vols = (b.formulations || []).map(f => { const a = fdbVolume(b, f, r.single, r.single2); if (!a || r.single2 == null) return a; const z = fdbVolume(b, f, r.single2, r.single2); return z ? `${a} to ${z}` : a; }).filter(Boolean);
+      const I = b.infusion || {}, X = fdbInfusion(b, p, r.single); let inf = "";
+      if (X) inf = ` · over ${X.duration} h${X.diluent != null ? ` in ${fnum(X.diluent)} mL` : X.minVol ? `, diluted to ≤${I.conc_max} mg/mL (≥${fnum(X.minVol)} mL)` : ""}${X.rate ? ` → ${fnum(X.rate)} mL/h` : ""}`;
+      const many = r.single2 ? `${fnum(r.single)}–${fnum(r.single2)}` : fnum(r.single);
+      return `<div class="yd-row">${lab}<b>${many} ${esc(r.unit || "mg")}</b>${r.interval ? " " + every(r.interval) : ""}${vols.length ? ` <span class="yd-vol">= ${esc(vols.join(" or "))}</span>` : ""}${esc(inf)}${(b.flags || []).includes("HIGH_ALERT") ? ` <span class="ha">High-alert</span>` : ""}
+        ${r.warn.length ? `<div class="yd-warn">${r.warn.map(esc).join("<br>")}</div>` : ""}
+        <details class="yd-how"><summary>How calculated</summary><p>${r.lines.map(esc).join("<br>")}<br>Rounding: ${clean(b.rounding)}</p></details></div>`; }).join("");
+    return `<div class="yd"><div class="yd-head">Your patient · ${esc(ptText(p))}</div>${rows}</div>`;
+  };
+  let fdbTab = null;
+  function fdbPage(id) {
+    const d = FDB[id]; if (!d) return fdbIndex();
+    document.title = d.inn + " · Drug reference";
+    const p = ptFull(ptGet()), m = p ? p.ageM : null, D = d.dose || { adult: [], child: [] };
+    const tab = fdbTab || (m != null && m < 216 ? "child" : "adult");
+    const Br = d.brands || {}, brandList = [...(Array.isArray(Br.IN) ? Br.IN : []), ...(Array.isArray(Br.BD) ? Br.BD : [])]
+      .filter((x, i, a) => a.findIndex(y => y[0].toLowerCase() === x[0].toLowerCase()) === i);   // one pill per brand name (same brand sold in India and Bangladesh)
+    const brands = brandList.map(([b, c, pr]) => `<span class="pill" title="${esc([c && c !== "—" ? c : "", pr || ""].filter(Boolean).join(" · "))}">${esc(b)}${c && c !== "—" ? `<small>${esc(c)}</small>` : ""}</span>`).join("");
+    const used = (d.linked || []).map(([c, , pg]) => pg && PAGES.some(x => x.id === pg) ? `<a class="pill link" href="#/d/${pg}">${esc(c)}</a>` : `<span class="pill">${esc(c)}</span>`).join("");
+    const highAlert = /high-alert|\bNTI\b/i.test(d.risk || "");
+    const SRC_KIND = { "CDC": "CDC guideline", "FDA": "FDA label", "WHO-EML": "WHO", "WHO-GL": "WHO", "NLM": "NLM", "BT-STG": "Bhutan guideline", "BT-NEML": "Bhutan NEML" };
+    const host = u => { try { return new URL(u).hostname.replace(/^www./, ""); } catch (e) { return u; } };
+    const refs = d.sources.map(([t, s, u]) => { const [title, ...rest] = String(s).split(" — "); return { kind: SRC_KIND[t] || t, title, meta: rest.join(" — "), u }; });
+    if ((Br.src || []).length) refs.push({ kind: "Brand listings", title: "Common trade names (India, Bangladesh)", meta: "Pharmacy and drug-index listings — confirm on the pack", links: [...new Set(Br.src.map(host))].map(h => [h, Br.src.find(u => host(u) === h)]) });
+    const doseRows = rows => rows.map(r => `<div class="dr"><div class="dr-ind">${esc(r.ind)}</div><div class="dr-txt">${clean(r.text)}</div>${r.bt ? `<div class="dr-bt"><span>Bhutan</span>${clean(r.bt)}</div>` : ""}${yourDose(d, r.calc, p)}</div>`).join("");
+    const li = a => `<ul>${(a || []).map(x => `<li>${clean(x)}</li>`).join("")}</ul>`;
+    const kv = rows => `<dl class="kv">${rows.filter(r => r[1]).map(([a, b]) => `<dt>${esc(a)}</dt><dd>${clean(b)}</dd>`).join("")}</dl>`;
+    const A = d.adj || {}, T = d.tox || {};
+    const fold = (k, h, body, open) => String(body).replace(/<[^>]+>/g, "").trim() ? `<details class="fold" id="f-${k}"${open ? " open" : ""}><summary><span>${h}</span></summary><div class="fold-b">${body}</div></details>` : "";   // empty sections are hidden
+    const warn = ptCheck(p || {});
+    view.innerHTML = `<div class="wrap dref">
+      <div class="crumb"><a href="#/">Home</a> › <a href="#/fdb">Drugs A–Z</a> › ${esc(d.inn)}</div>
+      <header class="dh">
+        <div class="dh-eyebrow"><span>Drug reference</span>${String(d.atc || "").split(/[s;(]/)[0] ? `<span>ATC ${esc(String(d.atc).split(/[s;(]/)[0])}</span>` : ""}${highAlert ? `<span class="ha">High-alert medicine</span>` : ""}</div>
+        <h1>${esc(d.inn)}</h1>
+        ${D.tagline ? `<p class="dh-tag">${esc(D.tagline)}</p>` : ""}
+        <details class="dh-more"><summary><span>Class, brands &amp; uses</span><small>${esc([brandList.slice(0, 3).map(x => x[0]).join(", "), (d.linked || []).length ? (d.linked.length + " condition" + (d.linked.length === 1 ? "" : "s")) : ""].filter(Boolean).join(" · "))}</small></summary>
+        <dl class="dh-meta">
+          <div><dt>Class</dt><dd>${esc(d.cls)}</dd></div>
+          ${brands ? `<div><dt>Brands</dt><dd class="pills">${brands}</dd></div>` : ""}
+          ${used ? `<div><dt>Used in</dt><dd class="pills">${used}</dd></div>` : ""}
+        </dl></details>
+      </header>
+      ${D.boxed ? `<details class="warnfold boxed"><summary><b>Boxed warning</b><span>${esc(D.boxedTitle || "Read before prescribing")}</span></summary><p>${clean(D.boxed)}</p></details>` : ""}
+      <section class="dose-card" aria-label="Dosing">
+        <div class="dose-top"><h2>Dose</h2>
+          <div class="seg dose-seg" role="tablist"><button type="button" role="tab" data-tab="adult" aria-pressed="${tab === "adult"}">Adult</button><button type="button" role="tab" data-tab="child" aria-pressed="${tab === "child"}">Child</button></div></div>
+        ${warn ? `<p class="pt-warn">${esc(warn)}</p>` : ""}
+        <div class="dose-body">${doseRows(tab === "child" ? D.child : D.adult) || `<p class="muted">No ${tab} dose in the primary source.</p>`}</div>
+        ${tab === "child" && d.paed && d.paed.transition ? `<p class="dose-foot">Adult dose from: ${clean(d.paed.transition)}</p>` : ""}
+      </section>
+      ${fold("adj", "Dose adjustments — kidney, liver, pregnancy", kv([["Kidney", A.renal], ["Liver", A.hepatic], ["Pregnancy & breastfeeding", A.preg], ["Elderly & other", A.other], ["Metabolic / diabetes", A.metabolic], ["Immunocompromised", A.immuno], ["ICU / sedation", A.icu]].filter(r => !/^Not applicable/.test(r[1] || ""))))}
+      ${D.caution ? `<details class="warnfold caution"><summary><b>Caution</b><span>${esc(D.cautionTitle || "Read before giving")}</span></summary><p>${clean(D.caution)}</p></details>` : ""}
+      ${fold("forms", "Formulations & administration", li(d.forms))}
+      ${fold("moa", "How it works", `<p>${clean(d.moa)}</p>`)}
+      ${fold("pk", "Pharmacokinetics & interactions", li(d.pk))}
+      ${fold("ind", "Indications", `<h3>Adults</h3>${li(d.ind.adult)}<h3>Children</h3>${li(d.ind.paed)}`)}
+      ${fold("contra", "Contraindications & warnings", li(d.contra.filter(x => !/^Boxed warning: none/.test(x)).map(x => x.replace(/^BOXED WARNING:\s*/, "Boxed warning: "))))}
+      ${fold("ae", "Adverse effects", `<h3>Common</h3>${li(d.ae.common)}<h3>Serious</h3>${li(d.ae.serious)}`)}
+      ${fold("mon", "Monitoring", li(d.monitor))}
+      ${fold("tox", "Overdose & toxicity", kv([["In humans", T.human], ["Animal data (LD50)", T.animal], ["Management", T.manage]]))}
+      ${fold("local", "Availability in Bhutan", kv([["NEML 2025", d.local.neml], ["Strengths", d.local.strengths], ["Bhutan STG", d.local.stg]]))}
+      <details class="fold refs2" id="f-refs"><summary><span>References (${refs.length})</span></summary><div class="fold-b">
+        <ol>${refs.map(r => `<li><span class="rk">${esc(r.kind)}</span><div class="rt">${r.u ? `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.title)}</a>` : esc(r.title)}${r.meta ? `<small>${esc(r.meta)}</small>` : ""}${r.links ? `<small>${r.links.map(([h, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(h)}</a>`).join(" · ")}</small>` : ""}</div></li>`).join("")}</ol>
+      </div></details>
+      <p class="dref-note">For health professionals. Confirm every dose against the product label and your local protocol.</p>
+      <section class="dref-ed">
+        <details class="audit"><summary>Editor view — source check and calculator data</summary>
+          <h3>Old entry vs primary source</h3>${tbl(["Field", "Old entry", "Primary source", "Verdict", "Action"], d.verify.map(r => [esc(r[0]), esc(r[1]), esc(r[2]), esc(r[3]), esc(r[4])]))}
+          <h3>Calculator blocks (JSON)</h3><pre class="fjson">${esc(JSON.stringify(d.calc, null, 2))}</pre></details></section>
+    </div>`;
+    $$(".dose-seg button").forEach(b => b.onclick = () => { fdbTab = b.dataset.tab; fdbPage(id); });
+    $$("[data-open-pt]").forEach(b => b.onclick = ptPanel);
+  }
+
   /* ---------- router ---------- */
   let current = "";
   function route() {
@@ -479,6 +685,7 @@
     else if (a === "drug" && b) { current = ""; drugPage(b); scrollTo(0, 0); }
     else if (a === "spec" && b) { current = ""; spec(b); scrollTo(0, 0); }
     else if (a === "calcs") { current = ""; calcsPage(); scrollTo(0, 0); }
+    else if (a === "fdb") { current = ""; b ? fdbPage(decodeURIComponent(b)) : fdbIndex(); scrollTo(0, 0); }
     else if (a === "az") { current = ""; az(); scrollTo(0, 0); }
     else { current = ""; home(); scrollTo(0, 0); }
   }
