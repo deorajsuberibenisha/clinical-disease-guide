@@ -981,3 +981,127 @@ FDB_M("risperidone", {
     adult: [{ ind: "Schizophrenia / mania", text: "Start 2 mg/day; target 4–8 mg/day (Bhutan STG 2–12 mg/day in 3 doses).", calc: ["adult"], bt: "Bhutan NEML: 2 mg tablet." }],
     child: [{ ind: "Autism irritability (5–17 y)", text: "0.25 mg/day (under 20 kg) or 0.5 mg/day (20 kg+).", calc: ["aut20", "aut20p"] }, { ind: "Schizophrenia / mania (adolescents)", text: "Start 0.5 mg/day." }] }
 });
+
+FDB_M("olanzapine", {
+  inn: "Olanzapine", atc: "N05AH03", cls: "Atypical (second-generation) antipsychotic",
+  linked: [["Psychosis — adults", "[FDA]", "psychosis-adult"], ["Bipolar mania", "[FDA]", "psychosis-adult"], ["Delirium (palliative, specialist)", "2.5–5 mg [BT-STG]", ""]],
+  forms: ["Tablets 2.5, 5, 7.5, 10, 15, 20 mg — not scored [FDA].", "Orally disintegrating tablets; IM injection (separate products) [FDA].", "Bhutan: olanzapine 10 mg tablet [BT-NEML]."],
+  moa: "D2 and 5-HT2A antagonist with antihistamine and anticholinergic actions [UNVERIFIED-KNOWLEDGE].",
+  pk: ["Long half-life allows once-daily dosing; smoking lowers levels (CYP1A2) [UNVERIFIED-KNOWLEDGE]."],
+  ind: { adult: ["Schizophrenia; bipolar I mania or mixed episodes (alone or with lithium/valproate) and maintenance; with fluoxetine for bipolar depression and treatment-resistant depression [FDA]."], paed: ["Schizophrenia and bipolar mania 13–17 years — consider other drugs first (weight gain, dyslipidaemia) [FDA]."] },
+  adult: [["Schizophrenia", "Start 5–10 mg once daily; target 10 mg/day within several days; adjust by 5 mg weekly; max 20 mg/day [FDA] [UNVERIFIED-KNOWLEDGE]."], ["Bipolar mania", "Start 10–15 mg once daily (10 mg with lithium or valproate) [FDA]."], ["With fluoxetine (bipolar depression)", "Olanzapine 5 mg + fluoxetine 20 mg once daily to start [FDA]."]],
+  paed: { tiers: ["Schizophrenia or bipolar mania, 13–17 years: start 2.5–5 mg once daily; target 10 mg/day [FDA]."], transition: "Adult doses from 18 years.", calcNote: "Starting doses; tablets are not scored." },
+  adj: { renal: "No adjustment [UNVERIFIED-KNOWLEDGE].", hepatic: "Caution — monitor liver tests [UNVERIFIED-KNOWLEDGE].", pregnancy: "Neonatal extrapyramidal and withdrawal symptoms after late exposure [UNVERIFIED-KNOWLEDGE].", other: "Lower start (5 mg) in the elderly, debilitated, or those prone to hypotension [UNVERIFIED-KNOWLEDGE]." },
+  tox: { human: "Sedation to coma, tachycardia, agitation, dysarthria, extrapyramidal signs, miosis [UNVERIFIED-KNOWLEDGE].", animal: "Animal LD50: Not established in primary source. [NEP]", manage: "Supportive; airway; ECG [UNVERIFIED-KNOWLEDGE]." },
+  contra: ["None for olanzapine monotherapy [FDA]."],
+  ae: { common: ["Weight gain, sedation, increased appetite, dizziness, dry mouth, constipation [UNVERIFIED-KNOWLEDGE]."], serious: ["Increased mortality in elderly with dementia (boxed) [FDA]", "Hyperglycaemia, dyslipidaemia, weight gain [FDA]", "Neuroleptic malignant syndrome; DRESS; tardive dyskinesia [UNVERIFIED-KNOWLEDGE]"] },
+  monitor: ["Weight, glucose, lipids at baseline and regularly; BP [UNVERIFIED-KNOWLEDGE]."],
+  local: { neml: "On the Bhutan NEML 2025: olanzapine 10 mg tablet [BT-NEML].", strengths: "10 mg.", stg: "Mentioned in Bhutan STG 2024 (olanzapine 2.5–5 mg) [BT-STG]." },
+  calc: [
+    { drug: "olanzapine", indication_id: "adult", label: "Schizophrenia (adult) — 10 mg once daily (start 5–10 mg)", route: "PO", population: { min_age_months: 216, max_age_months: null, min_weight_kg: null, max_weight_kg: null }, basis: "fixed", dose: { value: 5, unit: "mg", per: "dose", value_max: 10 }, interval_h: 24, divided_doses: 1, caps: { max_single: 20, unit: "mg" }, weight_basis: "NEP", formulations: [{ form: "tab (not scored)", strength: 10, unit: "mg/tab", whole: true }], rounding: "Whole tablets", renal: [], flags: ["Bipolar mania: start 10–15 mg"], sources: ["FDA"] },
+    { drug: "olanzapine", indication_id: "adol", label: "Adolescent 13–17 years — start 2.5–5 mg once daily", route: "PO", population: { min_age_months: 156, max_age_months: 216, min_weight_kg: null, max_weight_kg: null }, basis: "fixed", dose: { value: 2.5, unit: "mg", per: "dose", value_max: 5 }, interval_h: 24, divided_doses: 1, caps: { max_single: 10, unit: "mg" }, weight_basis: "NEP", formulations: [{ form: "tab", strength: 2.5, unit: "mg/tab", whole: true }], rounding: "Whole tablets", renal: [], flags: ["Target 10 mg/day"], sources: ["FDA"] }
+  ],
+  sources: [["FDA", "Olanzapine tablets — ANDA202862 (RemedyRepack), label effective 2026-11-17", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f692652-4451-4eef-901d-1e6aadc43847"], ["BT-NEML", "National Essential Medicines List 2025 — Ministry of Health, Bhutan", ""], ["BT-STG", "Standard Treatment Guidelines 2024 — Ministry of Health, Bhutan", ""]],
+  dose: { tagline: "Once-daily atypical antipsychotic — watch weight and glucose.",
+    boxedTitle: "Increased mortality in elderly patients with dementia-related psychosis",
+    boxed: "Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. Analyses of seventeen placebo-controlled trials (modal duration of 10 weeks), largely in patients taking atypical antipsychotic drugs, revealed a risk of death in drug-treated patients of between 1.6 to 1.7 times the risk of death in placebo-treated patients [FDA].",
+    adult: [{ ind: "Schizophrenia", text: "Start 5–10 mg once daily; target 10 mg (max 20 mg).", calc: ["adult"], bt: "Bhutan NEML: 10 mg tablet (not scored)." }, { ind: "Bipolar mania", text: "Start 10–15 mg once daily." }],
+    child: [{ ind: "13–17 years", text: "Start 2.5–5 mg once daily; target 10 mg.", calc: ["adol"] }] }
+});
+
+FDB_M("ipratropium-bromide", {
+  inn: "Ipratropium bromide", atc: "R03BB01", cls: "Short-acting inhaled antimuscarinic bronchodilator",
+  linked: [["COPD — adults", "Bronchospasm in COPD [FDA]", "copd-adult"], ["Asthma — severe exacerbation (with salbutamol)", "[UNVERIFIED-KNOWLEDGE]", "asthma-adult"], ["Asthma — children (severe attack)", "[UNVERIFIED-KNOWLEDGE]", "asthma-child"]],
+  forms: ["Inhalation solution 0.02% (500 mcg in 2.5 mL unit-dose vial) for nebulisation [FDA].", "Metered-dose inhaler 17 mcg/puff (separate product) [UNVERIFIED-KNOWLEDGE].", "Bhutan: ipratropium respiratory solution 0.25 mg/mL (250 mcg/mL), hospitals with an OT [BT-NEML]."],
+  moa: "Blocks muscarinic receptors in airway smooth muscle — bronchodilation [FDA].",
+  pk: ["Minimal systemic absorption [UNVERIFIED-KNOWLEDGE]."],
+  ind: { adult: ["Maintenance treatment of bronchospasm with COPD, chronic bronchitis and emphysema [FDA].", "Not adequately studied as a single agent for acute COPD bronchospasm — faster drugs preferred [FDA]."], paed: ["Safety and effectiveness under 12 years not established [FDA]."] },
+  adult: [["COPD (nebuliser)", "500 mcg three to four times daily, 6–8 h apart [FDA]."], ["Mixing", "May be mixed with albuterol (salbutamol) in the nebuliser if used within 1 h [FDA]."]],
+  paed: { tiers: ["Under 12 years: not established in the US label [FDA]; asthma guidelines add ipratropium to salbutamol in severe attacks [UNVERIFIED-KNOWLEDGE]."], transition: "Adult dose from 12 years.", calcNote: "500 mcg = 2 mL of Bhutan 250 mcg/mL solution." },
+  adj: { renal: "Not established in primary source. [NEP]", hepatic: "Not established in primary source. [NEP]", pregnancy: "Not established in primary source. [NEP]", other: "Use a mouthpiece or tight mask — mist in the eyes can precipitate angle-closure glaucoma [UNVERIFIED-KNOWLEDGE]. Caution with prostatic hyperplasia or bladder-neck obstruction [UNVERIFIED-KNOWLEDGE]." },
+  tox: { human: "Dry mouth, blurred vision [UNVERIFIED-KNOWLEDGE].", animal: "Animal LD50: Not established in primary source. [NEP]", manage: "Supportive [UNVERIFIED-KNOWLEDGE]." },
+  contra: ["Hypersensitivity to ipratropium, atropine or its derivatives [FDA]."],
+  ae: { common: ["Dry mouth, cough, headache, nausea [UNVERIFIED-KNOWLEDGE]."], serious: ["Paradoxical bronchospasm; hypersensitivity [FDA]", "Acute angle-closure glaucoma; urinary retention [UNVERIFIED-KNOWLEDGE]"] },
+  monitor: ["Symptoms, peak flow or spirometry [UNVERIFIED-KNOWLEDGE]."],
+  local: { neml: "On the Bhutan NEML 2025: ipratropium respiratory solution 0.25 mg/mL, hospitals with an OT [BT-NEML].", strengths: "250 mcg/mL.", stg: "Not detailed in Bhutan STG 2024 text [BT-STG]." },
+  calc: [
+    { drug: "ipratropium-bromide", indication_id: "copd", label: "COPD (12 years and older) — 500 mcg nebulised 3–4 times daily", route: "Nebulised", population: { min_age_months: 144, max_age_months: null, min_weight_kg: null, max_weight_kg: null }, basis: "fixed", dose: { value: 500, unit: "mcg", per: "dose" }, interval_h: 6, caps: { max_single: 500, unit: "mcg" }, weight_basis: "NEP", formulations: [{ form: "nebuliser solution", strength: 250, unit: "mcg/mL" }], rounding: "0.5 mL", renal: [], flags: ["6–8 h apart", "Can be mixed with salbutamol"], sources: ["FDA"] }
+  ],
+  sources: [["FDA", "Ipratropium bromide inhalation solution 0.02% — Chartwell (ANDA075562), label effective 2025-12-02", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e3d4faa-cf6e-460b-b1e0-fcc8094505fa"], ["BT-NEML", "National Essential Medicines List 2025 — Ministry of Health, Bhutan", ""], ["BT-STG", "Standard Treatment Guidelines 2024 — Ministry of Health, Bhutan", ""]],
+  dose: { tagline: "Nebulised antimuscarinic bronchodilator for COPD.",
+    adult: [{ ind: "COPD", text: "500 mcg nebulised 3–4 times daily.", calc: ["copd"], bt: "Bhutan NEML: 250 mcg/mL — 500 mcg = 2 mL." }],
+    child: [{ ind: "Under 12 years", text: "Not established in the US label." }] }
+});
+
+FDB_M("zinc-sulfate", {
+  inn: "Zinc sulfate", atc: "A12CB01", cls: "Mineral supplement (zinc)",
+  linked: [["Diarrhoea — children", "Zinc for 10–14 days with ORS [UNVERIFIED-KNOWLEDGE]", "ge-child"], ["Severe acute malnutrition", "[UNVERIFIED-KNOWLEDGE]", "sam-child"]],
+  forms: ["Oral: Bhutan zinc sulphate 20 mg dispersible tablet [BT-NEML].", "Injection 1, 3 and 5 mg/mL zinc (pharmacy bulk, for parenteral nutrition) [FDA]."],
+  moa: "Replaces zinc; shortens diarrhoea and reduces recurrence in deficient children [UNVERIFIED-KNOWLEDGE].",
+  pk: ["Not established in primary source. [NEP]"],
+  ind: { adult: ["Zinc source in parenteral nutrition (injection) [FDA]."], paed: ["Acute diarrhoea in children (oral, Bhutan NEMF/IMNCI) [UNVERIFIED-KNOWLEDGE].", "Parenteral nutrition (injection) [FDA]."] },
+  adult: [["Parenteral nutrition (injection)", "3 mg zinc/day for metabolically stable adults; more with high GI losses [FDA]."]],
+  paed: { tiers: ["Acute diarrhoea (Bhutan NEMF): under 6 months 10 mg daily; 6 months–5 years 20 mg daily, for 10–14 days [UNVERIFIED-KNOWLEDGE].", "WHO 2024 update: 5 mg daily for children up to 10 years (see the diarrhoea page) [UNVERIFIED-KNOWLEDGE].", "Parenteral nutrition: 1 mg/mL product for children under 12 kg; dose by age (label) [FDA]."], transition: "Adults: injection only in this label.", calcNote: "Bhutan NEMF diarrhoea doses; 20 mg dispersible tablet." },
+  adj: { renal: "Parenteral: reduce in renal impairment [UNVERIFIED-KNOWLEDGE].", hepatic: "Not established in primary source. [NEP]", pregnancy: "Not established in primary source. [NEP]", other: "Dissolve the dispersible tablet in breast milk or water [UNVERIFIED-KNOWLEDGE]." },
+  tox: { human: "Nausea, vomiting; chronic excess causes copper deficiency [UNVERIFIED-KNOWLEDGE].", animal: "Animal LD50: Not established in primary source. [NEP]", manage: "Supportive [UNVERIFIED-KNOWLEDGE]." },
+  contra: ["Hypersensitivity to zinc [FDA]."],
+  ae: { common: ["Vomiting soon after the dose [UNVERIFIED-KNOWLEDGE]."], serious: ["Copper deficiency with long high-dose use [UNVERIFIED-KNOWLEDGE]"] },
+  monitor: ["Zinc and copper levels on long-term parenteral nutrition [FDA]."],
+  local: { neml: "On the Bhutan NEML 2025: zinc sulphate 20 mg tablet (NRH to PHC) [BT-NEML].", strengths: "20 mg dispersible tablet.", stg: "Childhood diarrhoea: ORS plus zinc for 10–14 days (see the diarrhoea page) [UNVERIFIED-KNOWLEDGE]." },
+  calc: [
+    { drug: "zinc-sulfate", indication_id: "u6", label: "Diarrhoea, under 6 months — 10 mg daily × 10–14 days", route: "PO", population: { min_age_months: 0, max_age_months: 6, min_weight_kg: null, max_weight_kg: null }, basis: "fixed", dose: { value: 10, unit: "mg", per: "dose" }, interval_h: 24, divided_doses: 1, caps: { max_single: 10, unit: "mg" }, weight_basis: "NEP", formulations: [{ form: "dispersible tab", strength: 20, unit: "mg/tab" }], rounding: "Half tablet", renal: [], flags: ["Dissolve in breast milk or water", "WHO 2024: 5 mg daily (see diarrhoea page)"], sources: ["BT-NEML"] },
+    { drug: "zinc-sulfate", indication_id: "o6", label: "Diarrhoea, 6 months–5 years — 20 mg daily × 10–14 days", route: "PO", population: { min_age_months: 6, max_age_months: 60, min_weight_kg: null, max_weight_kg: null }, basis: "fixed", dose: { value: 20, unit: "mg", per: "dose" }, interval_h: 24, divided_doses: 1, caps: { max_single: 20, unit: "mg" }, weight_basis: "NEP", formulations: [{ form: "dispersible tab", strength: 20, unit: "mg/tab" }], rounding: "Whole tablet", renal: [], flags: ["WHO 2024: 5 mg daily (see diarrhoea page)"], sources: ["BT-NEML"] }
+  ],
+  sources: [["FDA", "Zinc sulfate injection — American Regent (NDA209377), label effective 2020-10-01", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4b528c88-07a0-4dce-84c6-ccd32555bbff"], ["BT-NEML", "National Essential Medicines List 2025 and National Essential Medicines Formulary — Ministry of Health, Bhutan", ""]],
+  dose: { tagline: "Zinc for childhood diarrhoea (with ORS) and for parenteral nutrition.",
+    adult: [{ ind: "Parenteral nutrition", text: "3 mg zinc/day IV (stable adults)." }],
+    child: [{ ind: "Diarrhoea, under 6 months", text: "10 mg daily for 10–14 days.", calc: ["u6"], bt: "Bhutan NEML: 20 mg dispersible tablet — half a tablet." }, { ind: "Diarrhoea, 6 months–5 years", text: "20 mg daily for 10–14 days.", calc: ["o6"] }] }
+});
+
+FDB_M("glyceryl-trinitrate", {
+  inn: "Glyceryl trinitrate (nitroglycerin)", atc: "C01DA02", cls: "Organic nitrate vasodilator",
+  linked: [["Acute coronary syndrome — adults", "Angina relief; IV for ongoing ischaemia [FDA]", "acs-adult"], ["Heart failure — adults", "Acute pulmonary oedema (IV) [UNVERIFIED-KNOWLEDGE]", "hf-adult"]],
+  forms: ["Sublingual tablets 0.3, 0.4, 0.6 mg [FDA].", "IV premixed in 5% dextrose; concentrate vials must be diluted [FDA] [UNVERIFIED-KNOWLEDGE].", "Bhutan: nitroglycerin 5 mg/mL injection (5 mL) [BT-NEML]."],
+  moa: "Releases nitric oxide — venodilation (lower preload) and coronary dilation [UNVERIFIED-KNOWLEDGE].",
+  pk: ["Sublingual onset within minutes; short action [UNVERIFIED-KNOWLEDGE].", "IV: PVC tubing absorbs nitroglycerin — non-absorbing tubing needs lower doses [FDA]."],
+  ind: { adult: ["Sublingual: acute relief of angina, and prophylaxis before exertion [FDA].", "IV: perioperative hypertension, heart failure with MI, angina not responding to other treatment, controlled hypotension in surgery [FDA] [UNVERIFIED-KNOWLEDGE]."], paed: ["Not established [FDA]."] },
+  adult: [["Angina (sublingual)", "One tablet under the tongue at the first sign; repeat every 5 min; no more than 3 tablets in 15 min — if pain persists, seek urgent care [FDA]."], ["Prophylaxis", "One tablet 5–10 min before activities that may cause angina [FDA]."], ["IV infusion", "Start 5 mcg/min by pump (non-absorbing tubing); increase by 5 mcg/min every 3–5 min; if no response at 20 mcg/min, increase by 10–20 mcg/min; smaller steps once BP responds [FDA]."]],
+  paed: { tiers: ["Not established; published paediatric doses 0.5–5 mcg/kg/min [FDA]."], transition: "Adults.", calcNote: "IV is titrated by rate — no bolus calculator." },
+  adj: { renal: "Not established in primary source. [NEP]", hepatic: "Not established in primary source. [NEP]", pregnancy: "Not established in primary source. [NEP]", other: "Tolerance with continuous use — allow nitrate-free intervals for long-term therapy [UNVERIFIED-KNOWLEDGE]. Avoid in right ventricular infarction and SBP under 90 [UNVERIFIED-KNOWLEDGE]." },
+  tox: { human: "Hypotension, headache, tachycardia, methaemoglobinaemia at very high doses [UNVERIFIED-KNOWLEDGE].", animal: "Animal LD50: Not established in primary source. [NEP]", manage: "Stop; lie flat, raise legs, IV fluids; methylene blue for methaemoglobinaemia [UNVERIFIED-KNOWLEDGE]." },
+  contra: ["PDE-5 inhibitors (sildenafil, tadalafil, vardenafil, avanafil) or riociguat — severe hypotension [FDA].", "Severe anaemia (sublingual) [FDA].", "IV: pericardial tamponade, restrictive cardiomyopathy, constrictive pericarditis, raised intracranial pressure [FDA].", "Hypersensitivity [FDA]."],
+  ae: { common: ["Headache, flushing, dizziness, postural hypotension [UNVERIFIED-KNOWLEDGE]."], serious: ["Severe hypotension and syncope [FDA]", "Paradoxical bradycardia and worsening angina [UNVERIFIED-KNOWLEDGE]"] },
+  monitor: ["BP and heart rate before and during each step [FDA]."],
+  local: { neml: "On the Bhutan NEML 2025: nitroglycerin 5 mg/mL injection (5 mL) [BT-NEML].", strengths: "5 mg/mL injection (dilute before infusion).", stg: "Not detailed in Bhutan STG 2024 text [BT-STG]." },
+  calc: [
+    { drug: "glyceryl-trinitrate", indication_id: "sl", label: "Angina — 0.4 mg sublingual, repeat every 5 min (max 3 in 15 min)", route: "SL", population: { min_age_months: 216, max_age_months: null, min_weight_kg: null, max_weight_kg: null }, basis: "fixed", dose: { value: 0.4, unit: "mg", per: "dose" }, interval_h: null, divided_doses: 1, caps: { max_single: 0.6, unit: "mg" }, weight_basis: "NEP", formulations: [{ form: "SL tab", strength: 0.4, unit: "mg/tab", whole: true }], rounding: "Whole tablets", renal: [], flags: ["No more than 3 tablets in 15 min — then urgent care", "Not with sildenafil, tadalafil, vardenafil"], sources: ["FDA"] }
+  ],
+  sources: [["FDA", "NITROSTAT (nitroglycerin sublingual tablets) — Pfizer/Henry Schein (NDA021134), label effective 2026-11-05", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5265648f-3062-48a2-a4e3-fea1207807a8"], ["FDA", "Nitroglycerin in 5% dextrose injection — NDA019970 (ProPharma), label effective 2025-12-18", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3f2c9570-a544-1982-e063-6294a90a3067"], ["BT-NEML", "National Essential Medicines List 2025 — Ministry of Health, Bhutan", ""], ["BT-STG", "Standard Treatment Guidelines 2024 — Ministry of Health, Bhutan", ""]],
+  dose: { tagline: "Sublingual for angina attacks; IV titrated for ischaemia and pulmonary oedema.",
+    adult: [{ ind: "Angina attack", text: "0.4 mg under the tongue every 5 min, up to 3 in 15 min.", calc: ["sl"] }, { ind: "IV", text: "Start 5 mcg/min; +5 mcg/min every 3–5 min; above 20 mcg/min, steps of 10–20.", bt: "Bhutan NEML: 5 mg/mL injection — dilute before infusion." }],
+    child: [{ ind: "Children", text: "Not established." }] }
+});
+
+FDB_M("isosorbide-dinitrate", {
+  inn: "Isosorbide dinitrate", atc: "C01DA08", cls: "Organic nitrate (long-acting)",
+  linked: [["Acute coronary syndrome / stable angina — adults", "Angina prevention [FDA]", "acs-adult"], ["Heart failure — adults", "With hydralazine [UNVERIFIED-KNOWLEDGE]", "hf-adult"]],
+  forms: ["Tablets 5, 10, 20, 30, 40 mg (oral) [FDA].", "Sublingual tablets 2.5, 5 mg (separate products; not in this label) [UNVERIFIED-KNOWLEDGE].", "Bhutan: isosorbide dinitrate 5 mg sublingual tablet; 10 mg oral tablet withdrawn (substituted by ranolazine) [BT-NEML]."],
+  moa: "Nitric oxide donor — venodilation and coronary dilation [UNVERIFIED-KNOWLEDGE].",
+  pk: ["Oral onset too slow to abort an acute attack [FDA].", "Tolerance with continuous levels — needs a daily dose-free interval of at least 14 h [FDA]."],
+  ind: { adult: ["Prevention of angina pectoris (oral immediate-release) [FDA]."], paed: ["Not established in primary source. [NEP]"] },
+  adult: [["Angina prevention (oral)", "5–20 mg two or three times daily to start; keep a dose-free interval of at least 14 h each day [FDA]."], ["Sublingual (Bhutan 5 mg)", "Used for acute angina; dose per local practice (sublingual products are not covered by this US label) [NEP]."]],
+  paed: { tiers: ["Not established in primary source. [NEP]"], transition: "Adults.", calcNote: "Oral starting dose only." },
+  adj: { renal: "Not established in primary source. [NEP]", hepatic: "Not established in primary source. [NEP]", pregnancy: "Not established in primary source. [NEP]", other: "Expect no more than about 12 h of anti-anginal effect per day [FDA]." },
+  tox: { human: "Hypotension, headache, tachycardia; methaemoglobinaemia at very high doses [UNVERIFIED-KNOWLEDGE].", animal: "Animal LD50: Not established in primary source. [NEP]", manage: "Lie flat, legs raised, IV fluids [UNVERIFIED-KNOWLEDGE]." },
+  contra: ["Allergy to isosorbide dinitrate [FDA].", "PDE-5 inhibitors (sildenafil, tadalafil, vardenafil) — severe hypotension, syncope, ischaemia [FDA].", "Riociguat [FDA]."],
+  ae: { common: ["Headache, dizziness, flushing, postural hypotension [UNVERIFIED-KNOWLEDGE]."], serious: ["Severe hypotension; rebound angina if stopped abruptly [UNVERIFIED-KNOWLEDGE]"] },
+  monitor: ["BP; angina frequency [UNVERIFIED-KNOWLEDGE]."],
+  local: { neml: "On the Bhutan NEML 2025: isosorbide dinitrate 5 mg sublingual tablet; the 10 mg tablet was substituted by ranolazine [BT-NEML].", strengths: "5 mg sublingual.", stg: "Not detailed in Bhutan STG 2024 text [BT-STG]." },
+  calc: [
+    { drug: "isosorbide-dinitrate", indication_id: "po", label: "Angina prevention (oral) — 5–20 mg two or three times daily", route: "PO", population: { min_age_months: 216, max_age_months: null, min_weight_kg: null, max_weight_kg: null }, basis: "fixed", dose: { value: 5, unit: "mg", per: "dose", value_max: 20 }, interval_h: 8, caps: { max_single: 20, unit: "mg" }, weight_basis: "NEP", formulations: [], rounding: "Tablet sizes", renal: [], flags: ["Leave a dose-free gap of at least 14 h each day (e.g. 8 am and 1 pm)"], sources: ["FDA"] }
+  ],
+  sources: [["FDA", "Isosorbide dinitrate tablets — Oceanside (NDA012093), label effective 2020-03-02", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=723d9f78-9d77-4575-af27-1aa117e6b8d7"], ["BT-NEML", "National Essential Medicines List 2025 — Ministry of Health, Bhutan", ""], ["BT-STG", "Standard Treatment Guidelines 2024 — Ministry of Health, Bhutan", ""]],
+  dose: { tagline: "Long-acting nitrate for angina prevention — needs a nitrate-free gap.",
+    adult: [{ ind: "Angina prevention", text: "5–20 mg two or three times daily with a 14 h dose-free interval.", calc: ["po"], bt: "Bhutan NEML: 5 mg sublingual tablet only." }],
+    child: [{ ind: "Children", text: "Not established." }] }
+});
