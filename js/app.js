@@ -582,7 +582,7 @@
   /* ----- clean text for reading: the database keeps every source tag; the page shows plain sentences ----- */
   const clean = s => esc(String(s || ""))
     .replace(/\s*\[UNVERIFIED-KNOWLEDGE\]/g, ` <span class="unv" title="Not yet checked against a primary source">(to be verified)</span>`)
-    .replace(/\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|BT-[A-Z]+)\](\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|BT-[A-Z]+)\])*/g, "")
+    .replace(/\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|UK-SmPC|EMA|BT-[A-Z]+)\](\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|UK-SmPC|EMA|BT-[A-Z]+)\])*/g, "")
     .replace(/Not established in primary source\.?/g, "Not established.")
     .replace(/⚠ DISCREPANCY:?\s*/g, `<span class="diff">Note:</span> `);
   // interval in words: 8 → "every 8 h", 24 → "once daily", 168 → "once weekly", 672 → "every 4 weeks"
@@ -621,7 +621,7 @@
     const brands = brandList.map(([b, c, pr]) => `<span class="pill" title="${esc([c && c !== "—" ? c : "", pr || ""].filter(Boolean).join(" · "))}">${esc(b)}${c && c !== "—" ? `<small>${esc(c)}</small>` : ""}</span>`).join("");
     const used = (d.linked || []).map(([c, , pg]) => pg && PAGES.some(x => x.id === pg) ? `<a class="pill link" href="#/d/${pg}">${esc(c)}</a>` : `<span class="pill">${esc(c)}</span>`).join("");
     const highAlert = /high-alert|\bNTI\b/i.test(d.risk || "");
-    const SRC_KIND = { "CDC": "CDC guideline", "FDA": "FDA label", "WHO-EML": "WHO", "WHO-GL": "WHO", "NLM": "NLM", "BT-STG": "Bhutan guideline", "BT-NEML": "Bhutan NEML" };
+    const SRC_KIND = { "CDC": "CDC guideline", "FDA": "FDA label", "WHO-EML": "WHO", "WHO-GL": "WHO", "NLM": "NLM", "BT-STG": "Bhutan guideline", "BT-NEML": "Bhutan NEML", "UK-SmPC": "UK SmPC", "ISMP": "ISMP" };
     const host = u => { try { return new URL(u).hostname.replace(/^www./, ""); } catch (e) { return u; } };
     const refs = d.sources.map(([t, s, u]) => { const [title, ...rest] = String(s).split(" — "); return { kind: SRC_KIND[t] || t, title, meta: rest.join(" — "), u }; });
     if ((Br.src || []).length) refs.push({ kind: "Brand listings", title: "Common trade names (India, Bangladesh)", meta: "Pharmacy and drug-index listings — confirm on the pack", links: [...new Set(Br.src.map(host))].map(h => [h, Br.src.find(u => host(u) === h)]) });

@@ -122,7 +122,8 @@
       let q = Math.round(x * 4) / 4; if (q * s > lim + 1e-9) q = Math.floor(x * 4 + 1e-9) / 4;
       // low end of a dose range: never round below the range minimum when a ¼-step up still fits inside the range
       if (hi != null && hi > amt + 1e-9 && q * s < amt - 1e-9) { const up = Math.ceil(x * 4 - 1e-9) / 4; if (up * s <= lim + 1e-9) q = up; }
-      if (per === "cap") return `${fnum(x)} × ${fnum(s)} ${U} capsule`;
+      // capsules cannot be split: offer a capsule option only when the dose is a whole number of capsules
+      if (per === "cap") return Math.abs(x - Math.round(x)) < 0.005 && Math.round(x) >= 1 ? `${fnum(Math.round(x))} × ${fnum(s)} ${U} capsule` : "";
       // tablets that must not be split (extended-release, enteric-coated): whole tablets only, kept inside the dose range
       if (f.whole) {
         if (Math.abs(x - Math.round(x)) < 0.005) return `${fnum(x)} × ${fnum(s)} ${U} ${word}`;
