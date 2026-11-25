@@ -590,8 +590,13 @@
   const yourDose = (d, ids, p) => {
     if (!ids || !ids.length) return "";
     if (!p || p.wt == null) return `<div class="yd none"><button type="button" class="linkbtn" data-open-pt>Set patient</button> to see the dose for your patient.</div>`;
-    const rows = ids.map(id => { const b = d.calc.find(x => x.indication_id === id); if (!b) return ""; const r = fdbCompute(b, { ageM: p.ageM, wt: p.wt, ht: p.ht, sex: p.sex, crcl: p.crcl });
-      const lab = ids.length > 1 ? `<span class="yd-lab">${esc((b.label || "").replace(/^.*?:\s*/, ""))}</span>` : "";
+    // band rows (weight or age) that do not fit this patient are hidden once another row in the group fits
+    const outBand = e => /^For (weight|age) /.test(e || "");
+    const res = ids.map(id => { const b = d.calc.find(x => x.indication_id === id); return b ? [b, fdbCompute(b, { ageM: p.ageM, wt: p.wt, ht: p.ht, sex: p.sex, crcl: p.crcl })] : null; }).filter(Boolean);
+    const anyFit = res.some(([, r]) => !r.err || !outBand(r.err));
+    const shown = anyFit ? res.filter(([, r]) => !outBand(r.err)) : res, hidden = res.length - shown.length;
+    const rows = shown.map(([b, r]) => {
+      const lab = res.length > 1 ? `<span class="yd-lab">${esc((b.label || "").replace(/^.*?:\s*/, ""))}</span>` : "";
       if (r.err) return `<div class="yd-row muted">${lab}${esc(r.err)}</div>`;
       if (r.band) return `<div class="yd-row">${lab}<b>${esc(r.band)}</b></div>`;
       // a dose range shows the volume for both ends ("1.5 mL … to 3 mL …"), never just the low end
@@ -602,7 +607,8 @@
       return `<div class="yd-row">${lab}<b>${many} ${esc(r.unit || "mg")}</b>${r.interval ? " " + every(r.interval) : ""}${vols.length ? ` <span class="yd-vol">= ${esc(vols.join(" or "))}</span>` : ""}${esc(inf)}${(b.flags || []).includes("HIGH_ALERT") ? ` <span class="ha">High-alert</span>` : ""}
         ${r.warn.length ? `<div class="yd-warn">${r.warn.map(esc).join("<br>")}</div>` : ""}
         <details class="yd-how"><summary>How calculated</summary><p>${r.lines.map(esc).join("<br>")}<br>Rounding: ${clean(b.rounding)}</p></details></div>`; }).join("");
-    return `<div class="yd"><div class="yd-head">Your patient · ${esc(ptText(p))}</div>${rows}</div>`;
+    const note = hidden ? `<div class="yd-row muted">${hidden} other weight or age band${hidden > 1 ? "s" : ""} not shown — ${hidden > 1 ? "they do" : "it does"} not fit this patient.</div>` : "";
+    return `<div class="yd"><div class="yd-head">Your patient · ${esc(ptText(p))}</div>${rows}${note}</div>`;
   };
   let fdbTab = null;
   function fdbPage(id) {
