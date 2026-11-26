@@ -318,7 +318,14 @@ const IMGS = {
   "images/abdominal-thrusts.jpg": ["2/28/Abdominal_thrusts_against_choking.jpg",1240],
   "images/cpr-adult.jpg": ["d/de/Cardiopulmonary_Resuscitation_Adult.jpg",400],
   "images/tourniquet-application.jpg": ["c/c6/Tourniquet_application.jpg",1312],
-  "images/pelvic-binder-equipment.jpg": ["f/fb/EquipmentforPelvicBinder.jpg",3041]
+  "images/pelvic-binder-equipment.jpg": ["f/fb/EquipmentforPelvicBinder.jpg",3041],
+  "images/tetanus-cdc.jpg": ["4/4c/PHIL_tetanus.jpg",1806],
+  "images/neonatal-tetanus.jpg": ["8/8f/Neonatal_tetanus_6374.jpg",1807],
+  "images/lockjaw.jpg": ["9/9a/Lock-jaw_2857.jpg",700],
+  "images/kiesselbach-plexus.jpg": ["e/e3/Kiesselbach%27s_Plexus.jpg",4032],
+  "images/ten-skin.jpg": ["a/ae/Toxic-epidermal-necrolysis.jpg",470],
+  "images/sjs-mucosa.jpg": ["e/e9/Mucosal_desquamation_in_a_person_with_Stevens%E2%80%93Johnson_syndrome.jpg",2899],
+  "images/sjs-conjunctivitis.jpg": ["2/20/Stevens-Johnson_Syndrome_Conjunctivitis.jpg",324]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
