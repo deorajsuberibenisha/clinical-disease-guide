@@ -334,7 +334,23 @@ const IMGS = {
   "images/ramsay-hunt.png": ["e/ed/Ramsey_Hunt_Syndrome.png",512],
   "images/bells-palsy-cdc.jpg": ["0/0c/Bells_Palsy_CDC.jpg",200],
   "images/bells-palsy-smile.jpg": ["4/4e/Bell%27s_Palsy_smiling.jpg",180],
-  "images/migraine-aura.png": ["f/f5/Flickering_scotoma.png",960]
+  "images/migraine-aura.png": ["f/f5/Flickering_scotoma.png",960],
+  "images/hyphaema.jpg": ["e/e0/Hyphema_-_occupying_half_of_anterior_chamber_of_eye.jpg",762],
+  "images/corneal-abrasion-fluorescein.jpg": ["6/65/Human_cornea_with_abrasion_highlighted_by_fluorescein_staining.jpg",1280],
+  "images/chemical-eye-burn.jpg": ["8/88/Chemical_burn_injury..jpg",300],
+  "images/cervical-collar.jpeg": ["8/89/While_on_duty_at_the_station_hospital%2C_Hospital_Corpsman_Joshua_Alvarez_immobilizes_an_injured_sailor%27s_head_and_neck_with_a_cervical_collar_-_DPLA_-_04103bbf38d9a432185ee024605fff3e.jpeg",2440],
+  "images/button-battery-xray.png": ["3/3a/ButtonBatteryIngestion.png",947],
+  "images/earwax-swab.jpg": ["4/49/Earwax_on_swab_crossed_out.jpg",1674],
+  "images/bronchiectasis-ct-massive.jpg": ["4/4b/Massive_Bronchiektasen_-_CT_LF_axial_001.jpg",1212],
+  "images/bronchiectasis-cxr-ct.jpg": ["9/97/Bronchiektasen_67W_-_CR_pa_und_CT_-_001.jpg",1533],
+  "images/lung-abscess-cxr.jpg": ["0/0b/Chest_X-ray_of_right_upper_to_mid_zone_lung_cavity_with_air_fluid_level.jpg",3456],
+  "images/lung-abscess-bilateral.jpg": ["4/4d/XR_chest_-_pneumonia_with_abscess_and_caverns_-_d0.jpg",664],
+  "images/lung-cancer-cxr.jpg": ["a/ad/Lung_Cancer_on_Chest_X-Ray.jpg",968],
+  "images/lung-adenocarcinoma-ct.jpg": ["e/e9/Pulmonary_adenocarcinoma%2C_left_lung%2C_CT_scan_Case_239_%287603361542%29.jpg",512],
+  "images/anthrax-eschar-neck.jpg": ["3/37/Cutaneous_anthrax_lesion_on_the_neck._PHIL_1934_lores.jpg",2852],
+  "images/hydatid-liver-us.jpg": ["f/f8/Ultrasonography_of_a_hydatid_liver_cyst.jpg",480],
+  "images/leishmania-bone-marrow.png": ["b/b4/Leishmania_donovani_01.png",1812],
+  "images/polio-leg-atrophy.jpg": ["5/57/Polio_lores134.jpg",982]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
