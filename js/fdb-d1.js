@@ -87,7 +87,7 @@ FDB_M("dacarbazine", {
   ],
   sources: [["FDA", "Dacarbazine for injection — Hikma (ANDA075812), label effective 2025-09-22", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0d81315c-7021-4091-b703-ad135390c936"]],
   dose: { tagline: "IV alkylator for melanoma and Hodgkin regimens.",
-    boxedTitle: "Warning",
+    boxedTitle: "Hemopoietic depression, hepatic necrosis, carcinogenic and teratogenic",
     boxed: "It is recommended that dacarbazine be administered under the supervision of a qualified physician experienced in the use of cancer chemotherapeutic agents. Hemopoietic depression is the most common toxicity with dacarbazine. Hepatic necrosis has been reported. Studies have demonstrated this agent to have a carcinogenic and teratogenic effect when used in animals. In treatment of each patient, the physician must weigh carefully the possibility of achieving therapeutic benefit against the risk of toxicity [FDA].",
     adult: [{ ind: "Melanoma", text: "250 mg/m²/day for 5 days every 3 weeks (or 2–4.5 mg/kg/day for 10 days every 4 weeks).", calc: ["mel"] }, { ind: "Hodgkin's disease", text: "375 mg/m² day 1 every 15 days, or 150 mg/m²/day for 5 days every 4 weeks.", calc: ["hd"] }],
     child: [{ ind: "Children", text: "Not established." }] }

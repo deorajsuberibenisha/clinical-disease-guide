@@ -552,7 +552,7 @@ FDB_M("chlorambucil", {
   calc: [{ drug: "chlorambucil", indication_id: "std", label: "0.1–0.2 mg/kg once daily", route: "PO", population: { min_age_months: 216, max_age_months: null, min_weight_kg: null, max_weight_kg: null }, basis: "mg_per_kg", dose: { value: 0.1, unit: "mg", per: "dose", value_max: 0.2 }, interval_h: 24, divided_doses: 1, caps: {}, weight_basis: "actual", formulations: [{ form: "tab", strength: 2, unit: "mg/tab" }], rounding: "Whole 2 mg tablets", renal: [], flags: ["Not more than 0.1 mg/kg if marrow infiltrated or hypoplastic"], sources: ["FDA"] }],
   sources: [["FDA", "LEUKERAN (chlorambucil) tablets — Waylis Therapeutics, label effective 2025-01-08", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=58a3c995-5ad6-465d-8437-5970c9088213"]],
   dose: { tagline: "Oral alkylating agent for CLL and lymphoma (palliative).",
-    boxedTitle: "Warning",
+    boxedTitle: "Bone marrow suppression, carcinogenic, mutagenic and teratogenic, infertility",
     boxed: "LEUKERAN (chlorambucil) can severely suppress bone marrow function. Chlorambucil is a carcinogen in humans. Chlorambucil is probably mutagenic and teratogenic in humans. Chlorambucil produces human infertility.",
     adult: [{ ind: "CLL; lymphoma", text: "0.1–0.2 mg/kg once daily for 3–6 weeks (CLL 0.1; Hodgkin 0.2 mg/kg).", calc: ["std"] }],
     child: [{ ind: "Children", text: "Not established in the label." }] }
@@ -993,7 +993,7 @@ FDB_M("ciclosporin", {
   ],
   sources: [["FDA", "NEORAL (cyclosporine, modified) capsules and oral solution — Novartis, label effective 2026-08-10", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=94461af3-11f1-4670-95d4-2965b9538ae3"], ["FDA", "VERKAZIA (cyclosporine ophthalmic emulsion) 0.1% — Santen, label effective 2026-11-04", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c795cd2f-89da-78e3-e053-2a95a90a9422"], ["BT-NEML", "Bhutan National Essential Medicines List 2025", ""]],
   dose: { tagline: "Calcineurin-inhibitor immunosuppressant; dose by weight, then by blood level.",
-    boxedTitle: "Warning",
+    boxedTitle: "Immunosuppression, infection and neoplasia; Neoral and Sandimmune not interchangeable",
     boxed: "Only physicians experienced in management of systemic immunosuppressive therapy for the indicated disease should prescribe Neoral. … Neoral, a systemic immunosuppressant, may increase the susceptibility to infection and the development of neoplasia. … Neoral and Sandimmune are not bioequivalent and cannot be used interchangeably without physician supervision. … Cyclosporine blood concentrations should be monitored in transplant and rheumatoid arthritis patients taking Neoral to avoid toxicity due to high concentrations. … Psoriasis patients previously treated with PUVA and to a lesser extent, methotrexate or other immunosuppressive agents, UVB, coal tar, or radiation therapy, are at an increased risk of developing skin malignancies when taking Neoral. Cyclosporine, the active ingredient in Neoral, in recommended dosages, can cause systemic hypertension and nephrotoxicity. The risk increases with increasing dose and duration of cyclosporine therapy. Renal dysfunction, including structural kidney damage, is a potential consequence of cyclosporine, and therefore, renal function must be monitored during therapy.",
     adult: [
       { ind: "New transplant", text: "7–9 mg/kg/day in 2 doses, then adjust to trough levels.", calc: ["tx"] },
@@ -1028,7 +1028,7 @@ FDB_M("cidofovir", {
   ],
   sources: [["FDA", "Cidofovir injection USP — Avet Pharmaceuticals (ANDA202501), label effective 2023-10-25", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=44966a7e-d777-40fb-956f-d0f31f737848"]],
   dose: { tagline: "IV antiviral for CMV retinitis in AIDS; always with probenecid and saline.",
-    boxedTitle: "Warning",
+    boxedTitle: "Renal impairment, neutropenia, carcinogenic and teratogenic",
     boxed: "Renal impairment is the major toxicity of cidofovir injection. Cases of acute renal failure resulting in dialysis and/or contributing to death have occurred with as few as one or two doses of cidofovir injection. To reduce possible nephrotoxicity, intravenous prehydration with normal saline and administration of probenecid must be used with each cidofovir infusion. Renal function (serum creatinine and urine protein) must be monitored within 48 hours prior to each dose of cidofovir injection and the dose of cidofovir injection modified for changes in renal function as appropriate. Cidofovir injection is contraindicated in patients who are receiving other nephrotoxic agents. Neutropenia has been observed in association with cidofovir injection treatment. Therefore, neutrophil counts should be monitored during cidofovir injection therapy. Cidofovir injection is indicated only for the treatment of CMV retinitis in patients with acquired immunodeficiency syndrome. In animal studies cidofovir was carcinogenic, teratogenic and caused hypospermia.",
     adult: [
       { ind: "Induction", text: "5 mg/kg IV over 1 h once weekly for 2 weeks.", calc: ["ind"] },

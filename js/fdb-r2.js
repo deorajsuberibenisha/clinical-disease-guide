@@ -64,7 +64,7 @@ FDB_M("raxibacumab", {
   ],
   sources: [["FDA", "Raxibacumab injection — FDA label (DailyMed)", R2_DM("f6927e91-bb46-47b3-ab66-f9d8a9d7b12a")], NEML_SRC],
   dose: { tagline: "Anthrax antitoxin antibody — single IV dose 40–80 mg/kg by weight, with antibiotics.",
-    boxedTitle: "Warning",
+    boxedTitle: "Hypersensitivity reactions, including anaphylaxis",
     boxed: "Hypersensitivity reactions, including anaphylaxis, have been reported during or after the administration of raxibacumab by intravenous infusion. Administer raxibacumab by intravenous infusion in monitored settings where appropriate equipment, medication (including epinephrine) and personnel trained in the management of hypersensitivity, anaphylaxis, and shock are available [FDA].",
     adult: [{ ind: "Inhalational anthrax", text: "40 mg/kg IV once.", calc: ["w41"] }],
     child: [{ ind: "By weight", text: "≤10 kg 80 mg/kg; >10–40 kg 60 mg/kg; >40 kg 40 mg/kg.", calc: ["w10", "w40", "w41"] }] }

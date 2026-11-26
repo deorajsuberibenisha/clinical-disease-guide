@@ -51,7 +51,7 @@ FDB_M("clindamycin", {
   ],
   sources: [["FDA", "CLEOCIN PHOSPHATE (clindamycin injection) — Henry Schein listing (NDA050441), label effective 2026-10-27", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=184acaee-6129-479e-850f-d89575b8b391"], ["FDA", "Clindamycin HCl capsules USP (ANDA207402), label effective 2023-02-06", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=07f5d841-9c58-4dd1-b0bc-e12553931c8e"], ["BT-STG", "Bhutan Standard Treatment Guidelines 2024", ""]],
   dose: { tagline: "Lincosamide for staphylococcal, streptococcal and anaerobic infections; C. difficile risk.",
-    boxedTitle: "Warning",
+    boxedTitle: "Clostridioides difficile-associated diarrhea",
     boxed: "Clostridioides difficile-associated diarrhea (CDAD) has been reported with use of nearly all antibacterial agents, including CLEOCIN PHOSPHATE and may range in severity from mild diarrhea to fatal colitis. Treatment with antibacterial agents alters the normal flora of the colon leading to overgrowth of C. difficile. Because CLEOCIN PHOSPHATE therapy has been associated with severe colitis which may end fatally, it should be reserved for serious infections where less toxic antimicrobial agents are inappropriate. It should not be used in patients with nonbacterial infections such as most upper respiratory tract infections. … If CDAD is suspected or confirmed, ongoing antibiotic use not directed against C. difficile may need to be discontinued. Appropriate fluid and electrolyte management, protein supplementation, antibiotic treatment of C. difficile, and surgical evaluation should be instituted as clinically indicated.",
     adult: [
       { ind: "Oral", text: "150–300 mg every 6 h (severe 300–450 mg).", calc: ["po"] },
@@ -1220,7 +1220,7 @@ FDB_M("cytarabine", {
   ],
   sources: [["FDA", "Cytarabine injection — Hospira (ANDA075383), label effective 2026-10-19", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e3a8c0e9-19ed-49b7-8464-11e8806f47fd"]],
   dose: { tagline: "Antimetabolite backbone of AML induction; also intrathecal.",
-    boxedTitle: "Warning",
+    boxedTitle: "Bone marrow suppression; experienced physicians only",
     boxed: "Only physicians experienced in cancer chemotherapy should use Cytarabine Injection. For induction therapy patients should be treated in a facility with laboratory and supportive resources sufficient to monitor drug tolerance and protect and maintain a patient compromised by drug toxicity. The main toxic effect of cytarabine injection is bone marrow suppression with leukopenia, thrombocytopenia and anemia. Less serious toxicity includes nausea, vomiting, diarrhea and abdominal pain, oral ulceration, and hepatic dysfunction. The physician must judge possible benefit to the patient against known toxic effects of this drug in considering the advisability of therapy with Cytarabine Injection.",
     adult: [
       { ind: "AML induction", text: "100 mg/m²/day continuous infusion, or 100 mg/m² every 12 h, days 1–7.", calc: ["ind"] },

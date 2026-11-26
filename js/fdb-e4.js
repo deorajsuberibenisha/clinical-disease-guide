@@ -108,7 +108,7 @@ FDB_M("etoposide", {
   ],
   sources: [["FDA", "Etoposide injection USP — FDA label (DailyMed)", E4_DM("0dddbe44-b4f4-431f-9011-8a54abbd4cbf")], E4_BT],
   dose: { tagline: "Topoisomerase II chemotherapy for testicular and small cell lung cancer.",
-    boxedTitle: "Warnings", boxed: "Etoposide injection should be administered under the supervision of a qualified physician experienced in the use of cancer chemotherapeutic agents. Severe myelosuppression with resulting infection or bleeding may occur [FDA].",
+    boxedTitle: "Severe myelosuppression", boxed: "Etoposide injection should be administered under the supervision of a qualified physician experienced in the use of cancer chemotherapeutic agents. Severe myelosuppression with resulting infection or bleeding may occur [FDA].",
     adult: [{ ind: "Testicular cancer", text: "50–100 mg/m²/day days 1–5 (combination).", calc: ["m100"] }, { ind: "Small cell lung cancer", text: "35 mg/m²/day × 4 to 50 mg/m²/day × 5 days." }],
     child: [{ ind: "Children", text: "Specialist protocol." }] }
 });

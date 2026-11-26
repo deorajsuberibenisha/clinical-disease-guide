@@ -312,7 +312,8 @@ const IMGS = {
   "images/crypto-india-ink.jpg": ["6/6f/Cryptococcus_neoformans_using_a_light_India_ink_staining_preparation_PHIL_3771_lores.jpg",2855],
   "images/pcp-cxr.jpg": ["9/9f/X-ray_of_ground_glass_opacities_of_pneumocystis_pneumonia.jpg",1013],
   "images/pf-gametocyte.jpg": ["d/d4/P._falciparum_thin_smear_gametocyte.jpg",1360],
-  "images/anopheles-feeding.jpg": ["a/ae/Anopheles_albimanus_mosquito.jpg",2466]
+  "images/anopheles-feeding.jpg": ["a/ae/Anopheles_albimanus_mosquito.jpg",2466],
+  "images/bcg-scar.jpg": ["d/d1/Bacillus_Calmette-Gu%C3%A9rin_scar.JPG",900]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };

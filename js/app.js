@@ -582,7 +582,7 @@
   /* ----- clean text for reading: the database keeps every source tag; the page shows plain sentences ----- */
   const clean = s => esc(String(s || ""))
     .replace(/\s*\[UNVERIFIED-KNOWLEDGE\]/g, ` <span class="unv" title="Not yet checked against a primary source">(to be verified)</span>`)
-    .replace(/\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|UK-SmPC|EMA|BT-[A-Z]+)\](\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|UK-SmPC|EMA|BT-[A-Z]+)\])*/g, "")
+    .replace(/\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|UK-SmPC|EMA|IN-UIP|IN-NRCP|AAP|BT-[A-Z]+)\](\s*\[(FDA|WHO-EML|WHO-GL|NLM|CDC|ISMP|PubChem|NEP|UK-SmPC|EMA|IN-UIP|IN-NRCP|AAP|BT-[A-Z]+)\])*/g, "")
     .replace(/Not established in primary source\.?/g, "Not established.")
     .replace(/⚠ DISCREPANCY:?\s*/g, `<span class="diff">Note:</span> `);
   // interval in words: 8 → "every 8 h", 24 → "once daily", 168 → "once weekly", 672 → "every 4 weeks"
@@ -621,7 +621,7 @@
     const brands = brandList.map(([b, c, pr]) => `<span class="pill" title="${esc([c && c !== "—" ? c : "", pr || ""].filter(Boolean).join(" · "))}">${esc(b)}${c && c !== "—" ? `<small>${esc(c)}</small>` : ""}</span>`).join("");
     const used = (d.linked || []).map(([c, , pg]) => pg && PAGES.some(x => x.id === pg) ? `<a class="pill link" href="#/d/${pg}">${esc(c)}</a>` : `<span class="pill">${esc(c)}</span>`).join("");
     const highAlert = /high-alert|\bNTI\b/i.test(d.risk || "");
-    const SRC_KIND = { "CDC": "CDC guideline", "FDA": "FDA label", "WHO-EML": "WHO", "WHO-GL": "WHO", "NLM": "NLM", "BT-STG": "Bhutan guideline", "BT-NEML": "Bhutan NEML", "UK-SmPC": "UK SmPC", "ISMP": "ISMP" };
+    const SRC_KIND = { "CDC": "CDC guideline", "FDA": "FDA label", "WHO-EML": "WHO", "WHO-GL": "WHO", "NLM": "NLM", "BT-STG": "Bhutan guideline", "BT-NEML": "Bhutan NEML", "UK-SmPC": "UK SmPC", "ISMP": "ISMP", "BT-EPI": "Bhutan guideline", "BT-NIS": "Bhutan strategy", "BT-RAB": "Bhutan guideline", "IN-UIP": "India programme", "IN-NRCP": "India guideline", "AAP": "US schedule (AAP)" };
     const host = u => { try { return new URL(u).hostname.replace(/^www./, ""); } catch (e) { return u; } };
     const refs = d.sources.map(([t, s, u]) => { const [title, ...rest] = String(s).split(" — "); return { kind: SRC_KIND[t] || t, title, meta: rest.join(" — "), u }; });
     if ((Br.src || []).length) refs.push({ kind: "Brand listings", title: "Common trade names (India, Bangladesh)", meta: "Pharmacy and drug-index listings — confirm on the pack", links: [...new Set(Br.src.map(host))].map(h => [h, Br.src.find(u => host(u) === h)]) });
@@ -652,7 +652,7 @@
         <div class="dose-body">${doseRows(tab === "child" ? D.child : D.adult) || `<p class="muted">No ${tab} dose in the primary source.</p>`}</div>
         ${tab === "child" && d.paed && d.paed.transition ? `<p class="dose-foot">Adult dose from: ${clean(d.paed.transition)}</p>` : ""}
       </section>
-      ${fold("adj", "Dose adjustments — kidney, liver, pregnancy", kv([["Kidney", A.renal], ["Liver", A.hepatic], ["Pregnancy & breastfeeding", A.preg], ["Elderly & other", A.other], ["Metabolic / diabetes", A.metabolic], ["Immunocompromised", A.immuno], ["ICU / sedation", A.icu]].filter(r => !/^Not applicable/.test(r[1] || ""))))}
+      ${fold("adj", "Dose adjustments — kidney, liver, pregnancy", kv([["Kidney", A.renal], ["Liver", A.hepatic], ["Pregnancy & breastfeeding", A.preg || A.pregnancy], ["Elderly & other", A.other], ["Metabolic / diabetes", A.metabolic], ["Immunocompromised", A.immuno], ["ICU / sedation", A.icu]].filter(r => !/^Not applicable/.test(r[1] || ""))))}
       ${D.caution ? `<details class="warnfold caution"><summary><b>Caution</b><span>${esc(D.cautionTitle || "Read before giving")}</span></summary><p>${clean(D.caution)}</p></details>` : ""}
       ${fold("forms", "Formulations & administration", li(d.forms))}
       ${fold("moa", "How it works", `<p>${clean(d.moa)}</p>`)}
@@ -663,6 +663,7 @@
       ${fold("mon", "Monitoring", li(d.monitor))}
       ${fold("tox", "Overdose & toxicity", kv([["In humans", T.human], ["Animal data (LD50)", T.animal], ["Management", T.manage]]))}
       ${fold("local", "Availability in Bhutan", kv([["NEML 2025", d.local.neml], ["Strengths", d.local.strengths], ["Bhutan STG", d.local.stg]]))}
+      ${d.compare && (d.compare.rows || []).length ? fold("cmp", d.compare.title || "Bhutan vs international schedules", `<div class="tbl-wrap">${tbl(d.compare.cols.map(esc), d.compare.rows.map(r => r.map(x => clean(x))))}</div>${d.compare.note ? `<p>${clean(d.compare.note)}</p>` : ""}`) : ""}
       <details class="fold refs2" id="f-refs"><summary><span>References (${refs.length})</span></summary><div class="fold-b">
         <ol>${refs.map(r => `<li><span class="rk">${esc(r.kind)}</span><div class="rt">${r.u ? `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.title)}</a>` : esc(r.title)}${r.meta ? `<small>${esc(r.meta)}</small>` : ""}${r.links ? `<small>${r.links.map(([h, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(h)}</a>`).join(" · ")}</small>` : ""}</div></li>`).join("")}</ol>
       </div></details>

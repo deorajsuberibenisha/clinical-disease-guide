@@ -424,7 +424,7 @@ FDB_M("penicillamine", {
   calc: [C("penicillamine", "cyst_child", "Cystinuria, child — 30 mg/kg/day in 4 doses", "PO", pop(null, 216, null, null), "mg_per_kg", 30, 6, { dose: { value: 30, unit: "mg", per: "day" }, divided_doses: 4, formulations: [{ form: "capsule", strength: 250, unit: "mg" }], rounding: "nearest capsule; larger part at bedtime", flags: ["Fasting", "Start 250 mg/day and build up"] })],
   sources: [["FDA", "Cuprimine (penicillamine) capsules — FDA label (DailyMed)", P2_DM("80e736d3-2017-4d68-94b4-38255c3c59c6")], NEML_SRC],
   dose: { tagline: "Chelator for Wilson's disease and cystinuria — dosed by urinary copper or cystine; frequent blood/urine checks.",
-    boxedTitle: "Warning",
+    boxedTitle: "Toxicity — close physician supervision",
     boxed: "Physicians planning to use penicillamine should thoroughly familiarize themselves with its toxicity, special dosage considerations, and therapeutic benefits. Penicillamine should never be used casually. Each patient should remain constantly under the close supervision of the physician. Patients should be warned to report promptly any symptoms suggesting toxicity [FDA].",
     adult: [{ ind: "Wilson's disease", text: "0.75–1.5 g/day by urinary copper." }, { ind: "Cystinuria", text: "2 g/day (1–4 g) in 4 doses." }],
     child: [{ ind: "Cystinuria", text: "30 mg/kg/day in 4 doses.", calc: ["cyst_child"] }] }
@@ -547,7 +547,7 @@ FDB_M("pentostatin", {
   calc: [C("pentostatin", "hcl", "Hairy cell leukaemia — 4 mg/m² IV every other week", "IV", ADULT, "mg_per_m2", 4, 336, { rounding: "per vial", flags: ["Hydrate before and after", "Never with fludarabine"], renal_note: "Kidney impairment: reduce or withhold per label [FDA]." })],
   sources: [["FDA", "Nipent (pentostatin) — FDA label (DailyMed)", P2_DM("674e0e6d-46ed-4868-9196-04019d667716")], ISMP_SRC, NEML_SRC],
   dose: { tagline: "Purine analogue for hairy cell leukaemia — 4 mg/m² every other week with hydration.",
-    boxedTitle: "Warning",
+    boxedTitle: "Higher than recommended doses; severe toxicity with fludarabine",
     boxed: "NIPENT should be administered under the supervision of a physician qualified and experienced in the use of cancer chemotherapeutic agents. The use of higher doses than those specified is not recommended. Dose-limiting severe renal, liver, pulmonary, and CNS toxicities occurred in Phase 1 studies that used NIPENT at higher doses (20-50 mg/m 2 in divided doses over 5 days) than recommended. In a clinical investigation in patients with refractory chronic lymphocytic leukemia using NIPENT at the recommended dose in combination with fludarabine phosphate, 4 of 6 patients entered in the study had severe or fatal pulmonary toxicity. The use of NIPENT in combination with fludarabine phosphate is not recommended [FDA].",
     adult: [{ ind: "Hairy cell leukaemia", text: "4 mg/m² IV every 2 weeks.", calc: ["hcl"] }],
     child: [{ ind: "Children", text: "Not established." }] }

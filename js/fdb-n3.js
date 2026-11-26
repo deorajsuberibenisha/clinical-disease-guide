@@ -728,7 +728,7 @@ FDB_M("misoprostol", {
   calc: [],
   sources: [["FDA", "Cytotec (misoprostol) — FDA label (DailyMed)", "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4ab12da7-5731-4e06-bf1c-bc3f2e711f12"], ["BT-NEML", "National Essential Medicines Formulary 2022 and NEML 2025 — Ministry of Health, Bhutan", ""], ["BT-STG", "Standard Treatment Guidelines 2024 — Ministry of Health, Bhutan", ""]],
   dose: { tagline: "Uterotonic for PPH and induction — the oral 25 microgram tablet for labour.",
-    boxedTitle: "Warnings",
+    boxedTitle: "Pregnancy: birth defects, abortion, premature birth or uterine rupture",
     boxed: "Cytotec (misoprostol) administration to women who are pregnant can cause birth defects, abortion, premature birth or uterine rupture. Uterine rupture has been reported when Cytotec was administered in pregnant women to induce labor or to induce abortion. The risk of uterine rupture increases with advancing gestational ages and with prior uterine surgery, including cesarean delivery. Cytotec should not be taken by pregnant women to reduce the risk of ulcers induced by nonsteroidal anti-inflammatory drugs (NSAIDs). Patients must be advised of the abortifacient property and warned not to give the drug to others [FDA].",
     adult: [{ ind: "PPH treatment", text: "800 microgram sublingual or rectal.", bt: "Bhutan NEML: 100 microgram tablet." }, { ind: "PPH prevention (no oxytocin)", text: "600 microgram orally." }, { ind: "Induction of labour", text: "25 microgram orally every 2 hours.", bt: "Bhutan NEML: 25 microgram oral tablet." }, { ind: "NSAID-ulcer prophylaxis", text: "200 microgram four times daily with food." }],
     child: [{ ind: "Children", text: "Not established." }] }
@@ -919,7 +919,7 @@ FDB_M("protamine", {
   calc: [],
   sources: [["FDA", "Protamine sulfate injection — FDA label (DailyMed)", "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c76876da-b9a8-45d0-9278-7df3288d3a06"], ["BT-NEML", "National Essential Medicines Formulary 2022 and NEML 2025 — Ministry of Health, Bhutan", ""]],
   dose: { tagline: "Heparin antidote — 1 mg per 100 units, slowly, 50 mg maximum.",
-    boxedTitle: "Warning",
+    boxedTitle: "Severe hypotension, cardiovascular collapse and pulmonary reactions",
     boxed: "Protamine sulfate can cause severe hypotension, cardiovascular collapse, noncardiogenic pulmonary edema, catastrophic pulmonary vasoconstriction, and pulmonary hypertension. Risk factors include high dose or overdose, rapid administration, repeated doses, previous administration of protamine, and current or previous use of protamine-containing drugs (NPH insulin, protamine zinc insulin, and certain beta-blockers). Allergy to fish, previous vasectomy, and severe left ventricular dysfunction and abnormal preoperative pulmonary hemodynamics also may be risk factors. In patients with any of these risk factors, the risk to benefit of administration of protamine sulfate should be carefully considered. Vasopressors and resuscitation equipment should be immediately available in case of a severe reaction to protamine. Protamine sulfate should not be given when bleeding occurs without prior heparin use [FDA].",
     adult: [{ ind: "Heparin overdose", text: "1 mg per 100 units of heparin given recently, by slow IV injection over 10 minutes; maximum 50 mg; less if time has passed.", bt: "Bhutan NEML: 10 mg/mL, 5 mL." }, { ind: "After a heparin infusion", text: "25–50 mg IV once the infusion is stopped." }],
     child: [{ ind: "Children", text: "Same ratio and rate limits." }] }
@@ -1174,7 +1174,7 @@ FDB_M("disulfiram", {
   ],
   sources: [["FDA", "Disulfiram tablets — FDA label (DailyMed)", "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d3832a1a-a140-49c1-a7df-134fa81341e3"], ["BT-NEML", "National Essential Medicines Formulary 2022 and NEML 2025 — Ministry of Health, Bhutan", ""]],
   dose: { tagline: "Alcohol deterrent — only with the patient's full knowledge and 12 h sober.",
-    boxedTitle: "Warning",
+    boxedTitle: "Never give during alcohol intoxication or without the patient's knowledge",
     boxed: "Disulfiram should never be administered to a patient when he is in a state of alcohol intoxication, or without his full knowledge. The physician should instruct relatives accordingly [FDA].",
     adult: [{ ind: "Alcohol dependence", text: "Up to 500 mg once daily for 1–2 weeks, then 250 mg once daily (125–500 mg).", calc: ["start", "maint"], bt: "Bhutan NEML: 250 mg tablet." }],
     child: [{ ind: "Children", text: "Not established." }] }

@@ -774,7 +774,7 @@ FDB_M("carboplatin", {
   ],
   sources: [["FDA", "Carboplatin injection — Teva Parenteral Medicines (ANDA077269), label effective 2022-08-30", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e176b6ef-2ff6-498b-a9d8-7a634d147f37"]],
   dose: { tagline: "Platinum chemotherapy dosed by BSA or by target AUC and kidney function.",
-    boxedTitle: "Warning",
+    boxedTitle: "Bone marrow suppression, vomiting and anaphylactic-like reactions",
     boxed: "Carboplatin injection 10 mg/mL should be administered under the supervision of a qualified physician experienced in the use of cancer chemotherapeutic agents. Appropriate management of therapy and complications is possible only when adequate treatment facilities are readily available. Bone marrow suppression is dose related and may be severe, resulting in infection and/or bleeding. Anemia may be cumulative and may require transfusion support. Vomiting is another frequent drug related side effect. Anaphylactic-like reactions to carboplatin have been reported and may occur within minutes of carboplatin injection administration. Epinephrine, corticosteroids, and antihistamines have been employed to alleviate symptoms.",
     adult: [
       { ind: "Advanced ovarian cancer (with cyclophosphamide)", text: "300 mg/m² IV on day 1 every 4 weeks for 6 cycles — or AUC dosing.", calc: ["combo"] },
@@ -803,7 +803,7 @@ FDB_M("carboprost", {
   calc: [],
   sources: [["FDA", "HEMABATE (carboprost tromethamine) injection — Pharmacia & Upjohn (Pfizer), label effective 2026-03-30", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3d282998-ff0c-480a-bd80-155606ef0a65"]],
   dose: { tagline: "IM prostaglandin for refractory postpartum haemorrhage; avoid in asthma.",
-    boxedTitle: "Warnings",
+    boxedTitle: "Strict adherence to recommended dosages; hospital use only",
     boxed: "HEMABATE Sterile Solution (carboprost tromethamine), like other potent oxytocic agents, should be used only with strict adherence to recommended dosages. HEMABATE should be used by medically trained personnel in a hospital which can provide immediate intensive care and acute surgical facilities.",
     adult: [
       { ind: "Postpartum haemorrhage (uterine atony)", text: "250 micrograms (1 mL) deep IM; repeat every 15–90 min if needed. Maximum 2 mg (8 doses)." },
