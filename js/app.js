@@ -472,7 +472,10 @@
   const TAGS = { "CDC": "who", "FDA": "fda", "WHO-EML": "who", "WHO-GL": "who", "NLM": "nlm", "BT-STG": "bt", "BT-NEML": "bt", "NEP": "nep", "UNVERIFIED-KNOWLEDGE": "unv" };
   const tagged = s => esc(s).replace(/\[([A-Z-]+)\]/g, (m, t) => TAGS[t] ? `<span class="ftag ft-${TAGS[t]}">${t === "UNVERIFIED-KNOWLEDGE" ? "UNVERIFIED" : t}</span>` : m)
     .replace(/⚠ DISCREPANCY/g, `<mark class="fdisc">⚠ DISCREPANCY</mark>`);
-  const fdbKey = n => Object.keys(FDB).find(k => k === n || (FDB[k].inn || "").toLowerCase() === n);
+  const fdbSlug = s => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  // index row → written monograph: exact key or INN first, then the slug of the index name or of its US name (e.g. "thiamine (vit b1)" → thiamine, "acetylsalicylic acid" US "aspirin" → aspirin)
+  const FDB_ALIAS = { "senna glycosides": "senna", "glucose": "dextrose", "vasopressin (argipressin)": "vasopressin", "tiotropium bromide": "tiotropium", "nitroprusside": "sodium-nitroprusside", "polystyrene sulfonate": "calcium-polystyrene-sulfonate", "4-aminosalicylic acid": "para-aminosalicylic-acid" };
+  const fdbKey = (n, us) => (FDB_ALIAS[n] && FDB[FDB_ALIAS[n]] ? FDB_ALIAS[n] : undefined) || Object.keys(FDB).find(k => k === n || (FDB[k].inn || "").toLowerCase() === n) || (FDB[fdbSlug(n)] ? fdbSlug(n) : (us && FDB[fdbSlug(us)] ? fdbSlug(us) : undefined));
   let fdbLetter = "A", fdbQ = "";
   function fdbIndex() {
     document.title = "Drug monograph database · Clinical Disease Guide";
@@ -484,10 +487,10 @@
       <div class="hero lib-hero"><h1>Drug monograph database</h1>
         <p>Worldwide master list A–Z: <b>${FIDX.total.toLocaleString()}</b> single-ingredient medicines from the WHO ATC classification (mapped by the US National Library of Medicine). Monographs follow the Build Prompt v2 — FDA label first, then WHO, NLM, with Bhutan STG/NEML as comparator. <b>${doneAll}</b> written so far (test set).</p>
         <div class="lib-tools"><input id="fdbQ" type="search" placeholder="Search any drug, US name or ATC code…" value="${esc(fdbQ)}" aria-label="Search the drug database"></div>
-        <div class="fdb-az" role="tablist">${letters.map(l => { const n = (FIDX.letters[l] || []).filter(r => fdbKey(r[0])).length;
+        <div class="fdb-az" role="tablist">${letters.map(l => { const n = (FIDX.letters[l] || []).filter(r => fdbKey(r[0], r[3])).length;
           return `<button type="button" data-l="${l}" aria-pressed="${!q && l === fdbLetter}">${l}${n ? `<i>${n}</i>` : ""}</button>`; }).join("")}</div></div>
-      <p class="lib-count">${q ? `${rows.length} match${rows.length === 1 ? "" : "es"}` : `Block ${fdbLetter}: ${rows.length} medicines · ${rows.filter(r => fdbKey(r[0])).length} monographs written`}</p>
-      <div class="fdb-list">${rows.slice(0, 600).map(r => { const k = fdbKey(r[0]);
+      <p class="lib-count">${q ? `${rows.length} match${rows.length === 1 ? "" : "es"}` : `Block ${fdbLetter}: ${rows.length} medicines · ${rows.filter(r => fdbKey(r[0], r[3])).length} monographs written`}</p>
+      <div class="fdb-list">${rows.slice(0, 600).map(r => { const k = fdbKey(r[0], r[3]);
         return k ? `<a class="fdb-row done" href="#/fdb/${k}"><b>${esc(title(r[0]))}</b><small>${esc(r[1])}${r[3] ? " · US: " + esc(r[3]) : ""}</small><span class="chip ok">Monograph ✓</span></a>`
           : `<div class="fdb-row"><b>${esc(title(r[0]))}</b><small>${esc(r[1])}${r[3] ? " · US: " + esc(r[3]) : ""}</small><span class="chip">Pending</span></div>`; }).join("") || `<div class="note">No drug matches “${esc(fdbQ)}”.</div>`}</div>
       <p class="foot">Master list: WHO Collaborating Centre ATC classification via NLM RxClass (RxNorm ingredients), built ${esc(FIDX.built || "")}. Combination products are added as separate entries later.</p></div>`;
