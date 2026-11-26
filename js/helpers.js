@@ -325,7 +325,16 @@ const IMGS = {
   "images/kiesselbach-plexus.jpg": ["e/e3/Kiesselbach%27s_Plexus.jpg",4032],
   "images/ten-skin.jpg": ["a/ae/Toxic-epidermal-necrolysis.jpg",470],
   "images/sjs-mucosa.jpg": ["e/e9/Mucosal_desquamation_in_a_person_with_Stevens%E2%80%93Johnson_syndrome.jpg",2899],
-  "images/sjs-conjunctivitis.jpg": ["2/20/Stevens-Johnson_Syndrome_Conjunctivitis.jpg",324]
+  "images/sjs-conjunctivitis.jpg": ["2/20/Stevens-Johnson_Syndrome_Conjunctivitis.jpg",324],
+  "images/diphtheria-membrane.jpg": ["4/47/Dirty_white_pseudomembrane_classically_seen_in_diphtheria_2013-07-06_11-07.jpg",900],
+  "images/diphtheria-bull-neck.jpg": ["a/a8/Diphtheria_bull_neck.5325_lores.jpg",700],
+  "images/ptx-signs.jpg": ["5/5a/X-ray_of_pneumothorax_signs.jpg",1980],
+  "images/tension-ptx-schematic.png": ["1/13/Tension-pneumothorax.png",3200],
+  "images/ptx-neonate.jpg": ["5/53/Pneumothorax_rechts_bei_einem_Neugeborenen_0tageW_-_CR_ap_-_001.jpg",1463],
+  "images/ramsay-hunt.png": ["e/ed/Ramsey_Hunt_Syndrome.png",512],
+  "images/bells-palsy-cdc.jpg": ["0/0c/Bells_Palsy_CDC.jpg",200],
+  "images/bells-palsy-smile.jpg": ["4/4e/Bell%27s_Palsy_smiling.jpg",180],
+  "images/migraine-aura.png": ["f/f5/Flickering_scotoma.png",960]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
