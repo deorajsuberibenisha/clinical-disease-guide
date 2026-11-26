@@ -313,7 +313,12 @@ const IMGS = {
   "images/pcp-cxr.jpg": ["9/9f/X-ray_of_ground_glass_opacities_of_pneumocystis_pneumonia.jpg",1013],
   "images/pf-gametocyte.jpg": ["d/d4/P._falciparum_thin_smear_gametocyte.jpg",1360],
   "images/anopheles-feeding.jpg": ["a/ae/Anopheles_albimanus_mosquito.jpg",2466],
-  "images/bcg-scar.jpg": ["d/d1/Bacillus_Calmette-Gu%C3%A9rin_scar.JPG",900]
+  "images/bcg-scar.jpg": ["d/d1/Bacillus_Calmette-Gu%C3%A9rin_scar.JPG",900],
+  "images/vf-ecg.jpg": ["3/3c/Ventricular_fibrillation_%28from_ecg-quiz.com%29.jpg",1107],
+  "images/abdominal-thrusts.jpg": ["2/28/Abdominal_thrusts_against_choking.jpg",1240],
+  "images/cpr-adult.jpg": ["d/de/Cardiopulmonary_Resuscitation_Adult.jpg",400],
+  "images/tourniquet-application.jpg": ["c/c6/Tourniquet_application.jpg",1312],
+  "images/pelvic-binder-equipment.jpg": ["f/fb/EquipmentforPelvicBinder.jpg",3041]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
