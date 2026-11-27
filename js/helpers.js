@@ -350,7 +350,19 @@ const IMGS = {
   "images/anthrax-eschar-neck.jpg": ["3/37/Cutaneous_anthrax_lesion_on_the_neck._PHIL_1934_lores.jpg",2852],
   "images/hydatid-liver-us.jpg": ["f/f8/Ultrasonography_of_a_hydatid_liver_cyst.jpg",480],
   "images/leishmania-bone-marrow.png": ["b/b4/Leishmania_donovani_01.png",1812],
-  "images/polio-leg-atrophy.jpg": ["5/57/Polio_lores134.jpg",982]
+  "images/polio-leg-atrophy.jpg": ["5/57/Polio_lores134.jpg",982],
+  "images/petechiae-leg.jpg": ["9/93/Petechia_lower_leg.jpg",4608],
+  "images/purpura-vasculitis-legs.jpg": ["b/b6/Vasculitis_on_legs.jpg",3264],
+  "images/chickenpox-face.jpg": ["2/23/Chickenpox.jpg",1202],
+  "images/target-lesion.jpg": ["d/d1/Target_lesion_1.jpg",3648],
+  "images/folliculitis-pustules.jpg": ["3/31/Folliculitis2.jpg",3648],
+  "images/psoriasis-back.jpg": ["b/b3/Psoriasis_on_back.jpg",404],
+  "images/tinea-corporis-arm.jpg": ["3/3a/Ringworm_on_the_arm%2C_or_tinea_corporis_due_to_Trichophyton_mentagrophytes_PHIL_2938_lores.jpg",700],
+  "images/zoster-thigh.jpg": ["d/d0/Shingles_rash%2C_thigh._Caused_by_the_herpes_zoster_virus.jpg",1357],
+  "images/erythema-nodosum.jpg": ["7/77/Erythema_nodosum_new_image.jpg",800],
+  "images/vitiligo-segmental.jpg": ["6/66/Vitiligo_segmentar.jpg",836],
+  "images/atopic-dermatitis-child.jpg": ["6/63/Atopic_dermatitis_child.JPG",817],
+  "images/pityriasis-versicolor.jpg": ["3/35/P_versicolorklein.jpg",1272]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
