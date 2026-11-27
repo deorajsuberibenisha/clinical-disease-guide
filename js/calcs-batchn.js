@@ -102,9 +102,9 @@
       let t;
       if (ob) t = "<b>Obstructed labour:</b> no oxytocin. IV Ringer's lactate, catheterise, ampicillin 2 g IV (STG 1 g), urgent caesarean or referral — risk of uterine rupture.";
       else if (c2 >= 10) t = "Fully dilated: second stage — expect birth within 3 h (nulliparous) or 2 h (multiparous); assess descent and pushing.";
-      else if (rate >= 1) t = `Progress <b>${r1(rate)} cm/h</b> — on or left of the alert line (WHO 1 cm/h). Continue monitoring.`;
-      else t = `Progress <b>${r1(rate)} cm/h</b> — slower than 1 cm/h (alert line crossed). WHO Labour Care Guide: at ${c2} cm, act if no progress for <b>${lcg} h</b>. Reassess the 3 Ps (contractions, position, pelvis), hydrate, empty bladder, amniotomy if membranes intact; oxytocin augmentation only if no obstruction and in a facility able to do caesarean.`;
-      out.innerHTML = `<p style="margin:0">${t}</p><p class="warn" style="margin:8px 0 0">Record on the partograph/LCG; fetal heart every 15–30 min in active labour; maternal pulse hourly. Never use oxytocin with a previous caesarean scar outside a hospital, or in obstruction.</p>`;
+      else if (rate >= 1) t = `Progress <b>${r1(rate)} cm/h</b> — at or faster than 1 cm/h. Continue monitoring.`;
+      else t = `Progress <b>${r1(rate)} cm/h</b> — slower than 1 cm/h (partograph alert line; WHO 2018 says 1 cm/h alone is too strict). WHO Labour Care Guide: at ${c2} cm, act if no progress for <b>${lcg} h</b>. Reassess the 3 Ps (contractions, position, pelvis), hydrate, empty bladder, amniotomy if membranes intact; oxytocin augmentation only if no obstruction and in a facility able to do caesarean.`;
+      out.innerHTML = `<p style="margin:0">${t}</p><p class="warn" style="margin:8px 0 0">Record on the partograph/LCG; fetal heart every 30 min in active first stage and every 15 min in the second stage for low-risk women (Bhutan midwifery standard; more often if high risk); maternal pulse every 30 min. Never use oxytocin with a previous caesarean scar outside a hospital, or in obstruction.</p>`;
     });
   },
 

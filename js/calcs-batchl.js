@@ -85,8 +85,8 @@
       const g = k => U.$(`[data-k=${k}]`, el), w = U.num(g("wt")), age = U.num(g("age")), yrs = U.num(g("yrs")) || 0, car = g("car").value, out = U.$(".out", el);
       if (!(w > 0) || !(age >= 0)) { out.textContent = "Enter weight and age."; return; }
       const dose = w < 30 ? "600,000 units (6 lakh)" : "1.2 million units (12 lakh)";
-      const until = car === "n" ? Math.max(18, age - yrs + 5) : car === "c" ? Math.max(25, age - yrs + 10) : car === "v" ? 40 : null;
-      const dur = car === "p" ? "lifelong" : car === "v" ? "at least until age 40, often lifelong" : `until age ${until} (STG: ${car === "n" ? "18 years and at least 5 years after the last attack" : "25 years or 10 years after the last attack, whichever is longer"})`;
+      const until = car === "n" ? Math.max(21, age - yrs + 5) : car === "c" ? Math.max(25, age - yrs + 10) : car === "v" ? 40 : null;
+      const dur = car === "p" ? "lifelong" : car === "v" ? "at least until age 40, often lifelong" : `until age ${until} (${car === "n" ? "5 years after the last attack or until age 21, whichever is longer — AHA; the STG duration for no carditis could not be read in the available STG text" : "STG: 25 years or 10 years after the last attack, whichever is longer"})`;
       out.innerHTML = `<p style="margin:0"><b>Benzathine penicillin G ${dose} deep IM every 4 weeks</b> (every 3 weeks if high risk or breakthrough attacks); ${dur}.</p><p style="margin:6px 0 0">Penicillin allergy: erythromycin 250 mg twice daily. Oral penicillin V 250 mg twice daily is less effective (STG alternative).</p><p class="warn" style="margin:8px 0 0">Missed injections are the main cause of recurrence: keep a register and trace defaulters. Yearly echo for carditis.</p>`;
     });
   },
