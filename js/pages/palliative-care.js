@@ -15,7 +15,7 @@ title: "Palliative and end-of-life care",
 subtitle: "Relieving pain, breathlessness, nausea, constipation, delirium and distress in advanced illness — morphine started and titrated safely with a laxative, honest communication with SPIKES, care for the last days, and support for the family in grief",
 age: "Adults (children noted)", specs: ["medicine", "onc", "ph", "emerg", "psych"],
 keywords: ["palliative care", "end of life care", "terminal care", "hospice", "cancer pain", "total pain", "WHO analgesic ladder", "morphine", "breakthrough pain", "opioid titration", "opioid-induced constipation", "nausea and vomiting palliative", "breathlessness palliative", "death rattle", "terminal restlessness", "delirium", "fungating wound", "lymphoedema", "breaking bad news", "SPIKES", "advance care planning", "grief", "bereavement", "subcutaneous syringe driver"],
-related: ["lung-cancer-adult", "gastric-cancer-adult", "hcc-adult", "cervical-cancer-adult", "hf-adult", "ckd-adult", "cirrhosis-adult", "depression-adult"],
+related: ["palliative-child", "lung-cancer-adult", "gastric-cancer-adult", "hcc-adult", "cervical-cancer-adult", "hf-adult", "ckd-adult", "cirrhosis-adult", "depression-adult"],
 updated: "27 Nov 2026", review: "Nov 2027", evidenceTo: "Nov 2026",
 sections: [
 { id: "glance", title: "At a glance", html: `

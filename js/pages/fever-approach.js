@@ -15,7 +15,7 @@ title: "Approach to fever — all ages",
 subtitle: "Look for danger first (airway, breathing, circulation, consciousness, sepsis, a non-blanching rash), then sort the fever: with a focus, without a focus, with a rash, or lasting more than 7 days — and think of what is common in Bhutan",
 age: "All ages", specs: ["emerg", "medicine", "paeds", "id", "neo"],
 keywords: ["fever", "pyrexia", "approach to fever", "febrile child", "fever without focus", "fever without localising signs", "traffic light", "NICE fever under 5", "fever with rash", "prolonged fever", "fever more than 7 days", "fever of unknown origin", "FUO", "PUO", "pyrexia of unknown origin", "neutropenic fever", "febrile neutropenia", "drug fever", "hyperthermia", "antipyretic", "paracetamol dose fever", "tepid sponging", "returning traveller fever"],
-related: ["afi-adult", "febinfant-child", "sepsis-adult", "sepsis-child", "neosepsis-child", "rash-approach", "malaria-adult", "malaria-child", "dengue-adult", "dengue-child", "scrub-adult", "scrub-child", "enteric-adult", "enteric-child", "meningitis-adult", "meningitis-child", "uti-child", "pneumonia-child", "kawasaki-child", "febsz-child", "tb-adult", "brucellosis"],
+related: ["afi-adult", "leptospirosis", "ebola-vhf", "febinfant-child", "sepsis-adult", "sepsis-child", "neosepsis-child", "rash-approach", "malaria-adult", "malaria-child", "dengue-adult", "dengue-child", "scrub-adult", "scrub-child", "enteric-adult", "enteric-child", "meningitis-adult", "meningitis-child", "uti-child", "pneumonia-child", "kawasaki-child", "febsz-child", "tb-adult", "brucellosis"],
 updated: "27 Nov 2026", review: "Nov 2027", evidenceTo: "Nov 2026",
 sections: [
 { id: "glance", title: "At a glance", html: `
@@ -69,7 +69,7 @@ ${tbl(["Cause", "In favour"], [
 ["Septicaemia", "Seriously ill without a cause; purpura; shock (or hypothermia in severe malnutrition) " + r(1) + " → " + P("sepsis-child", "sepsis (child)") + ", " + P("sepsis-adult", "adult")],
 ["Typhoid", "Seriously ill, abdominal pain or tenderness, vomiting, jaundice, mild hepatosplenomegaly " + r(1) + " → " + P("enteric-child", "enteric fever")],
 ["Urinary tract infection", "Loin or suprapubic tenderness, dysuria, frequency, new wetting; pus cells or bacteria in urine " + r(1) + " → " + P("uti-child", "UTI (child)")],
-["Dengue, scrub typhus, leptospirosis (adults: undifferentiated febrile illness)", P("afi-adult", "Acute fever without a focus") + " " + r(3)]
+["Dengue, scrub typhus, leptospirosis (adults: undifferentiated febrile illness)", P("afi-adult", "Acute fever without a focus") + ", " + P("leptospirosis", "leptospirosis") + " " + r(3)]
 ])}
 <h3>Fever with localising signs</h3>
 ${tbl(["Cause", "In favour"], [
@@ -153,7 +153,7 @@ ${tbl(["Risk", "Non-paediatric practitioner (BHU, PHC, GP)"], [
 ["Older adults", "Fever may be low or absent; confusion or functional decline may be the only sign " + r(3)],
 ["Chemotherapy", "Neutropenic sepsis — antibiotics immediately " + r(4)],
 ["HIV", "Opportunistic infections (TB, atypical mycobacteria, fungi, CMV) " + r(6) + " → " + P("hiv-adult", "HIV")],
-["Returned traveller", "Malaria first; dengue, typhoid, rickettsia " + r(3)],
+["Returned traveller", "Malaria first; dengue, typhoid, rickettsia; outbreak area within 21 days → " + P("ebola-vhf", "Ebola/VHF") + " " + r(3)],
 ["Learning disability", "Interpret the traffic light table for the individual child " + r(2)]
 ])}` },
 { id: "scenarios", title: "Clinical scenarios", html: `${tbl(["Scenario", "What to do"], [

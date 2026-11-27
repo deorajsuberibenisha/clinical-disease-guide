@@ -1,12 +1,17 @@
-/* Burns — children */
+/* Burns — children. Thin-page upgrade Round 2, 27 Nov 2026 (id, burnfluid calculator, images and related links kept).
+   Sources: Bhutan STG 2024 §1.9 Burns; ISBI practice guidelines 2016 (previous version); ICMR / DHR 'Prevention and management of burn injuries'
+   (Bhutan Medical Library copy, read 27 Nov 2026: causes in children, first aid and transport, rule of nines not for children — Lund & Browder,
+   rule of palm, severity classes for children vs adults (minor < 10%, moderate 10–15% or 1–3% full thickness, critical > 15% or > 3% full thickness;
+   5% in newborns and infants), Parkland 4 mL/kg/% half in 8 h, child urine target 1–2 (1.5) mL/kg/h, fluid creep). The ICMR Curreri nutrition table
+   is ambiguous in the PDF and was not used. */
 registerPage({
 id: "burns-child",
 title: "Burns — Children",
 subtitle: "Scalds and bukhari burns are common in young children: cool, size with an age-adjusted chart, start fluids from 10% TBSA with maintenance added, control pain well, and think about safety at home",
 age: "Children & adolescents", specs: ["paeds", "surg", "emerg"],
 keywords: ["burns child", "paediatric burns", "scald", "Lund and Browder", "Parkland child", "maintenance fluids burns", "child protection burns", "bukhari"],
-related: ["burns-adult", "sepsis-child"],
-updated: "23 Nov 2026", review: "Nov 2027", evidenceTo: "Nov 2026",
+related: ["burns-adult", "sepsis-child", "shock-child", "trauma-child", "poisoning-child", "neotherm-child"],
+updated: "27 Nov 2026", review: "Nov 2027", evidenceTo: "Nov 2026",
 sections: [
 
 { id: "glance", title: "At a glance", html: `
@@ -16,7 +21,7 @@ sections: [
 <div><h4>Size</h4><p>Age-adjusted chart (Lund–Browder): the head is 19% in infants, legs smaller.</p></div>
 <div><h4>Fluids from 10% TBSA</h4><p>Parkland (STG) or 3 mL/kg/% (ATLS) <b>plus maintenance</b>; urine 1 mL/kg/hour; watch glucose.</p></div>
 <div><h4>Pain</h4><p>${dr("paracetamol")} 15 mg/kg; ${dr("morphine")} 0.1 mg/kg.</p></div>
-<div><h4>Refer</h4><p>Over 10% TBSA, full thickness, face, hands, feet, genitals, joints, circumferential, inhalation, electrical (STG); suspected abuse.</p></div>
+<div><h4>Refer</h4><p>Over 10% TBSA, full thickness, face, hands, feet, genitals, joints, circumferential, inhalation, electrical (STG); suspected abuse. ICMR: critical if over 15% in children, over 5% in newborns and infants, or any full-thickness burn in a child ${r(3)}.</p></div>
 </div>
 ${box("bt", "Bhutan note", `<p>STG §1.9 applies to children with a 10% referral threshold. Many childhood burns in Bhutan come from bukharis and hot liquids at floor level: prevention advice is part of treatment. ${LB.bt()}</p>`)}
 ` },
@@ -36,9 +41,14 @@ F.ok("Resuscitation fluid + maintenance with glucose, early feeding")])}
 ` },
 
 { id: "conflicts", title: "Where guidance differs", html: `
-${tbl(["Topic", "Bhutan STG", "International", "This guide"], [["Fluid start", "Parkland 4 mL", "ATLS 3 mL/kg/% plus maintenance", "Either, plus maintenance " + LB.loc()], ["Antibiotics", "By availability", "No routine prophylaxis", "Treat infection only; watch for toxic shock syndrome"]])}
+${tbl(["Topic", "Bhutan STG", "ICMR burns guideline", "International (ISBI / ATLS)", "This guide"], [
+["Fluid start", "Parkland 4 mL/kg/%", "Parkland 4 mL/kg/% — half in first 8 h; warns of fluid creep", "ATLS 3 mL/kg/% in children plus maintenance", "Either, plus maintenance; titrate to urine " + r(2) + r(3) + " " + LB.loc()],
+["Urine target in children", "—", "1–2 mL/kg/h (1.5 optimal)", "About 1 mL/kg/h", "1–2 mL/kg/h " + r(3)],
+["Hospital admission threshold", "10% TBSA in children", "Over 10% in infants and children (5% in newborns/infants is critical)", "—", "Admit over 10%; infants lower " + r(2) + r(3)],
+["Cooling", "Cool the burn", "Running water for a short period, then quick transport", "Cool running water 20 minutes", "Cool 20 minutes if possible, but do not delay transfer; keep the child warm " + r(1) + r(3)],
+["Antibiotics", "By availability", "—", "No routine prophylaxis", "Treat infection only; watch for toxic shock syndrome " + r(1)]
+])}
 ` },
-
 { id: "presentation", title: "Assessment", html: `
 <ul><li>ABCDE; weigh the child; TBSA by age chart; depth.</li>
 <li>Does the story fit? Glove or stocking scalds, cigarette burns, clear edges without splash marks, delay in presentation suggest abuse.</li></ul>
@@ -99,9 +109,9 @@ ${qa("Intern/MO", "Urine output target in children?", "1 mL/kg/hour.")}
 <ol>
 <li id="ref-1">ISBI Practice Guidelines Committee. ISBI practice guidelines for burn care. <i>Burns</i> 2016;42:953–1021. <a href="https://doi.org/10.1016/j.burns.2016.05.013" target="_blank" rel="noopener">doi:10.1016/j.burns.2016.05.013</a></li>
 <li id="ref-2">Ministry of Health, Bhutan. Standard Treatment Guidelines 2024, §1.9 Burns.</li>
+<li id="ref-3">Indian Council of Medical Research / Department of Health Research. Prevention and management of burn injuries (Bhutan Medical Library copy).</li>
 </ol>
 ` },
-
-{ id: "qc", title: "Quality check and review status", html: `${tbl(["Check", "Result", "Note"], [["Lund–Browder values", "<span class='pass'>Checked</span>", "Rounded age bands"], ["Fluids", "<span class='pass'>Checked</span>", "STG, ATLS"]], "qc")}` }
+{ id: "qc", title: "Quality check and review status", html: `${tbl(["Check", "Result", "Note"], [["Lund–Browder values", "<span class='pass'>Checked</span>", "Rounded age bands"], ["Fluids", "<span class='pass'>Checked</span>", "STG, ATLS, ICMR (half in 8 h; child urine 1–2 mL/kg/h)"], ["ICMR severity classes", "<span class='pass'>Checked</span>", "Read 27 Nov 2026"], ["ICMR nutrition table", "<span class='unv'>Not used</span>", "Columns ambiguous in PDF"], ["Calculator", "<span class='pass'>Kept</span>", "burnfluid"]], "qc")}` }
 ]
 });
