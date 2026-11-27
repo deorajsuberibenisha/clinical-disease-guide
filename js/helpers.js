@@ -369,7 +369,12 @@ const IMGS = {
   "images/nec-gross.jpg": ["8/8e/Neonatal_necrotizing_enterocolitis%2C_gross_pathology_20G0022_lores.jpg",700],
   "images/cpap-preterm.jpg": ["2/2c/Premature_infant_CPAP.jpg",2102],
   "images/cpap-newborn.jpg": ["a/a8/CPAP_on_newborn.JPG",2604],
-  "images/rop-retcam.gif": ["0/0a/The_e-ROP_Study-_Telemedicine_for_rop%28scene_of_RetCam%29half-size.gif",320]
+  "images/rop-retcam.gif": ["0/0a/The_e-ROP_Study-_Telemedicine_for_rop%28scene_of_RetCam%29half-size.gif",320],
+  "images/mastitis.jpg": ["2/2f/Mastitis_in_breast.jpg",2448],
+  "images/pleural-effusion-cxr.jpg": ["e/e7/Pleural_effusion.jpg",475],
+  "images/empyema-cxr-ct.jpg": ["2/20/Actinomyces_meyeri_67jm_mit_Pleuraempyem_-_Roe_pa_und_CT_WF_ax_-_001.jpg",2914],
+  "images/coronary-atherosclerosis.png": ["d/d1/Blausen_0257_CoronaryArtery_Plaque.png",940],
+  "images/ncc-extraparenchymal-mri.jpg": ["e/e4/Extraparenchymal_neurocysticercosis_MRI.jpg",660]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };
