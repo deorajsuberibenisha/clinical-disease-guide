@@ -80,16 +80,6 @@
     });
   },
 
-  silverman(el, U) {
-    const s3 = (k, t, a, b, c) => sel(k, t, [["0", a + " (0)"], ["1", b + " (1)"], ["2", c + " (2)"]]);
-    el.innerHTML = `<h4>Newborn respiratory distress: Silverman–Andersen score</h4><div class="row">${s3("ch", "Chest movement", "Synchronised", "Lag on inspiration", "See-saw")}${s3("ic", "Intercostal retraction", "None", "Just visible", "Marked")}${s3("xi", "Xiphoid retraction", "None", "Just visible", "Marked")}${s3("na", "Nasal flaring", "None", "Minimal", "Marked")}${s3("gr", "Expiratory grunt", "None", "Audible with stethoscope", "Audible without stethoscope")}</div><div class="out" aria-live="polite"></div>`;
-    const go = () => {
-      const s = ["ch", "ic", "xi", "na", "gr"].reduce((n, k) => n + +U.$(`[data-k=${k}]`, el).value, 0);
-      const t = s === 0 ? "No distress." : s <= 3 ? "<b>Mild distress</b>: oxygen if SpO₂ under 90%, observe, glucose, warmth; consider CPAP if worsening." : s <= 6 ? "<b>Moderate distress</b>: CPAP 5–6 cmH₂O, oxygen to SpO₂ 90–95%, antibiotics if infection possible, IV fluids/tube feeds; refer if worsening." : "<b>Severe distress / impending failure</b>: CPAP or ventilation, surfactant if available, NICU.";
-      U.$(".out", el).innerHTML = `<p style="margin:0">Score <b>${s}</b>/10. ${t}</p>`;
-    };
-    el.addEventListener("input", go); go();
-  },
 
   osteorisk(el, U) {
     el.innerHTML = `<h4>Osteoporosis: who to treat (NOGG 2022)</h4><div class="checks">${chk("a", "Hip or vertebral fragility fracture")}${chk("b", "Other fragility fracture (wrist, humerus, pelvis) age 50+")}${chk("c", "DXA T-score −2.5 or lower")}${chk("d", "Prednisolone 7.5 mg/day+ for 3 months+ (age 70+ or previous fracture)")}${chk("e", "Postmenopausal woman with multiple risk factors (FRAX high where available)")}</div><div class="row" style="margin-top:8px"><label>eGFR<input type="number" data-k="egfr" placeholder="optional"></label></div><div class="out" aria-live="polite"></div>`;

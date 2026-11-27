@@ -362,7 +362,11 @@ const IMGS = {
   "images/erythema-nodosum.jpg": ["7/77/Erythema_nodosum_new_image.jpg",800],
   "images/vitiligo-segmental.jpg": ["6/66/Vitiligo_segmentar.jpg",836],
   "images/atopic-dermatitis-child.jpg": ["6/63/Atopic_dermatitis_child.JPG",817],
-  "images/pityriasis-versicolor.jpg": ["3/35/P_versicolorklein.jpg",1272]
+  "images/pityriasis-versicolor.jpg": ["3/35/P_versicolorklein.jpg",1272],
+  "images/umbilical-catheter.png": ["4/45/Umbilical_Catheter.png",1024],
+  "images/irds-xray.png": ["b/bf/X-ray_of_infant_respiratory_distress_syndrome_%28IRDS%29.png",551],
+  "images/mas-xray.jpg": ["9/93/Mekoniumaspiration_bei_Neugeborenen_im_Roentgenbild_0W_-_CR_ap_-_001.jpg",1275],
+  "images/nec-gross.jpg": ["8/8e/Neonatal_necrotizing_enterocolitis%2C_gross_pathology_20G0022_lores.jpg",700]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };

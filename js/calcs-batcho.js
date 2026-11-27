@@ -10,18 +10,18 @@
   window.EXTRA_CALCS = Object.assign(window.EXTRA_CALCS || {}, {
 
   pretermlabour(el, U) {
-    el.innerHTML = `<h4>Preterm labour / PPROM: what to give (WHO 2022 / NICE)</h4><div class="row"><label>Gestation (weeks)<input type="number" step="any" data-k="ga" placeholder="e.g. 30"></label>${sel("t", "Situation", [["pl", "Preterm labour, membranes intact"], ["pp", "PPROM (membranes ruptured, not in labour)"], ["ppl", "PPROM in labour"]])}${sel("inf", "Signs of infection (fever, tachycardia, tender uterus, foul liquor)", [["n", "No"], ["y", "Yes"]])}${sel("bleed", "Bleeding / abruption / fetal distress", [["n", "No"], ["y", "Yes"]])}</div><div class="out" aria-live="polite">Enter gestation.</div>`;
+    el.innerHTML = `<h4>Preterm labour / PPROM: what to give (Bhutan Midwifery Standards / WHO 2022 / NICE NG25)</h4><div class="row"><label>Gestation (weeks)<input type="number" step="any" data-k="ga" placeholder="e.g. 30"></label>${sel("t", "Situation", [["pl", "Preterm labour, membranes intact"], ["pp", "PPROM (membranes ruptured, not in labour)"], ["ppl", "PPROM in labour"]])}${sel("inf", "Signs of infection (fever, tachycardia, tender uterus, foul liquor)", [["n", "No"], ["y", "Yes"]])}${sel("bleed", "Bleeding / abruption / fetal distress", [["n", "No"], ["y", "Yes"]])}</div><div class="out" aria-live="polite">Enter gestation.</div>`;
     el.addEventListener("input", () => {
       const g = k => U.$(`[data-k=${k}]`, el), ga = U.num(g("ga")), t = g("t").value, inf = g("inf").value === "y", bl = g("bleed").value === "y", out = U.$(".out", el);
       if (!(ga > 0)) { out.textContent = "Enter gestation."; return; }
       const L = [];
-      if (inf) L.push("<b>Chorioamnionitis:</b> ampicillin 2 g IV 6-hourly + gentamicin 5 mg/kg daily (+ metronidazole after caesarean) and <b>expedite delivery</b>; no tocolysis.");
-      if (ga >= 24 && ga < 34) L.push("<b>Dexamethasone 6 mg IM 12-hourly × 4 doses</b> (WHO: when birth is likely within 7 days, gestation reliable, no maternal infection, and adequate newborn care available).");
-      else if (ga >= 34 && ga < 37) L.push("34–36 weeks: antenatal steroids not routinely recommended (WHO).");
-      if (ga >= 24 && ga < 32) L.push("<b>Magnesium sulfate</b> for fetal neuroprotection when birth is imminent: 4 g IV over 15–30 min then 1 g/h until birth or 24 h.");
-      if (t === "pl" && !inf && !bl && ga >= 24 && ga < 34) L.push("Tocolysis only to complete steroids or allow transfer: <b>nifedipine 20 mg orally, then 10–20 mg 4–6-hourly for up to 48 h</b> (NICE). WHO does not recommend tocolysis to improve newborn outcomes.");
+      if (inf) L.push("<b>Signs of infection:</b> start IV <b>ampicillin 1 g 8-hourly + metronidazole 500 mg 8-hourly</b> until delivery, then oral amoxicillin 500 mg + metronidazole 500 mg three times daily for 5 days (Bhutan Midwifery Standards); refer and <b>expedite delivery</b>; no tocolysis; no steroids if chorioamnionitis (WHO).");
+      if (ga >= 24 && ga < 34) L.push("<b>Dexamethasone 6 mg IM 12-hourly × 4 doses</b> (Bhutan Midwifery Standards; WHO 2022: when birth is likely within 7 days, gestation reliable, no maternal infection, and adequate newborn care available). If the cervix is 4 cm or more and transfer is planned, the Bhutan standard uses dexamethasone 12 mg IM × 2, 12 hours apart.");
+      else if (ga >= 34 && ga < 37) L.push("34–36 weeks: WHO recommends steroids only up to 34 weeks; NICE says consider at 34+0–35+6 weeks.");
+      if (ga >= 24 && ga < 32) L.push("<b>Magnesium sulfate</b> for fetal neuroprotection when birth is expected within 24 h (NICE: offer 24–29+6 weeks, consider 30–33+6): 4 g IV over 15 min then 1 g/h until birth or 24 h; check reflexes, breathing, pulse and BP at least 4-hourly.");
+      if (t === "pl" && !inf && !bl && ga >= 24 && ga < 34) L.push("Tocolysis only to complete steroids or allow transfer (not with ruptured membranes): <b>nifedipine 40 mg orally, then 10–20 mg four times daily</b> (Bhutan Midwifery Standards; if cervix 4 cm or more: 40 mg then 20 mg twice daily for 24 h). NICE: nifedipine first choice, no betamimetics (salbutamol, terbutaline).");
       if (t !== "pl" && !inf) L.push(`<b>Erythromycin 250 mg orally 6-hourly for 10 days</b> or until delivery (not co-amoxiclav).${t === "pp" ? (ga < 34 ? " Expectant management with monitoring for infection; deliver at 34–37 weeks or sooner if infection/distress." : " At 34 weeks+: offer induction (WHO/NICE vary — discuss).") : ""}`);
-      if (ga < 37) L.push("Intrapartum GBS prophylaxis: <b>benzylpenicillin 3 g IV, then 1.5 g 4-hourly</b> (or ampicillin 2 g then 1 g 4-hourly) in labour.");
+      if (ga < 37) L.push("Ruptured membranes (Bhutan standard): <b>ampicillin 2 g IV, then 1 g 6-hourly</b> until delivery; erythromycin if penicillin-allergic.");
       if (bl) L.push("Bleeding/fetal distress: see APH; no tocolysis; deliver if indicated.");
       L.push(ga < 32 || ga < 34 ? "Transfer the mother <b>before birth</b> to a hospital with a NICU (JDWNRH or regional referral)." : "Plan birth where newborn can receive warmth, KMC and breathing support.");
       out.innerHTML = `<ul style="margin:0;padding-left:18px">${L.map(x => `<li>${x}</li>`).join("")}</ul>`;
@@ -69,27 +69,7 @@
     });
   },
 
-  necbell(el, U) {
-    el.innerHTML = `<h4>Necrotising enterocolitis: modified Bell staging</h4><div class="row">${sel("s", "Findings", [["1", "Stage I (suspected): feed intolerance, mild distension, occult blood, apnoea, temperature instability; X-ray normal or mild ileus"], ["2a", "Stage IIA (definite, mild): plus absent bowel sounds ± tenderness; pneumatosis intestinalis"], ["2b", "Stage IIB (moderate): plus acidosis, thrombocytopenia, abdominal wall oedema; portal venous gas ± ascites"], ["3a", "Stage IIIA (advanced, intact bowel): hypotension, DIC, peritonitis, severe acidosis"], ["3b", "Stage IIIB: pneumoperitoneum (perforation)"]])}<label>Weight (kg)<input type="number" step="any" data-k="wt" placeholder="e.g. 1.4"></label><label>Postnatal age (days)<input type="number" data-k="pna" placeholder="e.g. 10"></label></div><div class="out" aria-live="polite"></div>`;
-    const go = () => {
-      const g = k => U.$(`[data-k=${k}]`, el), s = g("s").value, w = U.num(g("wt")), pna = U.num(g("pna"));
-      const days = { "1": "3 days (stop if cultures negative and well)", "2a": "7–10 days", "2b": "14 days", "3a": "14 days", "3b": "14 days" }[s];
-      const genInt = pna > 7 ? "24-hourly" : "36-hourly";
-      const ab = w > 0 ? `ampicillin ${Math.round(50 * w)} mg IV 12-hourly${pna > 7 ? " (8-hourly after day 7)" : ""} + gentamicin ${r1(5 * w)} mg ${w < 2 ? genInt : "24-hourly"} + metronidazole ${r1(7.5 * w)} mg IV 12-hourly (or cefotaxime + metronidazole)` : "ampicillin + gentamicin + metronidazole (enter weight for doses)";
-      U.$(".out", el).innerHTML = `<ul style="margin:0;padding-left:18px"><li><b>Nil by mouth</b>, NG tube on free drainage, IV fluids/parenteral nutrition; NPO for ${days}.</li><li>Antibiotics: ${ab}, for ${days}.</li><li>Abdominal X-ray (AP + lateral decubitus) every 6–12 h in stage II–III; FBC, platelets, gas, CRP, blood culture.</li><li>${s === "3b" || s === "3a" ? "<b>Urgent surgical referral</b> (laparotomy or peritoneal drain); inotropes, platelets/FFP for DIC, ventilation." : "Surgical review if worsening: perforation, fixed loop, abdominal wall redness, persistent acidosis."}</li><li>Restart feeds slowly with breast milk after the NPO period.</li></ul><p class="warn" style="margin:8px 0 0">Prevention: exclusive breast milk (donor if needed), cautious feed advancement, antenatal steroids, avoid co-amoxiclav in PPROM.</p>`;
-    };
-    el.addEventListener("input", go); go();
-  },
 
-  neoseizure(el, U) {
-    el.innerHTML = `<h4>Neonatal seizures: drugs by weight (WHO 2023)</h4><div class="row"><label>Weight (kg)<input type="number" step="any" data-k="wt" placeholder="e.g. 3"></label><label>Glucose (mmol/L)<input type="number" step="any" data-k="glu" placeholder="optional"></label></div><div class="out" aria-live="polite">Enter weight.</div>`;
-    el.addEventListener("input", () => {
-      const g = k => U.$(`[data-k=${k}]`, el), w = U.num(g("wt")), glu = U.num(g("glu")), out = U.$(".out", el);
-      if (!(w > 0)) { out.textContent = "Enter weight."; return; }
-      const low = glu > 0 && glu < 2.6;
-      out.innerHTML = `<ol style="margin:0;padding-left:18px">${low ? `<li><b>Hypoglycaemia:</b> 10% dextrose ${Math.round(2 * w)} mL IV (2 mL/kg), then infusion.</li>` : "<li>Check glucose (treat if under 2.6), calcium, magnesium, sodium.</li>"}<li><b>Phenobarbital ${Math.round(20 * w)} mg IV</b> (20 mg/kg) over 20 min — first line.</li><li>Still seizing after 15–30 min: further phenobarbital <b>${Math.round(10 * w)}–${Math.round(20 * w)} mg</b> (10–20 mg/kg; max total 40 mg/kg) — watch breathing.</li><li>Second line: <b>levetiracetam ${Math.round(40 * w)}–${Math.round(60 * w)} mg IV</b> (40–60 mg/kg) or <b>phenytoin ${Math.round(20 * w)} mg IV</b> (20 mg/kg over 30 min with ECG) or midazolam infusion (specialist).</li><li>Hypocalcaemia: 10% calcium gluconate ${Math.round(2 * w)} mL (2 mL/kg) IV over 10 min with ECG. Hypomagnesaemia: magnesium sulfate 50% 0.2 mL/kg (100 mg/kg) IV/IM.</li><li>Maintenance phenobarbital 5 mg/kg/day (${Math.round(5 * w)} mg) only if seizures recur; stop before discharge if neuro exam and EEG/clinical course allow (WHO).</li></ol><p class="warn" style="margin:8px 0 0">Treat suspected sepsis/meningitis (LP when stable). Be ready to bag-mask ventilate after phenobarbital.</p>`;
-    });
-  },
 
   pidplan(el, U) {
     el.innerHTML = `<h4>Pelvic inflammatory disease: treatment (CDC 2021 / WHO / Bhutan)</h4><div class="row">${sel("sev", "Severity", [["mild", "Mild–moderate, outpatient"], ["sev", "Severe: fever 38.5+, vomiting, peritonism, tubo-ovarian abscess, pregnancy, no response in 72 h"]])}${sel("iud", "IUD in place", [["n", "No"], ["y", "Yes"]])}${sel("preg", "Pregnancy test", [["neg", "Negative"], ["pos", "Positive"]])}</div><div class="out" aria-live="polite"></div>`;

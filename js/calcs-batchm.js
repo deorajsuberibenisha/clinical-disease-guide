@@ -87,32 +87,7 @@
     el.addEventListener("input", go); go();
   },
 
-  pretermfeed(el, U) {
-    el.innerHTML = `<h4>Preterm / LBW baby: daily fluids, feeds and caffeine</h4><div class="row"><label>Weight (g)<input type="number" data-k="wt" placeholder="e.g. 1400"></label><label>Day of life<input type="number" data-k="d" placeholder="e.g. 3"></label><label>Gestation (weeks)<input type="number" data-k="ga" placeholder="e.g. 31"></label>${sel("ok", "Can feed enterally", [["y", "Yes (stable)"], ["n", "No (shock, ileus, severe distress)"]])}</div><div class="out" aria-live="polite">Enter weight and day.</div>`;
-    el.addEventListener("input", () => {
-      const g = k => U.$(`[data-k=${k}]`, el), wg = U.num(g("wt")), d = Math.max(1, U.num(g("d")) || 1), ga = U.num(g("ga")), ok = g("ok").value === "y", out = U.$(".out", el);
-      if (!(wg > 0)) { out.textContent = "Enter weight and day."; return; }
-      const kg = wg / 1000, vlbw = wg < 1500;
-      const total = Math.min(vlbw ? 180 : 160, (vlbw ? 80 : 60) + 20 * (d - 1));
-      const ent = ok ? (vlbw ? Math.min(total, 10 + 30 * (d - 1)) : total) : 0;
-      const n = vlbw ? 12 : 8, perFeed = Math.round(ent * kg / n * 10) / 10;
-      let t = `<p style="margin:0">Total fluids day ${d}: <b>${total} mL/kg/day = ${Math.round(total * kg)} mL/day</b>.</p>`;
-      t += ok ? `<p style="margin:6px 0 0">Enteral (expressed breast milk): <b>${ent} mL/kg/day → ${perFeed} mL every ${vlbw ? 2 : 3} hours</b>${vlbw ? " by cup/paladai or NG; advance by up to 30 mL/kg/day (WHO)" : "; breastfeed directly if able to suck"}.${ent < total ? ` Remaining <b>${Math.round((total - ent) * kg)} mL/day</b> as IV 10% dextrose.` : ""}</p>` : `<p style="margin:6px 0 0">Nil by mouth: give all as <b>IV 10% dextrose ${r1(total * kg / 24)} mL/h</b>; start trophic milk 10–20 mL/kg/day as soon as stable.</p>`;
-      if (ga > 0 && ga < 34) t += `<p style="margin:6px 0 0">Caffeine citrate (WHO 2022, under 34 weeks): <b>load ${Math.round(20 * kg * 10) / 10} mg</b> (20 mg/kg) then <b>${Math.round(5 * kg * 10) / 10}–${Math.round(10 * kg * 10) / 10} mg once daily</b>.</p>`;
-      out.innerHTML = t + `<p class="warn" style="margin:8px 0 0">Kangaroo mother care as soon as stable (WHO 2022: immediately, even before stable, where staff can monitor). Glucose 3-hourly in the first day; vitamin K; check temperature, apnoea, jaundice and weight daily.</p>`;
-    });
-  },
 
-  neoresus(el, U) {
-    el.innerHTML = `<h4>Newborn resuscitation: sizes and doses</h4><div class="row"><label>Weight (kg)<input type="number" step="any" data-k="wt" placeholder="e.g. 3"></label><label>Gestation (weeks)<input type="number" data-k="ga" placeholder="e.g. 39"></label></div><div class="out" aria-live="polite">Enter the weight (estimate if needed).</div>`;
-    el.addEventListener("input", () => {
-      const g = k => U.$(`[data-k=${k}]`, el), w = U.num(g("wt")), ga = U.num(g("ga")), out = U.$(".out", el);
-      if (!(w > 0)) { out.textContent = "Enter the weight (estimate if needed)."; return; }
-      const ett = w < 1 ? "2.5" : w < 2 ? "3.0" : w < 3 ? "3.5" : "3.5–4.0";
-      const o2 = ga > 0 && ga < 35 ? "21–30% oxygen" : "air (21%)";
-      out.innerHTML = `<ul style="margin:0;padding-left:18px"><li>Ventilate within 60 s with <b>${o2}</b>, 40–60 breaths/min (Bhutan booklet 30–50); first breaths 20–30 cmH₂O (25 for preterm), PEEP 5.</li><li>ETT <b>${ett} mm</b>, depth at lip <b>${r1(w + 6)} cm</b> (weight + 6); laryngeal mask if 2 kg+ and 34 weeks+.</li><li>Compressions if HR under 60 after 30 s of effective ventilation: 3:1, 100% oxygen.</li><li>Adrenaline 1:10,000 (0.1 mg/mL): IV/UVC/IO <b>${r1(0.1 * w)}–${r1(0.3 * w)} mL</b> (0.01–0.03 mg/kg); via ETT <b>${r1(0.5 * w)}–${r1(1 * w)} mL</b> (Bhutan 0.3–1 mL/kg); repeat every 3–5 min.</li><li>Saline (blood loss/pale, poor response): <b>${Math.round(10 * w)} mL</b> over 5–10 min.</li><li>After return of circulation: glucose; 10% dextrose <b>${Math.round(2 * w)} mL</b> if low.</li></ul><p style="margin:8px 0 0">Pre-ductal SpO₂ targets: 1 min 60–65%, 2 min 65–70%, 3 min 70–75%, 4 min 75–80%, 5 min 80–85%, 10 min 85–95%.</p><p class="warn" style="margin:8px 0 0">Consider stopping if no heart rate after 20 minutes of full resuscitation (ILCOR), with the senior and the family. Term or near-term babies with moderate–severe encephalopathy: refer for cooling where available.</p>`;
-    });
-  },
 
   westley(el, U) {
     el.innerHTML = `<h4>Croup severity (Westley score)</h4><div class="row">${sel("loc", "Consciousness", [["0", "Normal (0)"], ["5", "Disoriented (5)"]])}${sel("cy", "Cyanosis", [["0", "None (0)"], ["4", "With agitation (4)"], ["5", "At rest (5)"]])}${sel("st", "Stridor", [["0", "None (0)"], ["1", "When agitated (1)"], ["2", "At rest (2)"]])}${sel("ae", "Air entry", [["0", "Normal (0)"], ["1", "Decreased (1)"], ["2", "Markedly decreased (2)"]])}${sel("re", "Retractions", [["0", "None (0)"], ["1", "Mild (1)"], ["2", "Moderate (2)"], ["3", "Severe (3)"]])}<label>Weight (kg)<input type="number" step="any" data-k="wt" placeholder="for doses"></label></div><div class="out" aria-live="polite"></div>`;
