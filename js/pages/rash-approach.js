@@ -15,7 +15,7 @@ title: "Approach to rash — all ages",
 subtitle: "First decide if the patient is ill (fever, shock, non-blanching rash, mucosal erosions, peeling skin): then describe the lesion — macule, papule, plaque, vesicle, bulla, pustule, wheal, petechia — and its distribution to narrow the cause",
 age: "All ages", specs: ["derm", "emerg", "paeds", "medicine", "id"],
 keywords: ["rash", "approach to rash", "skin rash", "fever and rash", "exanthem", "maculopapular", "petechiae", "purpura", "non-blanching rash", "glass test", "vesicles", "blisters", "bullae", "pustules", "wheals", "hives", "target lesions", "erythroderma", "drug rash", "drug eruption", "itchy rash", "skin lesion description", "primary morphology", "measles rash", "meningococcal rash", "scrub typhus rash", "dengue rash"],
-related: ["fever-approach", "measles-child", "chickenpox-child", "hfmd-child", "dengue-adult", "dengue-child", "scrub-adult", "scrub-child", "meningitis-child", "meningitis-adult", "sepsis-child", "sjs-adult", "sjs-child", "kawasaki-child", "scabies-adult", "ssti-adult", "ssti-child", "anaphylaxis-adult", "anaphylaxis-child", "hsp-child", "sti-adult", "neolocal-child"],
+related: ["fever-approach", "fungal-skin", "viral-skin", "leprosy", "vitiligo", "pr-papular-fde", "eczema", "psoriasis", "urticaria", "acne-rosacea", "seb-napkin-dermatitis", "measles-child", "chickenpox-child", "hfmd-child", "dengue-adult", "dengue-child", "scrub-adult", "scrub-child", "meningitis-child", "meningitis-adult", "sepsis-child", "sjs-adult", "sjs-child", "kawasaki-child", "scabies-adult", "ssti-adult", "ssti-child", "anaphylaxis-adult", "anaphylaxis-child", "hsp-child", "sti-adult", "neolocal-child"],
 updated: "27 Nov 2026", review: "Nov 2027", evidenceTo: "Nov 2026",
 sections: [
 { id: "glance", title: "At a glance", html: `
@@ -79,18 +79,18 @@ ${tbl(["Pattern", "Think of"], [
 ])}
 <h3>Rash without fever</h3>
 ${tbl(["Pattern", "Think of"], [
-["Wheals lasting under 24 hours ± lip/eye swelling", "Urticaria / angioedema; with breathing or circulation problems = " + P("anaphylaxis-adult", "anaphylaxis") + " " + r(1) + r(6)],
+["Wheals lasting under 24 hours ± lip/eye swelling", P("urticaria", "Urticaria / angioedema") + "; with breathing or circulation problems = " + P("anaphylaxis-adult", "anaphylaxis") + " " + r(1) + r(6)],
 ["Itchy papules in finger webs, wrists, genitals; family itching, worse at night", P("scabies-adult", "Scabies") + " " + LB.exp()],
-["Itchy dry patches in flexures (or cheeks/extensors in infants)", "Atopic eczema " + LB.exp("DERMATOLOGY PAGES IN PROGRESS")],
-["Well-defined plaques with silvery scale on elbows, knees, scalp; nail pits", "Psoriasis " + r(6)],
-["Ring with scaly edge, clearing centre", "Tinea " + LB.exp()],
-["Greasy scale on scalp, eyebrows, nasolabial folds", "Seborrhoeic dermatitis " + r(6)],
+["Itchy dry patches in flexures (or cheeks/extensors in infants)", P("eczema", "Atopic eczema")],
+["Well-defined plaques with silvery scale on elbows, knees, scalp; nail pits", P("psoriasis", "Psoriasis") + " " + r(6)],
+["Ring with scaly edge, clearing centre", P("fungal-skin", "Tinea")],
+["Greasy scale on scalp, eyebrows, nasolabial folds", P("seb-napkin-dermatitis", "Seborrhoeic dermatitis") + " " + r(6)],
 ["Honey-coloured crusts", P("ssti-child", "Impetigo") + " " + r(1)],
-["Dermatomal painful vesicles", "Herpes zoster " + LB.exp()],
+["Dermatomal painful vesicles", P("viral-skin", "Herpes zoster")],
 ["Palpable purpura on legs and buttocks in a child, abdominal pain, joint pain", P("hsp-child", "IgA vasculitis (HSP)") + " " + LB.exp()],
 ["Petechiae and bruising without fever", "Low platelets (ITP, leukaemia, aplasia), vasculitis — FBC " + LB.exp()],
-["Recurring single dusky patch at the same site after a drug", "Fixed drug eruption " + r(6)],
-["Patch with loss of sensation", "Leprosy — test sensation " + LB.exp()]
+["Recurring single dusky patch at the same site after a drug", P("pr-papular-fde", "Fixed drug eruption") + " " + r(6)],
+["Patch with loss of sensation", P("leprosy", "Leprosy") + " — test sensation"]
 ])}` },
 { id: "invest", title: "Investigations", html: `
 ${tbl(["Situation", "Tests"], [
