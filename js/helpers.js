@@ -366,7 +366,10 @@ const IMGS = {
   "images/umbilical-catheter.png": ["4/45/Umbilical_Catheter.png",1024],
   "images/irds-xray.png": ["b/bf/X-ray_of_infant_respiratory_distress_syndrome_%28IRDS%29.png",551],
   "images/mas-xray.jpg": ["9/93/Mekoniumaspiration_bei_Neugeborenen_im_Roentgenbild_0W_-_CR_ap_-_001.jpg",1275],
-  "images/nec-gross.jpg": ["8/8e/Neonatal_necrotizing_enterocolitis%2C_gross_pathology_20G0022_lores.jpg",700]
+  "images/nec-gross.jpg": ["8/8e/Neonatal_necrotizing_enterocolitis%2C_gross_pathology_20G0022_lores.jpg",700],
+  "images/cpap-preterm.jpg": ["2/2c/Premature_infant_CPAP.jpg",2102],
+  "images/cpap-newborn.jpg": ["a/a8/CPAP_on_newborn.JPG",2604],
+  "images/rop-retcam.gif": ["0/0a/The_e-ROP_Study-_Telemedicine_for_rop%28scene_of_RetCam%29half-size.gif",320]
 };
 function imgSources(key) {
   const e = IMGS[key]; if (!e) return { src: key, srcset: "", full: key, svg: false };

@@ -40,30 +40,7 @@
     });
   },
 
-  pphnoi(el, U) {
-    el.innerHTML = `<h4>PPHN: oxygenation index and ductal shunt</h4><div class="row"><label>FiO₂ (%)<input type="number" data-k="f" placeholder="e.g. 100"></label><label>Mean airway pressure (cmH₂O)<input type="number" step="any" data-k="map" placeholder="e.g. 14"></label><label>Post-ductal PaO₂ (mmHg)<input type="number" data-k="pao2" placeholder="e.g. 45"></label><label>Pre-ductal SpO₂ (right hand)<input type="number" data-k="pre" placeholder="e.g. 95"></label><label>Post-ductal SpO₂ (foot)<input type="number" data-k="post" placeholder="e.g. 84"></label></div><div class="out" aria-live="polite">Enter values.</div>`;
-    el.addEventListener("input", () => {
-      const g = k => U.num(U.$(`[data-k=${k}]`, el)), f = g("f"), map = g("map"), pa = g("pao2"), pre = g("pre"), post = g("post"), out = U.$(".out", el);
-      const L = [];
-      if (f > 0 && map > 0 && pa > 0) { const oi = f * map / pa; L.push(`Oxygenation index <b>${r1(oi)}</b> — ${oi >= 40 ? "<b>very severe (40+): ECMO criteria</b> — not available in Bhutan; maximise therapy, discuss with family" : oi >= 25 ? "<b>severe (25+)</b>: inhaled nitric oxide where available; sildenafil if not" : oi >= 15 ? "moderate (15–25)" : "mild (under 15)"}.`); }
-      if (pre > 0 && post > 0) L.push(`Pre–post ductal SpO₂ difference <b>${pre - post}%</b> — ${pre - post >= 5 ? "<b>right-to-left ductal shunt</b> (supports PPHN)" : "no significant ductal shunt (shunt may be at atrial level — echo)"}.`);
-      if (!L.length) { out.textContent = "Enter values."; return; }
-      out.innerHTML = `<ul style="margin:0;padding-left:18px">${L.map(x => `<li>${x}</li>`).join("")}<li>Targets: pre-ductal SpO₂ 90–97%, PaO₂ 55–80 mmHg; avoid hyperoxia and hyperventilation; normal pH (7.35–7.45); support BP (adrenaline/noradrenaline, milrinone if good BP); minimal handling, sedation, correct glucose/calcium, treat cause (sepsis, MAS, CDH).</li></ul>`;
-    });
-  },
 
-  ropscreen(el, U) {
-    el.innerHTML = `<h4>Retinopathy of prematurity: who and when to screen</h4><div class="row"><label>Gestation at birth (weeks)<input type="number" step="any" data-k="ga" placeholder="e.g. 30"></label><label>Birth weight (g)<input type="number" data-k="bw" placeholder="e.g. 1300"></label><label>Postnatal age now (days)<input type="number" data-k="pna" placeholder="e.g. 10"></label></div><div class="checks" style="margin-top:8px">${chk("sick", "Unstable course (prolonged oxygen, sepsis, transfusions, IVH)")}</div><div class="out" aria-live="polite">Enter gestation and birth weight.</div>`;
-    el.addEventListener("input", () => {
-      const g = k => U.num(U.$(`[data-k=${k}]`, el)), ga = g("ga"), bw = g("bw"), pna = g("pna"), sick = U.$("[data-k=sick]", el).checked, out = U.$(".out", el);
-      if (!(ga > 0) || !(bw > 0)) { out.textContent = "Enter gestation and birth weight."; return; }
-      const elig = ga < 34 || bw < 2000;
-      const strict = ga <= 30 || bw <= 1500;
-      if (!elig && !sick) { out.innerHTML = "<p style='margin:0'>Not eligible by Indian NNF/regional criteria (under 34 weeks or under 2000 g, or sick). No routine screening.</p>"; return; }
-      const firstDay = ga < 28 || bw < 1200 ? "2–3 weeks (day 14–21)" : "by 4 weeks (no later than day 30)";
-      out.innerHTML = `<p style="margin:0"><b>Screen for ROP.</b> ${strict ? "Also meets AAP/UK criteria (30 weeks or less / 1500 g or less)." : "Meets regional (Indian NNF) criteria — higher-birthweight babies develop severe ROP in South Asia."}</p><ul style="margin:6px 0 0;padding-left:18px"><li>First exam: <b>${firstDay}</b> of life${pna > 0 ? ` (baby is day ${pna})` : ""}; then every 1–2 weeks by findings until retina mature (about 40–45 weeks PMA).</li><li>Targeted oxygen (SpO₂ 90–95%), avoid fluctuations; treat sepsis; good nutrition.</li><li>Treatment-requiring ROP (type 1): laser or anti-VEGF within 48–72 h — arrange referral pathway before discharge.</li><li>Never discharge an eligible baby without a booked eye examination.</li></ul>`;
-    });
-  },
 
   pgcs(el, U) {
     el.innerHTML = `<h4>Coma and raised ICP (child): GCS and first steps</h4><div class="row">${sel("e", "Eyes", [["4", "Spontaneous (4)"], ["3", "To voice (3)"], ["2", "To pain (2)"], ["1", "None (1)"]])}${sel("v", "Verbal (preverbal: coos/cries)", [["5", "Oriented / coos, babbles (5)"], ["4", "Confused / irritable cry (4)"], ["3", "Inappropriate words / cries to pain (3)"], ["2", "Sounds / moans to pain (2)"], ["1", "None (1)"]])}${sel("m", "Motor", [["6", "Obeys / normal movement (6)"], ["5", "Localises / withdraws to touch (5)"], ["4", "Withdraws to pain (4)"], ["3", "Abnormal flexion (3)"], ["2", "Extension (2)"], ["1", "None (1)"]])}<label>Weight (kg)<input type="number" step="any" data-k="wt" placeholder="e.g. 18"></label></div><div class="checks" style="margin-top:8px">${chk("cu", "Cushing triad (hypertension, bradycardia, irregular breathing)")}${chk("pu", "Unequal/fixed dilated pupil, posturing")}</div><div class="out" aria-live="polite"></div>`;

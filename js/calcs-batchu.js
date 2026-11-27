@@ -43,33 +43,8 @@
     });
   },
 
-  apnoeaplan(el, U) {
-    el.innerHTML = `<h4>Apnoea of prematurity</h4><div class="row"><label>Gestation at birth (weeks)<input type="number" step="any" data-k="ga" placeholder="e.g. 29"></label><label>Current weight (kg)<input type="number" step="any" data-k="wt" placeholder="e.g. 1.2"></label>${sel("sev", "Episodes", [["m", "Occasional, self-resolving"], ["f", "Frequent or needing stimulation"], ["b", "Needing bag-mask ventilation"]])}</div><div class="out" aria-live="polite">Enter gestation and weight.</div>`;
-    el.addEventListener("input", () => {
-      const g = k => U.$(`[data-k=${k}]`, el), ga = U.num(g("ga")), w = U.num(g("wt")), sev = g("sev").value, out = U.$(".out", el);
-      if (!(ga > 0) || !(w > 0)) { out.textContent = "Enter gestation and weight."; return; }
-      out.innerHTML = `<ul style="margin:0;padding-left:18px"><li><b>Exclude secondary causes first:</b> sepsis (cultures, antibiotics if unwell), hypoglycaemia, hypothermia/overheating, anaemia, seizures, NEC, reflux with poor positioning, IVH.</li><li><b>Caffeine citrate</b>: load <b>${r1(20 * w)} mg</b> (20 mg/kg), then <b>${r1(5 * w)}–${r1(10 * w)} mg once daily</b> (5–10 mg/kg)${ga < 34 ? " — WHO 2022 also recommends for all under 34 weeks" : ""}; continue to ~34 weeks' corrected age and 5–7 apnoea-free days.</li><li>${sev === "b" ? "<b>Frequent severe events:</b> CPAP 5–6 cmH₂O (or NIPPV), check blood gas, consider higher caffeine (up to 20 mg/kg/day, specialist), ventilation if failing." : sev === "f" ? "Frequent: optimise caffeine, prone/positioning with monitoring, CPAP if persisting." : "Monitor SpO₂/apnoea alarms; gentle stimulation."}</li><li>Before discharge: 5–8 event-free days off caffeine; teach parents.</li></ul>`;
-    });
-  },
 
-  neoshock(el, U) {
-    el.innerHTML = `<h4>Neonatal shock: bolus and infusions (rule of 6)</h4><div class="row"><label>Weight (kg)<input type="number" step="any" data-k="wt" placeholder="e.g. 1.8"></label>${sel("t", "Likely cause", [["sep", "Septic"], ["hyp", "Hypovolaemic (blood loss, dehydration)"], ["car", "Cardiogenic (asphyxia, duct-dependent CHD, arrhythmia)"]])}</div><div class="out" aria-live="polite">Enter weight.</div>`;
-    el.addEventListener("input", () => {
-      const g = k => U.$(`[data-k=${k}]`, el), w = U.num(g("wt")), t = g("t").value, out = U.$(".out", el);
-      if (!(w > 0)) { out.textContent = "Enter weight."; return; }
-      out.innerHTML = `<ul style="margin:0;padding-left:18px"><li>Signs: CRT over 3 s, cold peripheries, HR over 180 or under 100, low BP (mean BP below gestational age in weeks is a rough guide), acidosis, low urine output.</li><li>${t === "car" ? `Cautious fluid: <b>${Math.round(5 * w)}–${Math.round(10 * w)} mL</b> (5–10 mL/kg) only if hypovolaemia suspected; prostaglandin for suspected duct-dependent lesion (specialist).` : `0.9% saline <b>${Math.round(10 * w)} mL</b> (10 mL/kg) over 15–30 min, repeat once (max 20–30 mL/kg)${t === "hyp" ? "; O-negative blood 10–20 mL/kg for haemorrhage" : ""}.`}</li><li><b>Adrenaline</b>: ${r1(0.6 * w)} mg in 100 mL 5% dextrose → <b>1 mL/h = 0.1 µg/kg/min</b>; run 0.5–3 mL/h (0.05–0.3 µg/kg/min).</li><li><b>Dopamine</b>: ${r1(6 * w)} mg in 100 mL → <b>1 mL/h = 1 µg/kg/min</b>; run 5–20 mL/h (5–20 µg/kg/min).</li><li>${t === "sep" ? `Antibiotics now: ampicillin ${Math.round(50 * w)} mg + gentamicin ${r1(5 * w)} mg (or cefotaxime ${Math.round(50 * w)} mg); hydrocortisone 1 mg/kg 6–8-hourly for catecholamine-resistant shock.` : t === "car" ? "Echo; dobutamine 5–10 µg/kg/min for poor contractility; avoid fluid overload." : "Stop the losses; transfuse if bleeding."}</li><li>Glucose, calcium, gas; warmth; central (UVC) access preferred for inotropes.</li></ul>`;
-    });
-  },
 
-  cpapcheck(el, U) {
-    el.innerHTML = `<h4>Bubble CPAP: settings and failure check</h4><div class="row">${sel("p", "Patient", [["n", "Newborn"], ["c", "Infant/child"]])}<label>PEEP (cmH₂O)<input type="number" data-k="peep" placeholder="e.g. 6"></label><label>FiO₂ (%)<input type="number" data-k="f" placeholder="e.g. 40"></label><label>SpO₂ (%)<input type="number" data-k="s" placeholder="e.g. 89"></label></div><div class="checks" style="margin-top:8px">${chk("ap", "Recurrent apnoea / bradycardia")}${chk("wob", "Worsening recession, grunting, exhaustion")}${chk("co2", "pCO₂ over 60–65 with pH under 7.25")}${chk("shock", "Shock or decreased consciousness")}</div><div class="out" aria-live="polite"></div>`;
-    const go = () => {
-      const g = k => U.$(`[data-k=${k}]`, el), n = g("p").value === "n", peep = U.num(g("peep")), f = U.num(g("f")), s = U.num(g("s")), c = k => g(k).checked;
-      const fail = (f >= (n ? 40 : 60) && s > 0 && s < (n ? 90 : 92)) || c("ap") || c("wob") || c("co2") || c("shock");
-      U.$(".out", el).innerHTML = `<ul style="margin:0;padding-left:18px"><li>Start: PEEP <b>${n ? "5–6" : "5–7"} cmH₂O</b> (max ${n ? 8 : 10}), flow ${n ? "5–8" : "8–12"} L/min, FiO₂ titrated to SpO₂ ${n ? "90–95%" : "92–98%"}; correct prong size, nasal care, OG tube to vent stomach.</li><li>${fail ? "<b>CPAP failing</b> — increase PEEP by 1 (if not at max), check for leak/blocked prongs/pneumothorax; <b>escalate to intubation/ventilation or surfactant</b> (newborn: FiO₂ 40%+ on PEEP 6–7 → surfactant/refer)." : peep > 0 && f > 0 ? "Not failing — continue, reassess hourly; wean FiO₂ first, then PEEP to 5, then off." : "Enter settings."}</li><li>Contraindications: apnoea needing ventilation, shock, upper airway anomaly (choanal atresia, CDH), untreated pneumothorax, facial trauma.</li></ul>`;
-    };
-    el.addEventListener("input", go); go();
-  },
 
   postrosc(el, U) {
     el.innerHTML = `<h4>Child after cardiac arrest (ROSC): targets</h4><div class="row"><label>Age (years)<input type="number" step="any" data-k="age" placeholder="e.g. 3"></label><label>Weight (kg)<input type="number" step="any" data-k="wt" placeholder="e.g. 14"></label></div><div class="out" aria-live="polite">Enter age and weight.</div>`;
